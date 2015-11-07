@@ -1,7 +1,7 @@
 Puppy Shelter Database
 ========
 
-This project sets up a puppy shelter database and demonstrates some code to manipulate that database. This is the final project for the Udacity Relational Databases course. The git repository below includes all of the work from this class. 
+This project sets up a puppy shelter database and demonstrates some code to manipulate that database. This repositor contains the puppyShelterDBsetup.py that sets up the database, the puppypopulator.py that populates my database with shelters and puppies, and two programs that demonstrate my ability to manipulate data in this database. puppyExpressionLanguage.py uses SQLAlchemy expression language to send SQL queries to the database, and puppyORM.py which uses ORM to manipulate the database.
 
 Technology
 ----------
