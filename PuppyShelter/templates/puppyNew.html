@@ -1,0 +1,31 @@
+<html>
+<head>	
+	<link rel=stylesheet type=text/css href="{{url_for('static', filename='styles.css') }}"
+</head>
+	<body>
+		{% for r in restaurant %}
+		<h2>{{r.name}}</h2>
+		<div>
+		<fieldset>
+		<legend>New Menu Item</legend>
+
+		<form method ='post' enctype ='multipart/form-data' actions='/menuitemnew'>
+		New Menu Item Name: <input type='text' name='name' ><br><br>
+		Course: 
+		<select type='text' name='course' >
+			<option value="Breakfast">Breakfast</option>
+			<option value="Appetizer">Appetizer</option>
+			<option value="Lunch">Lunch</option>
+			<option value="Entree" selected>Entree</option>
+			<option value="Dessert">Dessert</option>
+		</select><br><br>
+		Description: <input type='text' name='description' ><br><br>
+		Price: <input type='text' name='price' >
+		</fieldset>
+		<input type='submit' value='Create'>
+		<input type='reset' value='Reset'></br></br></br></br>
+		<a href='{{url_for('restaurantMenu', restaurant_id = r.restaurant_id)}}'>Click here to cancel and return to menu.</a>
+		{% endfor %}
+		</div>
+	</body>
+</html>

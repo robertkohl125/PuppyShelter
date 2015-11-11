@@ -37,7 +37,7 @@ def selectAllPuppies2():
 	    print item.name #lists names in order of primary key by default
 
 
-#This method selects and displays all puppy names from Puppy table in alphabetical order using "query.order_by"
+#This method selects and displays all puppy names from Puppy table in alphabetical order.
 def selectSortAllPuppies():
 	s = session.query(Puppy.puppy_id, Puppy.name, Puppy.gender, Puppy.dateOfbirth).\
 		order_by("puppy.name")
@@ -203,7 +203,7 @@ def findLowestOccupancyShelter():
 	return s[0] #returns first in the list
 
 
-#This method calculated the available spaces and returns these values as a list
+#This method calculates the available spaces and returns these values as a list
 def calcCurrentOccDiff():
 	mc = session.query(Shelter.shelter_id, Shelter.maximum_capacity)
 	co = session.query(Shelter.shelter_id, Shelter.current_occupancy)

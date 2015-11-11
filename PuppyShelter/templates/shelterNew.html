@@ -1,0 +1,16 @@
+<html>
+<head>	
+	<link rel=stylesheet type=text/css href="{{url_for('static', filename='styles.css') }}"
+</head>
+	<body>
+		Please enter the name of your new restaurant:
+		<form method ='POST' enctype ='multipart/form-data' actions='/restaurantnew'>
+		<input type='text' placeholder='Type your new name here.' name='new_name' ><br>
+		<input type='submit' value='Add Restaurant'>
+		<input type='reset' value='Reset'>
+		</form>
+		<a href='{{url_for('restaurants')}}'>Cancel and return to list of Restaurants.</a>
+		</br>
+		</br>
+	</body>
+</html>
