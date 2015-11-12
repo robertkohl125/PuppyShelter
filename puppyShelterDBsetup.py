@@ -39,5 +39,22 @@ class Puppy(Base):
 	shelter_id = Column(Integer, ForeignKey('shelter.shelter_id'), nullable = False)
 	shelter = relationship(Shelter, backref = "puppy")
 
+
+#Builds the Puppy table in the ORM
+class Owner(Base):
+	"""Connects to the Owner table
+	"""
+	__tablename__ = 'owners'
+	
+	owner_id = Column(Integer, primary_key = True)
+	name = Column(String(10), nullable = False)
+	needs = Column(String)
+	address = Column(String(30))
+	city = Column(String(20))
+	state = Column(String(13))
+	zipCode = Column(Integer(5))
+	puppy_id = Column(Integer, ForeignKey('puppy.puppy_id'))
+
+
 engine = create_engine('sqlite:///puppyshelter.db')
 Base.metadata.create_all(engine) 

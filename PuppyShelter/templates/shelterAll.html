@@ -1,0 +1,37 @@
+<html>
+<head>	
+	<link rel=stylesheet type=text/css href="{{url_for('static', filename='styles.css') }}"
+</head>
+	<body>
+		<h1>Shelters:</h1></br>
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				<ul>
+				{% for message in messages %}
+					<li> <strong> {{message}} </strong> </li>
+				{% endfor %}
+				</ul>
+			{% endif %}
+		{% endwith %}
+		<h3><a href='{{url_for('shelterNew')}}'> To add a shelter, click here.</a></br></br></h3>
+		{% for s in shelters %}
+			<h3>
+			{{s.name}}
+			</h3><p>
+			{{s.address}}</br>
+			{{s.city}}
+			{{s.state}}
+			{{s.zipCode}}</br>
+			{{s.website}}</br>
+			maximum capacity:{{s.maximum_capacity}}</br>
+			current occupancy:{{s.current_occupancy}}
+			</p>
+
+			</h3>
+			<a href='{{url_for('shelterView', shelter_id = s.shelter_id)}}'>View Shelter</a>
+			<a href='{{url_for('shelterEdit', shelter_id = s.shelter_id)}}'>Edit</a>
+			<a href='{{url_for('shelterDelete', shelter_id = s.shelter_id)}}'>Delete</a>
+			</br></br></br>
+		{% endfor %}
+	</body>
+</html>
