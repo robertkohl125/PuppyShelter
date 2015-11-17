@@ -3,6 +3,7 @@ from sqlalchemy.orm import *
 from puppyShelterDBsetup import Base, Puppy, Shelter, Owner
 from sqlalchemy.sql import *
 import datetime
+import puppypopulator
 
 engine = create_engine('sqlite:///puppyshelter.db')
 Base.metadata.bind = engine
@@ -12,29 +13,21 @@ session = DBSession()
 
 #This method selects and displays all puppy names from Puppy table
 def selectAllPuppies():
-	s = session.query(Puppy)
-	results = session.execute(s)
-	print selectAllPuppies
-	print 'selectAllPuppies:'
-	print '-----------------'
-	print str(s)
-	for r in results:
-	    print 'ID:', r[0], r[1], '-- Gender: ', r[2], '-- dateOfbirth: ', r[3]
-	    print '      Breed: ',r[5], '-- weight: ', r[6], '              -- shelter#: ', r[7]
-	print 'selectAllPuppies'
+	puppies = session.query(Puppy)
+	return puppies
+selectAllPuppies()
 
 
+def selectAllShelters():
+	shelters = session.query(Shelter)
+	return shelters
+selectAllShelters()
 
-#This method selects and displays all puppy names from Puppy table
-def selectAllPuppies2():
-	s = session.query(Puppy).first()
-	s.name
 
-	print 'puppyNames:'
-	print '-----------'
-	print str(s)
-	for item in s:
-	    print item.name #lists names in order of primary key by default
+def selectAllOwners():
+	owners = session.query(Owner)
+	return owners
+selectAllOwners()
 
 
 #This method selects and displays all puppy names from Puppy table in alphabetical order.
@@ -168,13 +161,6 @@ def createShelterPuppyRow():
 	updateCurrentOccupancy()
 
 
-#This method selects all data in the Shelter table and displays it.
-def showShelter():
-	s = session.query(Shelter).all()
-#	results = session.execute(s)
-	return s
-
-
 #This method inserts a new dog into the db and finds the best shelter for it.
 def findLowestOccupancyShelter():
 	count = countUpdatedOccupancy()
@@ -213,3 +199,4 @@ def calcCurrentOccDiff():
 	list_calc = list(dict_calc.values())
 	print list_calc
 	return list_calc
+

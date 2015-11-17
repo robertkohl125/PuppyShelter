@@ -3,5 +3,8 @@ import flask
 app = Flask(__name__)
 print flask.__version__
 
-import PuppyShelter.views
+import PuppyShelter.mainView
+import PuppyShelter.ownerViews
+import PuppyShelter.puppyViews
+import PuppyShelter.shelterViews
 import PuppyShelter.models

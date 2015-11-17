@@ -1,16 +1,35 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>	
-	<link rel=stylesheet type=text/css href="{{url_for('static', filename='styles.css') }}"
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+	<link rel=stylesheet type=text/css href="{{url_for('static', filename='bootstrap.css') }}"
 </head>
+
 	<body>
-		Please enter the name of your new restaurant:
-		<form method ='POST' enctype ='multipart/form-data' actions='/restaurantnew'>
-		<input type='text' placeholder='Type your new name here.' name='new_name' ><br>
-		<input type='submit' value='Add Restaurant'>
-		<input type='reset' value='Reset'>
+		<form>
+ 		<div class="form-group">
+        <legend>New shelter</legend>
+        <input type="text" placeholder="name" name="name">
+    	</div><div>
+        <input type="text" placeholder="address"  name="address">
+    	</div><div>
+        <input type="text" placeholder="city" name="city">
+    	</div><div>
+        <input type="text" placeholder="state" name="state">
+    	</div><div>
+        <input type="text" placeholder="zip" name="zip">
+    	</div><div>
+        <input type="text" placeholder="website" name="website">
+    	</div><div>
+        <input type="text" placeholder="capacity" name="maximum_capacity">
+    	</div><div>
+        </label>
+ 		<button type='submit'  class="btn btn-primary btn-sx active" role="button">Add Shelter</button>
+		<button type='reset'  class="btn btn-primary btn-sx active" role="button">Reset</button>
+
 		</form>
-		<a href='{{url_for('restaurants')}}'>Cancel and return to list of Restaurants.</a>
-		</br>
-		</br>
+		<b></b>
+		<a href='{{url_for('shelters')}}' class="btn btn-primary btn-sx active" role="button">Cancel and return to list of local shelters.</a>
+		</b>
 	</body>
 </html>

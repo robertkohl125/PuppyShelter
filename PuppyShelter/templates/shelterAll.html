@@ -1,9 +1,10 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>	
-	<link rel=stylesheet type=text/css href="{{url_for('static', filename='styles.css') }}"
+	<link rel=stylesheet type=text/css href="{{url_for('static', filename='bootstrap.css') }}"
 </head>
 	<body>
-		<h1>Shelters:</h1></br>
+		<h1>Shelters</h1>
 		{% with messages = get_flashed_messages() %}
 			{% if messages %}
 				<ul>
@@ -13,24 +14,26 @@
 				</ul>
 			{% endif %}
 		{% endwith %}
-		<h3><a href='{{url_for('shelterNew')}}'> To add a shelter, click here.</a></br></br></h3>
+		<a href='{{url_for('main')}}'class="btn btn-primary btn-lg active" role="button"> Return to main.</a></br>
+		<a href='{{url_for('shelterNew')}}'class="btn btn-success btn-lg active" role="button"> To add a shelter, click here.</a>
 		{% for s in shelters %}
-			<h3>
-			{{s.name}}
-			</h3><p>
+			<div class="container">
+			<h4>{{s.name}}</h4>
+			<p>
 			{{s.address}}</br>
 			{{s.city}}
-			{{s.state}}
+			{{s.state}}  
 			{{s.zipCode}}</br>
 			{{s.website}}</br>
 			maximum capacity:{{s.maximum_capacity}}</br>
 			current occupancy:{{s.current_occupancy}}
 			</p>
-
-			</h3>
+			<h5>
 			<a href='{{url_for('shelterView', shelter_id = s.shelter_id)}}'>View Shelter</a>
 			<a href='{{url_for('shelterEdit', shelter_id = s.shelter_id)}}'>Edit</a>
 			<a href='{{url_for('shelterDelete', shelter_id = s.shelter_id)}}'>Delete</a>
+			</h5>
+			</div>
 			</br></br></br>
 		{% endfor %}
 	</body>
