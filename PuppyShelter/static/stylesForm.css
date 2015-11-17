@@ -1,0 +1,34 @@
+body {  font-family: sans-serif; 
+		background-color: #D5DAE6
+}
+
+h1, h2, h3, h4 { color: #2F4271; 
+}
+
+h1, h2 {  	font-family: 'Georgia', 
+			serif; margin: 0; 
+}
+
+h1 { border-bottom: 2px solid #eee; 
+}	
+
+h2 { font-size: 1.2em; 
+}
+
+p, dd, dt { color: #2F4271; 
+}
+
+a { 
+	text-decoration: none; 
+	color:#2F4271; 
+	font-size: .75em;
+}
+
+
+form {
+  border: 1px solid #c6c7cc;
+  border-radius: 5px;
+  font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  width: 480px;
+}

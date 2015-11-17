@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>	
+	<link rel=stylesheet type=text/css href="{{url_for('static', filename='bootstrap.css') }}"
+</head>
+	<body>
+		<h1>Owners</h1>
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				<ul>
+				{% for message in messages %}
+					<li> <strong> {{message}} </strong> </li>
+				{% endfor %}
+				</ul>
+			{% endif %}
+		{% endwith %}
+		<a href='{{url_for('main')}}'class="btn btn-primary btn-lg active" role="button"> Return to main.</a></br>
+		<a href='{{url_for('ownerNew')}}'class="btn btn-success btn-lg active" role="button"> To add an owner, click here.</a>
+		{% for o in owners %}
+			<div class="container">
+			<h4>{{o.name}}</h4>
+			<p>
+			{{o.address}}</br>
+			{{o.city}}
+			{{o.state}}  
+			{{o.zipCode}}</br>
+			{{o.website}}</br>
+
+			</p>
+			<h5>
+			<a href='{{url_for('ownerView', owner_id = o.owner_id)}}'>View Owner Profile</a>
+			<a href='{{url_for('ownerEdit', owner_id = o.owner_id)}}'>Edit</a>
+			<a href='{{url_for('ownerDelete', owner_id = o.owner_id)}}'>Delete</a>
+			</h5>
+			</div>
+			</br></br></br>
+		{% endfor %}
+	</body>
+</html>

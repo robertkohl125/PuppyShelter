@@ -1,0 +1,19 @@
+<html>
+<head>	
+	<link rel=stylesheet type=text/css href="{{url_for('static', filename='styles.css') }}"
+</head>
+	<body>
+		<h2>{{restaurant.name}}</h2>
+		{%for r in restaurant%}		
+		<h3>{{r.name}}</h3> 
+		<form method ='POST' enctype ='multipart/form-data' actions='/restaurantedit'>
+		*New name: <input type='text' placeholder={{r.name}} name='new_name' ><br>
+		<input type='submit' value='Edit'>
+		<input type='reset' value='Reset'>		
+		</form>
+		<a href='{{url_for('restaurants')}}'>Cancel and return to list of Restaurants.</a>
+		</br>
+		</br>
+		{% endfor %}
+	</body>
+</html>
