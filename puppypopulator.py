@@ -18,7 +18,7 @@ shelter1 = Shelter(name = "Oakland Animal Services",
 	state = "California", 
 	zipCode = "94601", 
 	website = "oaklandanimalservices.org", 
-	maximum_capacity = 20)
+	maximum_capacity = 30)
 
 shelter2 = Shelter(name = "San Francisco SPCA Mission Adoption Center", 
 	address="250 Florida St", 
@@ -26,7 +26,7 @@ shelter2 = Shelter(name = "San Francisco SPCA Mission Adoption Center",
 	state="California", 
 	zipCode = "94103", 
 	website = "sfspca.org", 
-	maximum_capacity = 20)
+	maximum_capacity = 35)
 
 shelter3 = Shelter(name = "Wonder Dog Rescue", 
 	address= "2926 16th Street", 
@@ -34,7 +34,7 @@ shelter3 = Shelter(name = "Wonder Dog Rescue",
 	state = "California" , 
 	zipCode = "94103", 
 	website = "http://wonderdogrescue.org", 
-	maximum_capacity = 20)
+	maximum_capacity = 50)
 
 shelter4 = Shelter(name = "Humane Society of Alameda", 
 	address = "PO Box 1571", 
@@ -50,7 +50,7 @@ shelter5 = Shelter(name = "Palo Alto Humane Society" ,
 	state = "California" , 
 	zipCode = "94025", 
 	website = "paloaltohumane.org", 
-	maximum_capacity = 20)
+	maximum_capacity = 10)
 
 #Add all instances of shelter to the ORM
 session.add_all([shelter1, shelter2, shelter3, shelter4, shelter5])
@@ -111,7 +111,7 @@ for i,x in enumerate(male_names):
 	new_puppy = Puppy(name = x, 
 		gender = "male", \
 		dateOfbirth = CreateRandomAge(), \
-		picture=random.choice(puppy_images) , \
+		picture=random.choice(puppy_images), \
 		weight= CreateRandomWeight(), \
 		shelter_id = CreateRandomShelterAssignment())
 	session.add(new_puppy)

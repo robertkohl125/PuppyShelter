@@ -4,17 +4,17 @@ from flask import render_template, url_for, request, redirect, flash, jsonify
 
 
 #
-@app.route('/shelters')
+@app.route('/shelters/')
 def shelters():
     shelters = models.selectAllShelters()
     return render_template('shelterAll.html', shelters = shelters)
 
 
 #
-@app.route('/shelters/shelterview', methods = ['GET','POST'])
+@app.route('/shelters/<int:shelter_id>/shelterview/')
 def shelterView(shelter_id):
     shelter = models.selectShelter(shelter_id)
-    return render_template('shelterView.html', shelters = shelters)
+    return render_template('shelterView.html', shelter = shelter, shelter_id = shelter_id)
 
 
 #

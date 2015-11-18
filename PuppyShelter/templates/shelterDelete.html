@@ -8,7 +8,6 @@
 		<a href='{{url_for('shelters')}}'class="btn btn-primary btn-lg active" role="button"> Return to shelters.</a></br>
 		{% for s in shelter %}<br>	
 			<div class="container">
-
 			<h4>{{s.name}}</h4>
 			<h6>id#: {{s.shelter_id}}</h6>
 			{{s.address}}</br>
@@ -26,7 +25,5 @@
 		</p>
 		<button type='submit' class="btn btn-danger btn-xs">Delete</button>
 		</form>
-
-
 	</body>
 </html>

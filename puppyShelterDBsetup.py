@@ -36,7 +36,7 @@ class Puppy(Base):
 	picture = Column(String)
 	breed = Column(String)
 	weight = Column(Integer, nullable = False)
-	shelter_id = Column(Integer, ForeignKey('shelter.shelter_id'), nullable = False)
+	shelter_id = Column(Integer, ForeignKey('shelter.shelter_id'))
 	shelter = relationship(Shelter, backref = "puppy")
 
 

@@ -6,14 +6,15 @@ from flask import render_template, url_for, request, redirect, flash, jsonify
 #
 @app.route('/puppies/')
 def puppies():
-    puppies = models.selectAllPuppies()
-    return render_template('puppyAll.html', puppies = puppies)
+	puppies = models.selectAllPuppies()
+	return render_template('puppyAll.html', puppies = puppies)
 
 
 #
-@app.route('/puppies/<int:puppy_id>/puppyview', methods = ['GET','POST'])
+@app.route('/puppies/<int:puppy_id>/puppyview/')
 def puppyView(puppy_id):
-    return 'puppyview'
+	puppy = models.selectAllPuppies().filter_by(puppy_id=puppy_id)
+	return render_template('puppyView.html', puppy = puppy, puppy_id = puppy_id)
 
 
 #

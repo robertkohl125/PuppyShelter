@@ -8,7 +8,6 @@
 		<a href='{{url_for('puppies')}}'class="btn btn-primary btn-lg active" role="button"> Return to puppies.</a></br>
 		{% for p in puppy %}<br>	
 			<div class="container">
-
 			<h4>{{p.name}}</h4>
 			<h6>id#: {{p.puppy_id}}</h6>
 			{{p.gender}}</br>
@@ -23,7 +22,5 @@
 		<br>CANNOT BE UNDONE!</p>
 		<button type='submit' class="btn btn-danger btn-xs">Delete</button>
 		</form>
-
-
 	</body>
 </html>

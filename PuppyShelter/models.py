@@ -17,6 +17,7 @@ def selectAllPuppies():
 
 
 def selectAllShelters():
+	updateCurrentOccupancy()
 	shelters = session.query(Shelter)
 	return shelters
 
@@ -89,6 +90,38 @@ def deleteOwner(owner_id):
 		deleteItem = Owner(owner_id=owner_id)
 	session.delete(d)
 	session.commit()
+
+
+def editPuppy():
+	puppies = session.query(Puppy)
+	return puppies
+
+
+def editShelter():
+	updateCurrentOccupancy()
+	shelters = session.query(Shelter)
+	return shelters
+
+
+def editOwner():
+	owners = session.query(Owner)
+	return owners
+
+
+def selectPuppy(puppy_id):
+	puppies = session.query(Puppy).filter_by(puppy_id=puppy_id)
+	return puppies
+
+
+def selectShelter(shelter_id):
+	updateCurrentOccupancy()
+	shelters = session.query(Shelter).filter_by(shelter_id=shelter_id)
+	return shelters
+
+
+def selectOwner(owner_id):
+	owners = session.query(Owner).filter_by(owner_id=owner_id)
+	return owners
 
 
 #This method selects and displays all puppy names from Puppy table in alphabetical order.
@@ -176,14 +209,10 @@ def updateCurrentOccupancy():
 	counts_list = countCurrentOccupancy()
 	counts_dict = dict(counts_list)
 	shelters = session.query(Shelter)
-	print 'updateCurrentOccupancy:'
-	print '----------------------'
 	for shelter in shelters:
 		shelter.current_occupancy = counts_dict.get(shelter.shelter_id)
 		session.add(shelter)
-		print 'Update: shelter_ID-',shelter.shelter_id,'--',counts_dict.get(shelter.shelter_id)
 	session.commit()
-	showShelter()
 
 
 #This method tests for overall capacity and calls the createShelterPuppyRow() method if there is availability.
