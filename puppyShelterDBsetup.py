@@ -22,7 +22,7 @@ class Shelter(Base):
 	maximum_capacity = Column(Integer, nullable = False)
 	current_occupancy = Column(Integer)
 
-	
+
 #Builds the Puppy table in the ORM
 class Puppy(Base):
 	"""Connects to the Puppy table

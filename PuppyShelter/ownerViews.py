@@ -13,6 +13,22 @@ def owners():
 #
 @app.route('/owners/ownernew', methods = ['GET','POST'])
 def ownerNew():
+	if request.method == "POST":
+		new_owner = {'name': request.form['name'],
+			'needs': request.form['needs'],
+			'address': request.form['address'],
+			'city': request.form['city'],
+			'state': request.form['state'],
+			'zipCode': request.form['zipCode']}
+		models.createOwner(new_owner)
+		return redirect(url_for('owners'))
+	else:
+		return render_template('ownerNew.html')
+
+
+#
+@app.route('/owners/<int:owner_id>/ownerview', methods = ['GET','POST'])
+def ownerView(puppy_id):
     return 'ownernew'
 
 

@@ -13,7 +13,19 @@ def puppies():
 #
 @app.route('/puppies/puppynew', methods = ['GET','POST'])
 def puppyNew():
-    return 'puppynew'
+	shelters = models.selectAllShelters()
+	if request.method == "POST":
+		new_puppy = {'name': request.form['name'],
+			'gender': request.form['gender'],
+			'dateOfbirth': request.form['dateOfbirth'],
+			'picture': request.form['picture'],
+			'breed': request.form['breed'],
+			'weight': request.form['weight'],
+			'shelter_id': request.form['shelter_id']}
+		models.createPuppy(new_puppy)
+		return redirect(url_for('puppies'))
+	else:
+		return render_template('puppyNew.html', shelters = shelters)
 
 
 #

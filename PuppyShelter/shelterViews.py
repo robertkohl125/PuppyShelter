@@ -20,7 +20,18 @@ def shelterView():
 #
 @app.route('/shelters/shelternew', methods = ['GET','POST'])
 def shelterNew():
-    return render_template('shelterNew.html', shelters = shelters)
+	if request.method == "POST":
+		new_shelter = {'name': request.form['name'],
+			'address': request.form['address'],
+			'city': request.form['city'],
+			'state': request.form['state'],
+			'zipCode': request.form['zipCode'],
+			'website': request.form['website'],
+			'maximum_capacity': request.form['maximum_capacity']}
+		models.createShelter(new_shelter)
+		return redirect(url_for('shelters'))
+	else:
+		return render_template('shelterNew.html')
 
 
 #

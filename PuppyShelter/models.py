@@ -3,7 +3,6 @@ from sqlalchemy.orm import *
 from puppyShelterDBsetup import Base, Puppy, Shelter, Owner
 from sqlalchemy.sql import *
 import datetime
-import puppypopulator
 
 engine = create_engine('sqlite:///puppyshelter.db')
 Base.metadata.bind = engine
@@ -15,20 +14,55 @@ session = DBSession()
 def selectAllPuppies():
 	puppies = session.query(Puppy)
 	return puppies
-selectAllPuppies()
 
 
 def selectAllShelters():
 	shelters = session.query(Shelter)
 	return shelters
-selectAllShelters()
 
 
 def selectAllOwners():
 	owners = session.query(Owner)
 	return owners
-selectAllOwners()
 
+
+def createPuppy(new_puppy):
+	newPuppy = Puppy(
+    	name = new_puppy['name'],
+		gender = new_puppy['gender'],
+		dateOfbirth = new_puppy['dateOfbirth'],
+		picture = new_puppy['picture'],
+		breed = new_puppy['breed'],
+		weight = new_puppy['weight'],
+		shelter_id = new_puppy['shelter_id'])
+	session.add(newPuppy)
+	session.commit()
+
+
+def createShelter(new_shelter):
+	newShelter = Shelter(
+    	name = new_shelter['name'],
+		address = new_shelter['address'],
+		city = new_shelter['city'],
+		state = new_shelter['state'],
+		zipCode = new_shelter['zipCode'],
+		website = new_shelter['website'],
+		maximum_capacity = new_shelter['maximum_capacity'])
+	session.add(newShelter)
+	session.commit()
+
+
+def createOwner(new_owner):
+	print new_owner
+	newOwner = Owner(
+    	name = new_owner['name'],
+		needs = new_owner['needs'],
+		address = new_owner['address'],
+		city = new_owner['city'],
+		state = new_owner['state'],
+		zipCode = new_owner['zipCode'])
+	session.add(newOwner)
+	session.commit()
 
 #This method selects and displays all puppy names from Puppy table in alphabetical order.
 def selectSortAllPuppies():

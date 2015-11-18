@@ -1,35 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>	
-	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-	<link rel=stylesheet type=text/css href="{{url_for('static', filename='bootstrap.css') }}"
+<head>  
+    <link rel=stylesheet type=text/css href="{{url_for('static', filename='bootstrap.css') }}"
 </head>
+    <body>
+        <div>
+        <legend>New Shelter</legend>
+        <form method ='POST' actions='/ownerNew'>
+            <label>Name</label>
+                <input type='text' name='name'><br>
+            <label>Address</label>
+                <input type='text' name='address'><br>
+            <label>City</label>
+                <input type='text' name='city'><br>
+            <label>State</label>
+                <input type='text' name='state'><br>
+            <label>ZIP</label>
+                <input type='text' name='zipCode'><br>
+            <label>Needs</label>
+                <input type='text' name='needs'><br>
+            <input class="btn btn-success" type='submit' value='Create'>
+            <input class="btn btn-warning" type='reset' value='Reset'></br>
+        </form>
+        </br></br>
+        <a href='{{url_for('shelters')}}'class="btn btn-success btn-lg active" role="button"> Shelters.</a>
+        <a href='{{url_for('puppies')}}'class="btn btn-success btn-lg active" role="button"> Puppies.</a>
+        <a href='{{url_for('owners')}}'class="btn btn-success btn-lg active" role="button"> Owners.</a>
 
-	<body>
-		<form>
- 		<div class="form-group">
-        <legend>New shelter</legend>
-        <input type="text" placeholder="name" name="name">
-    	</div><div>
-        <input type="text" placeholder="address"  name="address">
-    	</div><div>
-        <input type="text" placeholder="city" name="city">
-    	</div><div>
-        <input type="text" placeholder="state" name="state">
-    	</div><div>
-        <input type="text" placeholder="zip" name="zip">
-    	</div><div>
-        <input type="text" placeholder="website" name="website">
-    	</div><div>
-        <input type="text" placeholder="capacity" name="maximum_capacity">
-    	</div><div>
-        </label>
- 		<button type='submit'  class="btn btn-primary btn-sx active" role="button">Add Shelter</button>
-		<button type='reset'  class="btn btn-primary btn-sx active" role="button">Reset</button>
-
-		</form>
-		<b></b>
-		<a href='{{url_for('shelters')}}' class="btn btn-primary btn-sx active" role="button">Cancel and return to list of local shelters.</a>
-		</b>
-	</body>
+        </div>
+    </body>
 </html>
