@@ -12,8 +12,8 @@ def shelters():
 
 #
 @app.route('/shelters/shelterview', methods = ['GET','POST'])
-def shelterView():
-    shelter = models.selectShelter()
+def shelterView(shelter_id):
+    shelter = models.selectShelter(shelter_id)
     return render_template('shelterView.html', shelters = shelters)
 
 
@@ -43,4 +43,9 @@ def shelterEdit(shelter_id):
 #
 @app.route('/shelters/<int:shelter_id>/shelterdelete', methods = ['GET','POST'])
 def shelterDelete(shelter_id):
-    return 'shelterdelete'
+	shelter = models.selectAllShelters().filter_by(shelter_id=shelter_id)
+	if request.method == "POST":
+		models.deleteShelter(shelter_id)
+		return redirect(url_for('shelters'))
+	else:
+		return render_template('shelterDelete.html', shelter = shelter, shelter_id = shelter_id)

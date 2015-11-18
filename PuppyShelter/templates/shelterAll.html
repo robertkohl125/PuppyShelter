@@ -29,9 +29,9 @@
 			current occupancy:{{s.current_occupancy}}
 			</p>
 			<h5>
-			<a href='{{url_for('shelterView', shelter_id = s.shelter_id)}}'>View Shelter</a>
-			<a href='{{url_for('shelterEdit', shelter_id = s.shelter_id)}}'>Edit</a>
-			<a href='{{url_for('shelterDelete', shelter_id = s.shelter_id)}}'>Delete</a>
+			<a href='{{url_for('shelterView', shelter_id = s.shelter_id)}}'class="btn btn-info btn-xs active" role="button">View Shelter</a>
+			<a href='{{url_for('shelterEdit', shelter_id = s.shelter_id)}}'class="btn btn-warning btn-xs active" role="button">Edit</a>
+			<a href='{{url_for('shelterDelete', shelter_id = s.shelter_id)}}'class="btn btn-danger btn-xs active" role="button">Delete</a>
 			</h5>
 			</div>
 			</br></br></br>

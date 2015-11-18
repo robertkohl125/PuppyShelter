@@ -53,7 +53,6 @@ def createShelter(new_shelter):
 
 
 def createOwner(new_owner):
-	print new_owner
 	newOwner = Owner(
     	name = new_owner['name'],
 		needs = new_owner['needs'],
@@ -63,6 +62,34 @@ def createOwner(new_owner):
 		zipCode = new_owner['zipCode'])
 	session.add(newOwner)
 	session.commit()
+
+
+#
+def deletePuppy(puppy_id):
+	delPuppy = session.query(Puppy).filter_by(puppy_id=puppy_id)
+	for d in delPuppy:
+		deleteItem = Puppy(puppy_id=puppy_id)
+	session.delete(d)
+	session.commit()
+
+
+#
+def deleteShelter(shelter_id):
+	delShelter = session.query(Shelter).filter_by(shelter_id=shelter_id)
+	for d in delShelter:
+		deleteItem = Shelter(shelter_id=shelter_id)
+	session.delete(d)
+	session.commit()
+
+
+#
+def deleteOwner(owner_id):
+	delOwner = session.query(Owner).filter_by(owner_id=owner_id)
+	for d in delOwner:
+		deleteItem = Owner(owner_id=owner_id)
+	session.delete(d)
+	session.commit()
+
 
 #This method selects and displays all puppy names from Puppy table in alphabetical order.
 def selectSortAllPuppies():

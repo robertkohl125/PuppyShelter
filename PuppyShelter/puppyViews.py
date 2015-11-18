@@ -11,6 +11,12 @@ def puppies():
 
 
 #
+@app.route('/puppies/<int:puppy_id>/puppyview', methods = ['GET','POST'])
+def puppyView(puppy_id):
+    return 'puppyview'
+
+
+#
 @app.route('/puppies/puppynew', methods = ['GET','POST'])
 def puppyNew():
 	shelters = models.selectAllShelters()
@@ -34,19 +40,14 @@ def puppyEdit(puppy_id):
     return 'puppyedit'
 
 
-
-@app.route('/puppies/<int:puppy_id>/puppyview', methods = ['GET','POST'])
-def puppyView(puppy_id):
-    return 'puppyedit'
-#
-#@app.route('/puppies/<int:puppy_id>/puppyadopt', methods = ['GET','POST'])
-#def puppyAdopt(puppy_id):
-#    return 'puppyadopt'
-
-
 #
 @app.route('/puppies/<int:puppy_id>/puppydelete', methods = ['GET','POST'])
 def puppyDelete(puppy_id):
-    return 'puppydelete'
+	puppy = models.selectAllPuppies().filter_by(puppy_id=puppy_id)
+	if request.method == "POST":
+		models.deletePuppy(puppy_id)
+		return redirect(url_for('puppies'))
+	else:
+		return render_template('puppyDelete.html', puppy = puppy, puppy_id = puppy_id)
 
 

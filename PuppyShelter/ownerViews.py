@@ -11,6 +11,12 @@ def owners():
 
 
 #
+@app.route('/owners/<int:owner_id>/ownerview', methods = ['GET','POST'])
+def ownerView(puppy_id):
+    return 'ownerview'
+
+
+#
 @app.route('/owners/ownernew', methods = ['GET','POST'])
 def ownerNew():
 	if request.method == "POST":
@@ -27,24 +33,17 @@ def ownerNew():
 
 
 #
-@app.route('/owners/<int:owner_id>/ownerview', methods = ['GET','POST'])
-def ownerView(puppy_id):
-    return 'ownernew'
-
-
-#
 @app.route('/owners/<int:owner_id>/owneredit', methods = ['GET','POST'])
 def ownerEdit(puppy_id):
     return 'owneredit'
 
 
 #
-@app.route('/owners/<int:owner_id>/owneradopt', methods = ['GET','POST'])
-def ownerAdopt(puppy_id):
-    return 'owneradopt'
-
-
-#
 @app.route('/owner/<int:owner_id>/ownerdelete', methods = ['GET','POST'])
-def ownerDelete(puppy_id):
-    return 'ownerdelete'
+def ownerDelete(owner_id):
+	owner = models.selectAllOwners().filter_by(owner_id=owner_id)
+	if request.method == "POST":
+		models.deleteOwner(owner_id)
+		return redirect(url_for('owners'))
+	else:
+		return render_template('ownerDelete.html', owner = owner, owner_id = owner_id)
