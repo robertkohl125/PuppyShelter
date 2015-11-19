@@ -1,19 +1,36 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>	
-	<link rel=stylesheet type=text/css href="{{url_for('static', filename='styles.css') }}"
+	<link rel=stylesheet type=text/css href="{{url_for('static', filename='bootstrap.css') }}"
 </head>
 	<body>
-		<h2>{{restaurant.name}}</h2>
-		{%for r in restaurant%}		
-		<h3>{{r.name}}</h3> 
-		<form method ='POST' enctype ='multipart/form-data' actions='/restaurantedit'>
-		*New name: <input type='text' placeholder={{r.name}} name='new_name' ><br>
-		<input type='submit' value='Edit'>
-		<input type='reset' value='Reset'>		
-		</form>
-		<a href='{{url_for('restaurants')}}'>Cancel and return to list of Restaurants.</a>
-		</br>
-		</br>
-		{% endfor %}
+		<div>
+		<legend>Edit Shelter Information</legend>
+			{% for s in shelter %}
+			<form method ='POST' actions='/shelterEdit'>
+				<label>{{s.name}}</label>
+					<input type='text' name='name'><br>
+				<label>{{s.address}}</label>
+					<input type='text' name='address'><br>
+				<label>{{s.city}}</label>
+					<input type='text' name='city'>
+				<label>{{s.state}}</label>
+					<input type='text' name='state'>
+				<label>{{s.zipCode}}lbs</label>
+					<input type='text' name='zipCode'><br>
+				<label>{{s.website}}</label>
+					<input type='text' name='website'><br>
+				<label>{{s.maximum_capacity}}</label>
+					<input type='text' name='maximum_capacity'><br>
+			{% endfor %}
+			<input class="btn btn-success" type='submit' value='Edit'>
+			<input class="btn btn-warning" type='reset' value='Reset'></br>
+			</form>
+		</br></br>
+		<a href='{{url_for('shelters')}}'class="btn btn-success btn-lg active" role="button"> Shelters.</a>
+		<a href='{{url_for('puppies')}}'class="btn btn-success btn-lg active" role="button"> Puppies.</a>
+		<a href='{{url_for('owners')}}'class="btn btn-success btn-lg active" role="button"> Owners.</a>
+
+		</div>
 	</body>
 </html>

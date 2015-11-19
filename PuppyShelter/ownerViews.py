@@ -34,8 +34,19 @@ def ownerNew():
 
 #
 @app.route('/owners/<int:owner_id>/owneredit', methods = ['GET','POST'])
-def ownerEdit(puppy_id):
-    return 'owneredit'
+def ownerEdit(owner_id):
+	owner = models.selectAllOwners().filter_by(owner_id=owner_id)
+	if request.method == "POST":
+		edit_owner = {'name': request.form['name'],
+			'address': request.form['address'],
+			'city': request.form['city'],
+			'state': request.form['state'],
+			'zipCode': request.form['zipCode'],
+			'needs': request.form['needs']}
+		models.editOwner(edit_owner, owner_id)
+		return redirect(url_for('owners'))
+	else:
+		return render_template('ownerEdit.html', owner = owner)
 
 
 #

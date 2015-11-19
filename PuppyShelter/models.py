@@ -92,20 +92,69 @@ def deleteOwner(owner_id):
 	session.commit()
 
 
-def editPuppy():
-	puppies = session.query(Puppy)
-	return puppies
+def editPuppy(edit_puppy, puppy_id):
+	puppy = session.query(Puppy).filter_by(puppy_id=puppy_id)
+	editPup = Puppy(
+		name = edit_puppy['name'],
+		gender = edit_puppy['gender'],
+		dateOfbirth = edit_puppy['dateOfbirth'],
+		picture = edit_puppy['picture'],
+		breed = edit_puppy['breed'],
+		weight = edit_puppy['weight'],
+		shelter_id = edit_puppy['shelter_id'])
+	for p in puppy:
+		p.name = editPup.name
+		p.gender = editPup.gender
+		p.dateOfbirth = editPup.dateOfbirth
+		p.picture = editPup.picture
+		p.breed = editPup.breed
+		p.weight = editPup.weight
+ 		p.shelter_id = editPup.shelter_id	
+	session.add(p)
+	session.commit
+	
 
 
-def editShelter():
-	updateCurrentOccupancy()
-	shelters = session.query(Shelter)
-	return shelters
+def editShelter(edit_shelter, shelter_id):
+	shelter = session.query(Shelter).filter_by(shelter_id=shelter_id)
+	editShelt = Shelter(
+		name = edit_shelter['name'],
+		address = edit_shelter['address'],
+		city = edit_shelter['city'],
+		state = edit_shelter['state'],
+		zipCode = edit_shelter['zipCode'],
+		website = edit_shelter['website'],
+		maximum_capacity = edit_shelter['maximum_capacity'])
+	for s in shelter:
+		s.name = editShelt.name
+		s.address = editShelt.address
+		s.city = editShelt.city
+		s.state = editShelt.state
+		s.zipCode = editShelt.zipCode
+		s.website = editShelt.website
+ 		s.maximum_capacity = editShelt.maximum_capacity	
+	session.add(s)
+	session.commit
 
 
-def editOwner():
-	owners = session.query(Owner)
-	return owners
+def editOwner(edit_owner, owner_id):
+	owner = session.query(Owner).filter_by(owner_id=owner_id)
+	editOwn = Owner(
+		name = edit_owner['name'],
+		address = edit_owner['address'],
+		city = edit_owner['city'],
+		state = edit_owner['state'],
+		zipCode = edit_owner['zipCode'],
+		needs = edit_owner['needs'])
+	for o in owner:
+		o.name = editOwn.name
+		o.address = editOwn.address
+		o.city = editOwn.city
+		o.state = editOwn.state
+		o.zipCode = editOwn.zipCode
+		o.needs = editOwn.needs
+	session.add(o)
+	session.commit
 
 
 def selectPuppy(puppy_id):

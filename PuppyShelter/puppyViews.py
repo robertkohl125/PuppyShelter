@@ -38,7 +38,20 @@ def puppyNew():
 #
 @app.route('/puppies/<int:puppy_id>/puppyedit', methods = ['GET','POST'])
 def puppyEdit(puppy_id):
-    return 'puppyedit'
+	puppy = models.selectAllPuppies().filter_by(puppy_id=puppy_id)
+	shelters = models.selectAllShelters()
+	if request.method == "POST":
+		edit_puppy = {'name': request.form['name'],
+			'gender': request.form['gender'],
+			'dateOfbirth': request.form['dateOfbirth'],
+			'picture': request.form['picture'],
+			'breed': request.form['breed'],
+			'weight': request.form['weight'],
+			'shelter_id': request.form['shelter_id']}
+		models.editPuppy(edit_puppy, puppy_id)
+		return redirect(url_for('puppies'))
+	else:
+		return render_template('puppyEdit.html', puppy = puppy, puppy_id = puppy_id, shelters = shelters)
 
 
 #

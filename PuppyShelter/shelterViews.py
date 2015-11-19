@@ -37,7 +37,19 @@ def shelterNew():
 #
 @app.route('/shelters/<int:shelter_id>/shelteredit', methods = ['GET','POST'])
 def shelterEdit(shelter_id):
-    return 'shelteredit'
+	shelter = models.selectAllShelters().filter_by(shelter_id=shelter_id)
+	if request.method == "POST":
+		edit_shelter = {'name': request.form['name'],
+			'address': request.form['address'],
+			'city': request.form['city'],
+			'state': request.form['state'],
+			'zipCode': request.form['zipCode'],
+			'website': request.form['website'],
+			'maximum_capacity': request.form['maximum_capacity']}
+		models.editShelter(edit_shelter, shelter_id)
+		return redirect(url_for('shelters'))
+	else:
+		return render_template('shelterEdit.html', shelter_id = shelter_id, shelter = shelter)
 
 
 #
