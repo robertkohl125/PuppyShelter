@@ -11,6 +11,15 @@ session = DBSession()
 
 
 #This method selects and displays all puppy names from Puppy table
+def adoptPuppy(puppy_id, ownr, shelt):
+	puppy = selectAllPuppies().filter_by(puppy_id=puppy_id)
+	owner = selectAllOwners().filter_by(owner_id=ownr)
+	shelter = selectAllShelters().filter_by(shelter_id=shelt)
+#	add function to remove puppy_id from Shelter
+#	add function to remove shelter_id from Puppy
+#	add function to add puppy_id to Owner 
+
+
 def selectAllPuppies():
 	puppies = session.query(Puppy)
 	return puppies

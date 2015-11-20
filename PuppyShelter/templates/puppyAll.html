@@ -15,7 +15,7 @@
 			{% endif %}
 		{% endwith %}
 		<a href='{{url_for('main')}}'class="btn btn-primary btn-lg active" role="button"> Return to main.</a></br>
-		<a href='{{url_for('puppyNew')}}'class="btn btn-success btn-lg active" role="button"> To enroll a puppy in a shelter, click here.</a>
+		<a href='{{url_for('puppyNew')}}'class="btn btn-success btn-lg active" role="button"> To add a puppy, click here.</a>
 		{% for p in puppies %}
 			<div class="container">
 			<h4>{{p.name}}</h4>

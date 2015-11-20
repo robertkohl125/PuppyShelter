@@ -3491,6 +3491,10 @@ fieldset[disabled] .btn-link:focus {
   line-height: 1.3333333;
   border-radius: 6px;
 }
+.btn-lg.round {
+  border-radius: 24px;
+}
+
 .btn-sm,
 .btn-group-sm > .btn {
   padding: 5px 10px;

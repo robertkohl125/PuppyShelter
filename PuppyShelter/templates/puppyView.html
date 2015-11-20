@@ -4,7 +4,7 @@
 <link rel=stylesheet type=text/css href="{{url_for('static', filename='bootstrap.css') }}"
 </head>
 	<body>
-		<a href='{{url_for('main')}}'class="btn btn-primary btn-lg active" role="button"> Return to main.</a></br>
+		<a href='{{url_for('main')}}'class="btn btn-primary active" role="button"> Return to main.</a></br>
 		<a href='{{url_for('puppies')}}'class="btn btn-primary active" role="button"> Return to puppies.</a></br>
 		{% for p in puppy %}<br>	
 			<div class="container">
@@ -15,7 +15,8 @@
 			breed: {{p.breed}}</br>
 			{{p.weight}} lbs</br>
 			</div>
-			<img src={{p.picture}} alt="picture">
+			<img src={{p.picture}} alt="picture"></br>
+			<a href='{{url_for('puppyAdopt', puppy_id = p.puppy_id, shelter_id = p.shelter_id)}}'class="btn btn-success btn-lg round active" role="button"> Adopt!</a>
 		{% endfor %}
 	</body>
 </html>

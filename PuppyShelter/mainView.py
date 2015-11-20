@@ -10,6 +10,18 @@ def main():
 
 
 #
-@app.route('/puppies/<int:puppy_id>/adopt', methods = ['GET','POST'])
+@app.route('/<int:puppy_id>/adopt/', methods = ['GET','POST'])
 def puppyAdopt(puppy_id):
-    return 'adoption page'
+	puppy = models.selectAllPuppies().filter_by(puppy_id=puppy_id)
+	for pup in puppy:
+		shelt = pup.shelter_id
+	owners = models.selectAllOwners()
+	shelters = models.selectAllShelters().filter_by(shelter_id=shelt)
+	if request.method == "POST":
+		dict_ownr = {'owner_id': request.form['owner_id']}
+		print dict_ownr
+		ownr = dict_ownr.get('owner_id')
+		models.adoptPuppy(puppy_id, ownr, shelt)
+		return redirect(url_for('puppies'))
+	else:
+		return render_template('adoptPuppy.html', puppy = puppy, owners = owners, shelters = shelters)
