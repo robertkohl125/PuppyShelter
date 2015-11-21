@@ -14,7 +14,9 @@
 			{{o.city}}
 			{{o.state}}  
 			{{o.zipCode}}</br>
-			Adopted Puppy ID: {{o.puppy_id}}
+			{% for p in puppy %}
+			Adopted Puppy: {{p.name}}
+			{% endfor %}
 			</div>
 		{% endfor %}
 	</body>

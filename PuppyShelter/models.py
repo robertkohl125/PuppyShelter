@@ -15,6 +15,11 @@ def adoptPuppy(puppy_id, ownr, shelt):
 	puppy = selectAllPuppies().filter_by(puppy_id=puppy_id)
 	owner = selectAllOwners().filter_by(owner_id=ownr)
 	shelter = selectAllShelters().filter_by(shelter_id=shelt)
+	for p in puppy:
+		p.shelter_id = 0
+	for o in owner:
+		o.puppy_id = puppy_id
+
 #	add function to remove puppy_id from Shelter
 #	add function to remove shelter_id from Puppy
 #	add function to add puppy_id to Owner 

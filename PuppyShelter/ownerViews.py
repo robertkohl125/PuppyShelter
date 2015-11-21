@@ -14,7 +14,10 @@ def owners():
 @app.route('/owners/<int:owner_id>/ownerview/')
 def ownerView(owner_id):
 	owner = models.selectAllOwners().filter_by(owner_id=owner_id)
-	return render_template('ownerView.html', owner = owner, owner_id = owner_id)
+	for o in owner:
+		pup = o.puppy_id
+	puppy = models.selectAllPuppies().filter_by(puppy_id = pup)
+	return render_template('ownerView.html', owner = owner, owner_id = owner_id, puppy = puppy)
 
 #
 @app.route('/owners/ownernew', methods = ['GET','POST'])

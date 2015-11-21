@@ -13,8 +13,11 @@ def puppies():
 #
 @app.route('/puppies/<int:puppy_id>/puppyview/')
 def puppyView(puppy_id):
-	puppy = models.selectAllPuppies().filter_by(puppy_id=puppy_id)
-	return render_template('puppyView.html', puppy = puppy, puppy_id = puppy_id)
+	puppy = models.selectAllPuppies().filter_by(puppy_id = puppy_id)
+	for p in puppy:
+		shltr = p.shelter_id
+	shelter = models.selectAllShelters().filter_by(shelter_id = shltr)
+	return render_template('puppyView.html', puppy = puppy, puppy_id = puppy_id, shelter = shelter)
 
 
 #

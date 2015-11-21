@@ -14,6 +14,9 @@
 			born {{p.dateOfbirth}}</br>
 			breed: {{p.breed}}</br>
 			{{p.weight}} lbs</br>
+			{% for s in shelter %}
+			Shelter: {{s.name}}
+			{% endfor %}
 			</div>
 			<img src={{p.picture}} alt="picture"></br>
 			<a href='{{url_for('puppyAdopt', puppy_id = p.puppy_id, shelter_id = p.shelter_id)}}'class="btn btn-success btn-lg round active" role="button"> Adopt!</a>
