@@ -15,7 +15,7 @@ def puppyAdopt(puppy_id):
 	puppy = models.selectAllPuppies().filter_by(puppy_id=puppy_id)
 	for pup in puppy:
 		shelt = pup.shelter_id
-	owners = models.selectOwnerWOPuppies()
+	owners = models.selectAllOwners()
 	shelters = models.selectAllShelters().filter_by(shelter_id=shelt)
 	if request.method == "POST":
 		dict_ownr = {'owner_id': request.form['owner_id']}

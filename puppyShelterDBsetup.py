@@ -24,6 +24,21 @@ class Shelter(Base):
 	remaining_spaces = Column(Integer)
 
 
+#Builds the Owner table in the ORM
+class Owner(Base):
+	"""Connects to the Owner table
+	"""
+	__tablename__ = 'owner'
+	
+	owner_id = Column(Integer, primary_key = True)
+	name = Column(String(10), nullable = False)
+	address = Column(String(30))
+	city = Column(String(20))
+	state = Column(String(13))
+	zipCode = Column(Integer(5))
+	needs = Column(String)
+
+
 #Builds the Puppy table in the ORM
 class Puppy(Base):
 	"""Connects to the Puppy table
@@ -39,22 +54,8 @@ class Puppy(Base):
 	weight = Column(Integer, nullable = False)
 	shelter_id = Column(Integer, ForeignKey('shelter.shelter_id'))
 	shelter = relationship(Shelter, backref = "puppy")
-
-
-#Builds the Puppy table in the ORM
-class Owner(Base):
-	"""Connects to the Owner table
-	"""
-	__tablename__ = 'owners'
-	
-	owner_id = Column(Integer, primary_key = True)
-	name = Column(String(10), nullable = False)
-	needs = Column(String)
-	address = Column(String(30))
-	city = Column(String(20))
-	state = Column(String(13))
-	zipCode = Column(Integer(5))
-	puppy_id = Column(Integer, ForeignKey('puppy.puppy_id'))
+	owner_id = Column(Integer, ForeignKey('owner.owner_id'))
+	owner = relationship(Owner, backref = "puppy")
 
 
 engine = create_engine('sqlite:///puppyshelter.db')

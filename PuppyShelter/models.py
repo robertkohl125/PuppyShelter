@@ -13,21 +13,13 @@ session = DBSession()
 #This method selects and displays all puppy names from Puppy table
 def adoptPuppy(puppy_id, ownr, shelt):
 	puppy = selectAllPuppies().filter_by(puppy_id=puppy_id)
-	o = selectAllOwners().filter_by(owner_id=ownr, puppy_id = None)
+	o = selectAllOwners().filter_by(owner_id=ownr)
 	if o is None:
 		owner = "No owners available, must create an owner profile"
 	else:
-		owner = o
-
-	shelter = selectAllShelters().filter_by(shelter_id=shelt)
-	for p in puppy:
-		p.shelter_id = 0
-	for o in owner:
-		o.puppy_id = puppy_id
-
-#	add function to remove puppy_id from Shelter
-#	add function to remove shelter_id from Puppy
-#	add function to add puppy_id to Owner 
+		for p in puppy:
+			p.shelter_id = None
+			p.owner_id = ownr
 
 
 def selectAllPuppies():
