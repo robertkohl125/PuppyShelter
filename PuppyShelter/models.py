@@ -13,7 +13,12 @@ session = DBSession()
 #This method selects and displays all puppy names from Puppy table
 def adoptPuppy(puppy_id, ownr, shelt):
 	puppy = selectAllPuppies().filter_by(puppy_id=puppy_id)
-	owner = selectAllOwners().filter_by(owner_id=ownr)
+	o = selectAllOwners().filter_by(owner_id=ownr, puppy_id = None)
+	if o is None:
+		owner = "No owners available, must create an owner profile"
+	else:
+		owner = o
+
 	shelter = selectAllShelters().filter_by(shelter_id=shelt)
 	for p in puppy:
 		p.shelter_id = 0
@@ -187,6 +192,17 @@ def selectOwner(owner_id):
 	return owners
 
 
+def selectOwnerWOPuppies():
+	owners = session.query(Owner).filter_by(puppy_id=None)
+	return owners
+
+
+def selectAvailableShelters():
+	updateCurrentOccupancy()
+	shelters = session.query(Shelter).filter(Shelter.remaining_spaces > 1).order_by(asc(Shelter.remaining_spaces))
+	return shelters
+
+
 #This method selects and displays all puppy names from Puppy table in alphabetical order.
 def selectSortAllPuppies():
 	s = session.query(Puppy.puppy_id, Puppy.name, Puppy.gender, Puppy.dateOfbirth).\
@@ -219,33 +235,20 @@ def selectFatPuppies():
 		order_by(Puppy.weight)
 	s.all() #returns query results as list
 	results = session.execute(s)
-	print 'selectFatPuppies:'
-	print '-----------------'
-	print str(s)
-	for r in results:
-		print r[0], r #printscolumn 1(0) then the list created for that row
 
 
 #This method queries all puppies grouped by the shelter in which they are staying
-def selectPuppiesByShelter():
-	s = session.query(Shelter.shelter_id, Shelter.name, Puppy.puppy_id, Puppy.name).\
-		filter(Puppy.shelter_id == Shelter.shelter_id)
-	o = s.order_by("shelter.shelter_id") #add the order_by method
-	results_o = session.execute(o)
-	print 'selectPuppiesByShelter:'
-	print '-----------------------'
-	print str(o)
-	for r in results_o:
-	    print r
+def selectPuppiesByShelter(shelter_id):
+	puppies = session.query(Puppy).filter_by(shelter_id=shelter_id)
+#	o = s.order_by("shelter.shelter_id") #add the order_by method
+#	results_o = session.execute(o)
+	return puppies
 
 
 #This method counts all puppies by the shelter in which they are staying.
 def countCurrentOccupancy():
 	p = session.query(Puppy.shelter_id, func.count(Puppy.shelter_id))
 	p_grouped_count = p.group_by (Puppy.shelter_id)
-	print 'countCurrentOccupancy:'
-	print '----------------------'
-	print 'SQL: ', str(p_grouped_count) #prints the SQL query
 	for row in p_grouped_count:
 		print row
 	return p_grouped_count
@@ -254,16 +257,11 @@ def countCurrentOccupancy():
 #This method returns current_occupancy from the Shelter table as a list of only current_occupancy values
 def countUpdatedOccupancy():
 	p = session.query(Shelter.shelter_id, Shelter.current_occupancy)
-	print 'countCurrentOccupancy:'
-	print '----------------------'
-	print 'SQL: ', str(p) #prints the SQL query
 	for row in p:
 		print row
 	w = []
 	for row in p:
 		w.append(row[1])
-	print type(w)
-	print w
 	return w
 
 
@@ -274,7 +272,9 @@ def updateCurrentOccupancy():
 	shelters = session.query(Shelter)
 	for shelter in shelters:
 		shelter.current_occupancy = counts_dict.get(shelter.shelter_id)
+		shelter.remaining_spaces = shelter.maximum_capacity - shelter.current_occupancy
 		session.add(shelter)
+
 	session.commit()
 
 

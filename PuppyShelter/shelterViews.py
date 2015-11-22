@@ -7,14 +7,19 @@ from flask import render_template, url_for, request, redirect, flash, jsonify
 @app.route('/shelters/')
 def shelters():
     shelters = models.selectAllShelters()
-    return render_template('shelterAll.html', shelters = shelters)
+    for s in shelters:
+    	mc = s.maximum_capacity
+    	co = s.current_occupancy
+    rems = mc - co
+    return render_template('shelterAll.html', shelters = shelters, rem = rems)
 
 
 #
 @app.route('/shelters/<int:shelter_id>/shelterview/')
 def shelterView(shelter_id):
     shelter = models.selectShelter(shelter_id)
-    return render_template('shelterView.html', shelter = shelter, shelter_id = shelter_id)
+    puppies = models.selectPuppiesByShelter(shelter_id)
+    return render_template('shelterView.html', shelter = shelter, puppies = puppies)
 
 
 #

@@ -23,7 +23,7 @@ def puppyView(puppy_id):
 #
 @app.route('/puppies/puppynew', methods = ['GET','POST'])
 def puppyNew():
-	shelters = models.selectAllShelters()
+	shelters = models.selectAvailableShelters()
 	if request.method == "POST":
 		new_puppy = {'name': request.form['name'],
 			'gender': request.form['gender'],

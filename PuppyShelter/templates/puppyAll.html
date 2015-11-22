@@ -18,6 +18,7 @@
 		<a href='{{url_for('puppyNew')}}'class="btn btn-success btn-lg active" role="button"> To add a puppy, click here.</a>
 		{% for p in puppies %}
 			<div class="container">
+
 			<h4>{{p.name}}</h4>
 			<p>
 			<h6>id#: {{p.puppy_id}}</h6>
@@ -25,14 +26,23 @@
 			born {{p.dateOfbirth}}</br>
 			breed: {{p.breed}}</br>
 			{{p.weight}} lbs</br>
+			Shelter: {{p.shelter_id}}
 			</p>
 			<h5>
 			<a href='{{url_for('puppyView', puppy_id = p.puppy_id)}}'class="btn btn-info btn-xs active" role="button">View Puppy</a>
 			<a href='{{url_for('puppyEdit', puppy_id = p.puppy_id)}}'class="btn btn-warning btn-xs active" role="button">Edit</a>
 			<a href='{{url_for('puppyDelete', puppy_id = p.puppy_id)}}'class="btn btn-danger btn-xs active" role="button">Delete</a>
 			</h5>
+
 			</div>
 			</br></br></br>
 		{% endfor %}
+			<ul class="pagination">
+			    <li><a href="#">1</a></li>
+    			<li><a href="#">2</a></li>
+    			<li><a href="#">3</a></li>
+    			<li><a href="#">4</a></li>
+    			<li><a href="#">5</a></li>
+			</ul>
 	</body>
 </html>

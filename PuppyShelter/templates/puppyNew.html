@@ -12,7 +12,7 @@
 			<label>Shelter</label>
 				<select class='form-control' type='text' name='shelter_id' >
 					{% for s in shelters %}
-					<option value="{{ s.shelter_id }}" SELECTED>{{s.shelter_id}} {{s.name}}</option>
+					<option value="{{ s.shelter_id }}" SELECTED>Available Spaces {{s.remaining_spaces}} - <b>{{s.name}}</b></option>
 					{% endfor %}
 				</select><br>
 			<label>Gender</label>

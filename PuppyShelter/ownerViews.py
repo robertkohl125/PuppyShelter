@@ -40,7 +40,8 @@ def ownerNew():
 def ownerEdit(owner_id):
 	owner = models.selectAllOwners().filter_by(owner_id=owner_id)
 	if request.method == "POST":
-		edit_owner = {'name': request.form['name'],
+		edit_owner = {
+			'name': request.form['name'],
 			'address': request.form['address'],
 			'city': request.form['city'],
 			'state': request.form['state'],

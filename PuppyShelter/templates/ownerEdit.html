@@ -7,19 +7,19 @@
 		<div>
 		<legend>Edit Owner Information</legend>
 		{% for o in owner %}
-		<form method ='POST' actions='/puppyEdit'>
+		<form method ='POST' actions='/puppyEdit' id='puppyEdit'>
 			<label>{{o.name}}</label>
-				<input type='text' name='name'><br>
+				<input type='text' textarea placeholder="{{o.name}}" name='name' required><br>
 			<label>{{o.address}}</label>
-				<input type='text' name='address'><br>
+				<input type='text' textarea placeholder="{{o.address}}" name='address' required><br>
 			<label>{{o.city}}</label>
-				<input type='text' name='city'>
+				<input type='text' textarea placeholder="{{o.city}}" name='city' required>
 			<label>{{o.state}}</label>
-				<input type='text' name='state'>
+				<input type='text' placeholder="{{o.state}}" name='state' required>
 			<label>{{o.zipCode}}</label>
-				<input type='text' name='zipCode'><br>
-			<label>{{o.needs}}lbs</label>
-				<input type='text' name='needs'><br>
+				<input type='text' textarea placeholder="{{o.zipCode}}" name='zipCode' required><br>
+			<textarea name='needs' form='puppyEdit' placeholder="{{o.needs}}" required>
+			</textarea> </br>
 			{% endfor %}
 			<input class="btn btn-success" type='submit' value='Edit'>
 			<input class="btn btn-warning" type='reset' value='Reset'></br>

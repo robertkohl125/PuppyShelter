@@ -21,6 +21,7 @@ class Shelter(Base):
 	website = Column(String)
 	maximum_capacity = Column(Integer, nullable = False)
 	current_occupancy = Column(Integer)
+	remaining_spaces = Column(Integer)
 
 
 #Builds the Puppy table in the ORM
