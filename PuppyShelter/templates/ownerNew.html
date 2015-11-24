@@ -7,8 +7,10 @@
         <div>
         <legend>New Owner Profile</legend>
         <form method ='POST' actions='/ownerNew' id='ownerNew'>
-            <label>Name</label>
-                <input type='text' placeholder='Full Name' name='name' required><br>
+            <label>First Name</label>
+                <input type='text' placeholder='Full Name' name='firstName' required><br>
+            <label>Last Name</label>
+                <input type='text' placeholder='Full Name' name='lastName' required><br>
             <label>Address</label>
                 <input type='text' placeholder='Street Address' name='address'required><br>
             <label>City</label>
@@ -17,6 +19,8 @@
                 <input type='text' placeholder='State' name='state' required><br>
             <label>ZIP</label>
                 <input type='text' placeholder='xxxxx-xxxx or xxxxx' name='zipCode' required><br>
+            <label>email</label>
+                <input type='text' placeholder='email' name='email' required><br>
             <textarea rows="4" cols="50" name='needs'  form='ownerNew' required>Please tell us about your needs here...
                 </textarea> </br> </br>
             <input class="btn btn-success" type='submit' value='Create'>

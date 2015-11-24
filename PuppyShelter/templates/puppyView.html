@@ -8,7 +8,9 @@
 		<a href='{{url_for('puppies')}}'class="btn btn-primary active" role="button"> Return to puppies.</a></br>
 		{% for p in puppy %}<br>	
 			<div class="container">
-			<h4>{{p.name}}</h4>
+			<h3>{{p.name}}</h3>
+			<a href='{{url_for('puppyEdit', puppy_id = p.puppy_id)}}'class="btn btn-warning btn-xs active" role="button">Edit</a>
+			<a href='{{url_for('puppyDelete', puppy_id = p.puppy_id)}}'class="btn btn-danger btn-xs active" role="button">Delete</a>
 			<h6>id#: {{p.puppy_id}}</h6>
 			{{p.gender}}</br>
 			born {{p.dateOfbirth}}</br>
@@ -17,9 +19,13 @@
 			{% for s in shelter %}
 			Shelter: {{s.name}}
 			{% endfor %}
+			{% for o in owner %}
+			Adopter: {{o.firstName}} {{o.lastName}}
+			{% endfor %}
+
 			</div>
-			<img src={{p.picture}} alt="picture"></br>
-			<a href='{{url_for('puppyAdopt', puppy_id = p.puppy_id, shelter_id = p.shelter_id)}}'class="btn btn-success btn-lg round active" role="button"> Adopt!</a>
+			<img src={{p.picture}} class="img-responsive" alt="Responsive image"></br>
+			<a href='{{url_for('puppyAdopt', puppy_id = p.puppy_id, shelter_id = p.shelter_id)}}'class="btn btn-success btn-lg round active" role="button" {{att}}> Adopt!</a>
 		{% endfor %}
 	</body>
 </html>

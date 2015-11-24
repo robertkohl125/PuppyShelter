@@ -1,17 +1,14 @@
 from PuppyShelter import app
 from PuppyShelter import models
+from PuppyShelter import forms
 from flask import render_template, url_for, request, redirect, flash, jsonify
 
 
 #
 @app.route('/shelters/')
 def shelters():
-    shelters = models.selectAllShelters()
-    for s in shelters:
-    	mc = s.maximum_capacity
-    	co = s.current_occupancy
-    rems = mc - co
-    return render_template('shelterAll.html', shelters = shelters, rem = rems)
+	shelters = models.selectAllShelters()
+	return render_template('shelterAll.html', shelters = shelters)
 
 
 #
@@ -25,36 +22,42 @@ def shelterView(shelter_id):
 #
 @app.route('/shelters/shelternew', methods = ['GET','POST'])
 def shelterNew():
+	form = forms.ShelterForm()
 	if request.method == "POST":
-		new_shelter = {'name': request.form['name'],
-			'address': request.form['address'],
-			'city': request.form['city'],
-			'state': request.form['state'],
-			'zipCode': request.form['zipCode'],
-			'website': request.form['website'],
-			'maximum_capacity': request.form['maximum_capacity']}
+		new_shelter = {
+			'name': form.name.data,
+			'address': form.address.data,
+			'city': form.city.data,
+			'state': form.state.data,
+			'zipCode': form.zipCode.data,
+			'website': form.website.data,
+			'maximum_capacity': form.maximum_capacity.data}
 		models.createShelter(new_shelter)
+		flash('A new shelter has been opened!')
 		return redirect(url_for('shelters'))
 	else:
-		return render_template('shelterNew.html')
+		return render_template('shelterNew.html', form = form)
 
 
 #
 @app.route('/shelters/<int:shelter_id>/shelteredit', methods = ['GET','POST'])
 def shelterEdit(shelter_id):
+	form = forms.ShelterForm()
 	shelter = models.selectAllShelters().filter_by(shelter_id=shelter_id)
 	if request.method == "POST":
-		edit_shelter = {'name': request.form['name'],
-			'address': request.form['address'],
-			'city': request.form['city'],
-			'state': request.form['state'],
-			'zipCode': request.form['zipCode'],
-			'website': request.form['website'],
-			'maximum_capacity': request.form['maximum_capacity']}
+		edit_shelter = {
+			'name': form.name.data,
+			'address': form.address.data,
+			'city': form.city.data,
+			'state': form.state.data,
+			'zipCode': form.zipCode.data,
+			'website': form.website.data,
+			'maximum_capacity': form.maximum_capacity.data}
 		models.editShelter(edit_shelter, shelter_id)
+		flash('A shelter has been edited!')
 		return redirect(url_for('shelters'))
 	else:
-		return render_template('shelterEdit.html', shelter_id = shelter_id, shelter = shelter)
+		return render_template('shelterEdit.html', shelter_id = shelter_id, shelter = shelter, form = form)
 
 
 #
@@ -63,6 +66,7 @@ def shelterDelete(shelter_id):
 	shelter = models.selectAllShelters().filter_by(shelter_id=shelter_id)
 	if request.method == "POST":
 		models.deleteShelter(shelter_id)
+		flash('A new shelter has been deleted!')
 		return redirect(url_for('shelters'))
 	else:
 		return render_template('shelterDelete.html', shelter = shelter, shelter_id = shelter_id)

@@ -10,9 +10,9 @@
 			<div class="container">
 			{% for p in puppy %}
 			<h4>Choose who will be adopting {{p.name}}:</h4>
-			<select class='form-control' type='text' name='owner_id' >
+			<select class='form-control' type='text' name='owner_id' style='max-width:40%'>
 				{% for o in owners %}
-				<option value="{{ o.owner_id }}" SELECTED>{{o.name}}</option>
+				<option value="{{ o.owner_id }}" SELECTED>{{o.firstName}} {{o.lastName}}</option>
 				{% endfor %}
 			</select><br>
 			<h4>{{p.name}}</h4>
@@ -21,11 +21,11 @@
 			breed: {{p.breed}}</br>
 			{{p.weight}} lbs</br>
 				{% for s in shelters %}
-				from <b>{{s.name}}</b>
+				from <b>({{p.shelter_id}}){{s.shelter_id}}{{s.name}}</b>
 				{% endfor %}
 			</div>
 			<img src={{p.picture}} alt="picture"></br>
-			<input class="btn btn-success round btn-lg" type='submit' value='ADOPT'>
+			<input class="btn btn-success round btn-lg" type='submit' value='ADOPT' {{att}}>
 			{% endfor %}
 		</form>
 	</body>

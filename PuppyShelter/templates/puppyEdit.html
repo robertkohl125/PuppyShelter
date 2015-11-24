@@ -8,27 +8,29 @@
 		<legend>Edit Puppy</legend>
 		{% for p in puppy %}
 		<form method ='POST' actions='/puppyEdit'>
-			<label>{{p.name}}</label>
-				<input type='text' name='name'><br>
-			<label>Current shelter: {{p.shelter_id}}</label>
-				<select class='form-control' type='text' name='shelter_id' >
+			<label>Name</label>
+				<input type='text' name='name' placeholder={{p.name}}><br>
+			{% for s in shelter %}
+			<label>Current shelter: {{s.name}}</label>
+			{% endfor %}
+				<select class='form-control' type='text' name='shelter_id' style='max-width:40%'>
 					{% for s in shelters %}
-					<option value="{{ s.shelter_id }}" SELECTED>{{s.shelter_id}} {{s.name}}</option>
+					<option value="{{ s.shelter_id }}" SELECTED>{{s.name}} ({{s.remaining_spaces}} spaces left) </option>
 					{% endfor %}
 				</select><br>
-			<label>{{p.gender}}</label>
-				<select class='form-control' type='text' name='gender' >
+			<label>Gender</label>
+				<select class='form-control' type='text' name='gender' style='max-width:12%'>
 					<option value="male" SELECTED>male</option>
 					<option value="female" SELECTED>female</option>
 				</select><br>
-			<label>Date of Birth{{p.dateOfbirth}}</label>
-				<input type='text' name='dateOfbirth'><br>
-			<label>{{p.breed}}</label>
-				<input type='text' name='breed'><br>
-			<label>Weight {{p.weight}}lbs</label>
-				<input type='text' name='weight'><br>
+			<label>Date of Birth</label>
+				<input type='text' name='dateOfbirth' placeholder={{p.dateOfbirth}}><br>
+			<label>Breed</label>
+				<input type='text' name='breed' placeholder={{p.breed}}><br>
+			<label>Weight</label>
+				<input type='text' name='weight' placeholder={{p.weight}} >lbs.<br>
 			<label>Picture URL</label>
-				<input type='text' name='picture'><br>
+				<input type='text' name='picture' placeholder={{p.picture}}><br>
 			{% endfor %}
 			<input class="btn btn-success" type='submit' value='Edit'>
 			<input class="btn btn-warning" type='reset' value='Reset'></br>

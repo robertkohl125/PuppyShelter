@@ -20,7 +20,7 @@ class Shelter(Base):
 	zipCode = Column(Integer(5))
 	website = Column(String)
 	maximum_capacity = Column(Integer, nullable = False)
-	current_occupancy = Column(Integer)
+	current_occupancy = Column(Integer, default = '0')
 	remaining_spaces = Column(Integer)
 
 
@@ -31,11 +31,13 @@ class Owner(Base):
 	__tablename__ = 'owner'
 	
 	owner_id = Column(Integer, primary_key = True)
-	name = Column(String(10), nullable = False)
+	firstName = Column(String(15), nullable = False)
+	lastName = Column(String(30), nullable = False)
 	address = Column(String(30))
 	city = Column(String(20))
 	state = Column(String(13))
 	zipCode = Column(Integer(5))
+	email = Column(String)
 	needs = Column(String)
 
 
@@ -48,14 +50,14 @@ class Puppy(Base):
 	puppy_id = Column(Integer, primary_key = True)
 	name = Column(String(10), nullable = False)
 	gender = Column(String(6), nullable = False)
-	dateOfbirth = Column(Integer, nullable = False)
+	dateOfbirth = Column(Date, nullable = False)
 	picture = Column(String)
-	breed = Column(String)
+	breed = Column(String, default = 'Unknown')
 	weight = Column(Integer, nullable = False)
 	shelter_id = Column(Integer, ForeignKey('shelter.shelter_id'))
-	shelter = relationship(Shelter, backref = "puppy")
+	shelter = relationship(Shelter, backref = 'puppy')
 	owner_id = Column(Integer, ForeignKey('owner.owner_id'))
-	owner = relationship(Owner, backref = "puppy")
+	owner = relationship(Owner, backref = 'puppy')
 
 
 engine = create_engine('sqlite:///puppyshelter.db')

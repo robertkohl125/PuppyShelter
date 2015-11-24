@@ -53,25 +53,28 @@ def createPuppy(new_puppy):
 
 def createShelter(new_shelter):
 	newShelter = Shelter(
-    	name = new_shelter['name'],
+		name = new_shelter['name'],
 		address = new_shelter['address'],
 		city = new_shelter['city'],
 		state = new_shelter['state'],
 		zipCode = new_shelter['zipCode'],
 		website = new_shelter['website'],
-		maximum_capacity = new_shelter['maximum_capacity'])
+		maximum_capacity = new_shelter['maximum_capacity'],
+		current_occupancy = 0)
 	session.add(newShelter)
 	session.commit()
 
 
 def createOwner(new_owner):
 	newOwner = Owner(
-    	name = new_owner['name'],
-		needs = new_owner['needs'],
+    	firstName = new_owner['firstName'],
+    	lastName = new_owner['lastName'],
 		address = new_owner['address'],
 		city = new_owner['city'],
 		state = new_owner['state'],
-		zipCode = new_owner['zipCode'])
+		zipCode = new_owner['zipCode'],
+		email = new_owner['email'],
+		needs = new_owner['needs'])
 	session.add(newOwner)
 	session.commit()
 
@@ -151,18 +154,22 @@ def editShelter(edit_shelter, shelter_id):
 def editOwner(edit_owner, owner_id):
 	owner = session.query(Owner).filter_by(owner_id=owner_id)
 	editOwn = Owner(
-		name = edit_owner['name'],
+    	firstName = edit_owner['firstName'],
+    	lastName = edit_owner['lastName'],
 		address = edit_owner['address'],
 		city = edit_owner['city'],
 		state = edit_owner['state'],
 		zipCode = edit_owner['zipCode'],
+		email = edit_owner['email'],
 		needs = edit_owner['needs'])
 	for o in owner:
-		o.name = editOwn.name
+		o.firstName = editOwn.firstName
+		o.lastName = editOwn.lastName
 		o.address = editOwn.address
 		o.city = editOwn.city
 		o.state = editOwn.state
 		o.zipCode = editOwn.zipCode
+		o.email = editOwn.email
 		o.needs = editOwn.needs
 	session.add(o)
 	session.commit
@@ -182,6 +189,23 @@ def selectShelter(shelter_id):
 def selectOwner(owner_id):
 	owners = session.query(Owner).filter_by(owner_id=owner_id)
 	return owners
+
+
+def selectEnrolledShelter(puppy_id):
+	updateCurrentOccupancy()
+	puppy = selectAllPuppies().filter_by(puppy_id=puppy_id)
+	for p in puppy:
+		shelt = p.shelter_id
+	shelter = session.query(Shelter).filter_by(shelter_id=shelt)
+	return shelter
+
+
+def selectAdopterOwners(puppy_id):
+	powner = session.query(Puppy).filter_by(puppy_id=puppy_id)
+	for o in powner:
+		owner_id = o.owner_id
+	owner = session.query(Owner).filter_by(owner_id=owner_id)
+	return owner
 
 
 def selectOwnerWOPuppies():
@@ -232,8 +256,7 @@ def selectFatPuppies():
 #This method queries all puppies grouped by the shelter in which they are staying
 def selectPuppiesByShelter(shelter_id):
 	puppies = session.query(Puppy).filter_by(shelter_id=shelter_id)
-#	o = s.order_by("shelter.shelter_id") #add the order_by method
-#	results_o = session.execute(o)
+#	o = puppies.order_by("shelter.shelter_id") #add the order_by method
 	return puppies
 
 
@@ -241,16 +264,12 @@ def selectPuppiesByShelter(shelter_id):
 def countCurrentOccupancy():
 	p = session.query(Puppy.shelter_id, func.count(Puppy.shelter_id))
 	p_grouped_count = p.group_by (Puppy.shelter_id)
-	for row in p_grouped_count:
-		print row
 	return p_grouped_count
 
 
 #This method returns current_occupancy from the Shelter table as a list of only current_occupancy values
 def countUpdatedOccupancy():
 	p = session.query(Shelter.shelter_id, Shelter.current_occupancy)
-	for row in p:
-		print row
 	w = []
 	for row in p:
 		w.append(row[1])
@@ -264,9 +283,13 @@ def updateCurrentOccupancy():
 	shelters = session.query(Shelter)
 	for shelter in shelters:
 		shelter.current_occupancy = counts_dict.get(shelter.shelter_id)
-		shelter.remaining_spaces = shelter.maximum_capacity - shelter.current_occupancy
+		co = 0
+		if shelter.current_occupancy is None:
+			co = 0
+		else:
+			co = shelter.current_occupancy
+		shelter.remaining_spaces = shelter.maximum_capacity - co
 		session.add(shelter)
-
 	session.commit()
 
 
@@ -280,30 +303,6 @@ def testAvailability():
 		print 'Shelters beyond capacity, please open a new shelter.'
 	else:
 		createShelterPuppyRow()
-
-#This method creates a new row in the Puppy table with new puppy data.
-def createShelterPuppyRow():
-	updateCurrentOccupancy()
-	minOccShelter = findLowestOccupancyShelter()
-	print minOccShelter
-	session.add_all([
-		Puppy(name = "Griffin", 
-			gender = "Male", 
-			dateOfbirth = '2010-12-10', 
-			picture = "http://www.lotsofpuppylove.com/daisy.bmp", 
-			breed = "Labradoodle", 
-			weight = "9", 
-			shelter_id = minOccShelter),
-		Puppy(name = "Max", 
-			gender = "Male", 
-			dateOfbirth = '2010-04-27', 
-			picture = "http://www.montanalabradoodles.com/Taylor_puppy_2007_b.jpg", 
-			breed = "Labradoodle", 
-			weight = "10", 
-			shelter_id = minOccShelter)])
-	session.commit()
-	selectAllPuppies()
-	updateCurrentOccupancy()
 
 
 #This method inserts a new dog into the db and finds the best shelter for it.

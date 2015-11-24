@@ -14,8 +14,8 @@
 				</ul>
 			{% endif %}
 		{% endwith %}
-		<a href='{{url_for('main')}}'class="btn btn-primary btn-lg active" role="button"> Return to main.</a></br>
-		<a href='{{url_for('shelterNew')}}'class="btn btn-success btn-lg active" role="button"> To add a shelter, click here.</a></br></br>
+		<a href='{{url_for('main')}}'class="btn btn-primary btn-sm active" role="button"> Return to main.</a></br>
+		<a href='{{url_for('shelterNew')}}'class="btn btn-success btn-sm active" role="button"> To add a shelter, click here.</a></br></br>
 		{% for s in shelters %}
 			<div class="container">
 			<a href='{{url_for('shelterView', shelter_id = s.shelter_id)}}'class="btn btn-info active" role="button">{{s.name}}</a>

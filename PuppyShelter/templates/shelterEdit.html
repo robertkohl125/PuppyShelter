@@ -9,26 +9,93 @@
 		<a href='{{url_for('owners')}}'class="btn btn-success btn-lg active" role="button"> Owners.</a>
 		<div>
 		<legend>Edit Shelter Information</legend>
-			{% for s in shelter %}
-			<form method ='POST' actions='/shelterEdit'>
-				<label>Name</label>
-					<input type='text' name='name' placeholder='{{s.name}}' required>{{s.name}}<br>
-				<label>Address</label>
-					<input type='text' name='address' placeholder='{{s.address}}' required>{{s.address}}<br>
-				<label>City</label>
-					<input type='text' name='city' placeholder='{{s.city}}' required>{{s.city}}<br>
-				<label>State</label>
-					<input type='text' name='state' placeholder='{{s.state}}' required>{{s.state}}<br>
-				<label>Zip</label>
-					<input type='text' name='zipCode' placeholder='{{s.zipCode}}' required>{{s.zipCode}}<br>
-				<label>Website</label>
-					<input type='text' name='website' placeholder='{{s.website}}' required>{{s.website}}<br>
-				<label>Maximum Capacity</label>
-					<input type='text' name='maximum_capacity' placeholder='{{s.maximum_capacity}}' required>{{s.maximum_capacity}}<br>
-			{% endfor %}
-			<input class="btn btn-success" type='submit' value='Edit'>
-			<input class="btn btn-warning" type='reset' value='Reset'></br>
-			</form>
+        <form method ='POST' actions='/shelterNew' enctype="multipart/form-data">
+            {{ form.csrf_token }}
+        {% for s in shelter %}
+        <div class="form-group col-xs-4">
+            <label for="shelter-name">Name</label> {{s.name}}
+            {{ form.name(class="form-control", placeholder="Name") }}
+            {% if form.name.errors %}
+                <div class="alert alert-info" role="alert">
+                    {% for error in form.name.errors %}
+                    {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group col-xs-6">
+            <label for="shelter-address">Address</label> {{s.address}}
+            {{ form.address(class="form-control", placeholder="Address") }}
+            {% if form.address.errors %}
+                <div class="alert alert-info" role="alert">
+                    {% for error in form.address.errors %}
+                    {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group col-xs-4">
+            <label for="shelter-city">City</label> {{s.city}}
+            {{ form.city(class="form-control", placeholder="City") }}
+            {% if form.city.errors %}
+                <div class="alert alert-info" role="alert">
+                    {% for error in form.city.errors %}
+                    {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group col-xs-4">
+            <label for="shelter-state">State</label> {{s.state}}
+            {{ form.state(class="form-control", placeholder="State") }}
+            {% if form.state.errors %}
+                <div class="alert alert-info" role="alert">
+                    {% for error in form.state.errors %}
+                    {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group col-xs-3">
+            <label for="shelter-zipCode"></label> {{s.zipCode}}
+            {{ form.zipCode(class="form-control", placeholder="Zip") }}
+            {% if form.zipCode.errors %}
+                <div class="alert alert-info" role="alert">
+                    {% for error in form.zipCode.errors %}
+                    {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group col-xs-12">
+            <label for="shelter-website">Website</label> {{s.website}}
+            {{ form.website(class="form-control", placeholder="enter url here") }}
+            {% if form.website.errors %}
+                <div class="alert alert-info" role="alert">
+                    {% for error in form.website.errors %}
+                    {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group col-xs-4">
+            <label for="shelter-maximum_capacity">Maximum Capacity</label> {{s.maximum_capacity}}
+            {{ form.maximum_capacity(class="form-control", placeholder="Maximum Capacity") }}
+            {% if form.maximum_capacity.errors %}
+                <div class="alert alert-info" role="alert">
+                    {% for error in form.maximum_capacity.errors %}
+                    {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endfor %}
+        </div>
+        </br>
+        <div>
+        <input class="btn btn-success" type='submit' value='Create'>
+        <input class="btn btn-warning" type='reset' value='Reset'>
+        </div></br>
+        </form>
 		</div>
 	</body>
 </html>

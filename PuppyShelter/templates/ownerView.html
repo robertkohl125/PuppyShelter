@@ -8,16 +8,24 @@
 		<a href='{{url_for('owners')}}'class="btn btn-primary btn-sm active" role="button"> Return to owners.</a></br>
 		{% for o in owner %}<br>	
 			<div class="container">
-			<h4>{{o.name}}</h4>
+			<h3>{{o.firstName}} {{o.lastName}}</h3>
+			<a href='{{url_for('ownerEdit', owner_id = o.owner_id)}}'class="btn btn-warning btn-xs active" role="button">Edit</a>
+			<a href='{{url_for('ownerDelete', owner_id = o.owner_id)}}'class="btn btn-danger btn-xs active" role="button">Delete</a>
 			<h6>id#: {{o.owner_id}}</h6>
 			{{o.address}}</br>
 			{{o.city}}
 			{{o.state}}  
 			{{o.zipCode}}</br>
-			{% for p in puppy %}
-			Adopted Puppy: {{p.name}}
-			{% endfor %}
+			{{o.email}}</br>
+			<i>{{o.needs}}</i></br>
+			
+			<b>Adopted Puppies:</b></br>
+			<ul>
+				{% for p in puppy %}
+				<li><a href='{{url_for('puppyView', puppy_id = p.puppy_id)}}'class="btn btn-info btn-xs active" role="button">{{p.name}}</a></li>
+				{% endfor %}
+			</ul>
 			</div>
-		{% endfor %}
+			{% endfor %}
 	</body>
 </html>

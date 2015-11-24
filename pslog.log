@@ -1,0 +1,646 @@
+INFO:werkzeug: * Detected change in '/vagrant/PuppyShelter/config.py', reloading
+INFO:werkzeug: * Detected change in '/vagrant/PuppyShelter/config.py', reloading
+2015-11-24 05:29:43,596  * Detected change in 'runserver.py', reloading
+2015-11-24 05:33:23,132 Started server
+2015-11-24 05:33:23,149  * Running on http://0.0.0.0:8080/
+2015-11-24 05:33:23,149  * Restarting with reloader
+2015-11-24 05:33:23,460 Started server
+2015-11-24 05:34:24,496  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/__init__.py', reloading
+2015-11-24 05:34:24,515  * Restarting with reloader
+2015-11-24 05:34:24,839 Started server
+2015-11-24 05:37:48,990  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 05:37:49,007  * Restarting with reloader
+2015-11-24 05:37:49,339 Started server
+2015-11-24 05:37:59,932 10.0.2.2 - - [24/Nov/2015 05:37:59] "GET / HTTP/1.1" 200 -
+2015-11-24 05:38:01,078 10.0.2.2 - - [24/Nov/2015 05:38:01] "GET /owners/ HTTP/1.1" 200 -
+2015-11-24 05:38:02,900 10.0.2.2 - - [24/Nov/2015 05:38:02] "GET /owners/ownernew HTTP/1.1" 200 -
+2015-11-24 05:38:26,379 10.0.2.2 - - [24/Nov/2015 05:38:26] "POST /owners/ownernew HTTP/1.1" 302 -
+2015-11-24 05:38:26,622 10.0.2.2 - - [24/Nov/2015 05:38:26] "GET /owners/ HTTP/1.1" 200 -
+2015-11-24 05:38:30,053 10.0.2.2 - - [24/Nov/2015 05:38:30] "GET / HTTP/1.1" 200 -
+2015-11-24 05:38:31,783 10.0.2.2 - - [24/Nov/2015 05:38:31] "GET /shelters/ HTTP/1.1" 200 -
+2015-11-24 05:38:33,272 10.0.2.2 - - [24/Nov/2015 05:38:33] "GET /shelters/1/shelterview/ HTTP/1.1" 200 -
+2015-11-24 05:38:35,357 10.0.2.2 - - [24/Nov/2015 05:38:35] "GET /puppies/3/puppyview/ HTTP/1.1" 200 -
+2015-11-24 05:38:36,530 10.0.2.2 - - [24/Nov/2015 05:38:36] "GET /3/adopt/?shelter_id=1 HTTP/1.1" 200 -
+2015-11-24 05:41:24,407 10.0.2.2 - - [24/Nov/2015 05:41:24] "GET /3/adopt/?shelter_id=1 HTTP/1.1" 200 -
+2015-11-24 05:41:24,608 10.0.2.2 - - [24/Nov/2015 05:41:24] "GET /static/bootstrap.css HTTP/1.1" 304 -
+2015-11-24 05:41:43,080 10.0.2.2 - - [24/Nov/2015 05:41:43] "GET /3/adopt/?shelter_id=1 HTTP/1.1" 200 -
+2015-11-24 05:41:43,284 10.0.2.2 - - [24/Nov/2015 05:41:43] "GET /static/bootstrap.css HTTP/1.1" 304 -
+2015-11-24 05:42:16,955 10.0.2.2 - - [24/Nov/2015 05:42:16] "GET /3/adopt/?shelter_id=1 HTTP/1.1" 200 -
+2015-11-24 05:42:17,163 10.0.2.2 - - [24/Nov/2015 05:42:17] "GET /static/bootstrap.css HTTP/1.1" 304 -
+2015-11-24 05:42:45,409 10.0.2.2 - - [24/Nov/2015 05:42:45] "GET / HTTP/1.1" 200 -
+2015-11-24 05:42:46,356 10.0.2.2 - - [24/Nov/2015 05:42:46] "GET /owners/ HTTP/1.1" 200 -
+2015-11-24 05:42:50,162 10.0.2.2 - - [24/Nov/2015 05:42:50] "GET /owners/1/ownerview/ HTTP/1.1" 200 -
+2015-11-24 05:42:54,318 10.0.2.2 - - [24/Nov/2015 05:42:54] "GET /owners/1/owneredit HTTP/1.1" 200 -
+2015-11-24 05:43:41,141 10.0.2.2 - - [24/Nov/2015 05:43:41] "POST /owners/1/owneredit HTTP/1.1" 302 -
+2015-11-24 05:43:41,397 10.0.2.2 - - [24/Nov/2015 05:43:41] "GET /owners/ HTTP/1.1" 200 -
+2015-11-24 05:43:46,106 10.0.2.2 - - [24/Nov/2015 05:43:46] "GET /owners/ownernew HTTP/1.1" 200 -
+2015-11-24 05:44:30,232 10.0.2.2 - - [24/Nov/2015 05:44:30] "POST /owners/ownernew HTTP/1.1" 302 -
+2015-11-24 05:44:30,486 10.0.2.2 - - [24/Nov/2015 05:44:30] "GET /owners/ HTTP/1.1" 200 -
+2015-11-24 05:44:32,990 10.0.2.2 - - [24/Nov/2015 05:44:32] "GET / HTTP/1.1" 200 -
+2015-11-24 05:44:34,600 10.0.2.2 - - [24/Nov/2015 05:44:34] "GET /puppies/ HTTP/1.1" 200 -
+2015-11-24 05:44:38,660 10.0.2.2 - - [24/Nov/2015 05:44:38] "GET /puppies/ HTTP/1.1" 200 -
+2015-11-24 05:44:39,933 10.0.2.2 - - [24/Nov/2015 05:44:39] "GET /puppies/1/puppyview/ HTTP/1.1" 200 -
+2015-11-24 05:44:44,330 10.0.2.2 - - [24/Nov/2015 05:44:44] "GET /1/adopt/?shelter_id=4 HTTP/1.1" 200 -
+2015-11-24 05:44:51,518 10.0.2.2 - - [24/Nov/2015 05:44:51] "GET /1/adopt/?shelter_id=4 HTTP/1.1" 200 -
+2015-11-24 05:45:24,655  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/models.py', reloading
+2015-11-24 05:45:24,687  * Restarting with reloader
+2015-11-24 05:45:25,038 Started server
+2015-11-24 05:45:25,465 10.0.2.2 - - [24/Nov/2015 05:45:25] "GET /1/adopt/?shelter_id=4 HTTP/1.1" 500 -
+2015-11-24 05:45:25,645 10.0.2.2 - - [24/Nov/2015 05:45:25] "GET /1/adopt/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2015-11-24 05:45:25,827 10.0.2.2 - - [24/Nov/2015 05:45:25] "GET /1/adopt/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2015-11-24 05:45:25,833 10.0.2.2 - - [24/Nov/2015 05:45:25] "GET /1/adopt/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2015-11-24 05:45:25,896 10.0.2.2 - - [24/Nov/2015 05:45:25] "GET /1/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 05:45:26,220 10.0.2.2 - - [24/Nov/2015 05:45:26] "GET /1/adopt/?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2015-11-24 05:45:26,471 10.0.2.2 - - [24/Nov/2015 05:45:26] "GET /1/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 05:45:26,533 10.0.2.2 - - [24/Nov/2015 05:45:26] "GET /1/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 05:45:49,924  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/models.py', reloading
+2015-11-24 05:45:49,950  * Restarting with reloader
+2015-11-24 05:45:50,286 Started server
+2015-11-24 05:45:51,636 10.0.2.2 - - [24/Nov/2015 05:45:51] "GET /1/adopt/?shelter_id=4 HTTP/1.1" 200 -
+2015-11-24 05:45:51,828 10.0.2.2 - - [24/Nov/2015 05:45:51] "GET /static/bootstrap.css HTTP/1.1" 304 -
+2015-11-24 05:46:32,729  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/models.py', reloading
+2015-11-24 05:46:32,757  * Restarting with reloader
+2015-11-24 05:46:33,085 Started server
+2015-11-24 05:46:53,645 10.0.2.2 - - [24/Nov/2015 05:46:53] "GET /1/adopt/?shelter_id=4 HTTP/1.1" 200 -
+2015-11-24 05:46:53,821 10.0.2.2 - - [24/Nov/2015 05:46:53] "GET /static/bootstrap.css HTTP/1.1" 304 -
+2015-11-24 05:46:57,968 10.0.2.2 - - [24/Nov/2015 05:46:57] "POST /1/adopt/?shelter_id=4 HTTP/1.1" 302 -
+2015-11-24 05:46:58,356 10.0.2.2 - - [24/Nov/2015 05:46:58] "GET /puppies/ HTTP/1.1" 200 -
+2015-11-24 05:47:01,904 10.0.2.2 - - [24/Nov/2015 05:47:01] "GET /puppies/1/puppyview/ HTTP/1.1" 200 -
+2015-11-24 05:47:07,226 10.0.2.2 - - [24/Nov/2015 05:47:07] "GET /puppies/3/puppyview/ HTTP/1.1" 200 -
+2015-11-24 05:47:21,696 10.0.2.2 - - [24/Nov/2015 05:47:21] "GET /1/adopt/?shelter_id=4 HTTP/1.1" 200 -
+2015-11-24 05:47:23,266 10.0.2.2 - - [24/Nov/2015 05:47:23] "GET / HTTP/1.1" 200 -
+2015-11-24 05:47:25,865 10.0.2.2 - - [24/Nov/2015 05:47:25] "GET /owners/ HTTP/1.1" 200 -
+2015-11-24 05:47:27,505 10.0.2.2 - - [24/Nov/2015 05:47:27] "GET /owners/1/ownerview/ HTTP/1.1" 200 -
+2015-11-24 05:47:34,411 10.0.2.2 - - [24/Nov/2015 05:47:34] "GET /puppies/1/puppyview/ HTTP/1.1" 200 -
+2015-11-24 05:48:56,739 10.0.2.2 - - [24/Nov/2015 05:48:56] "GET /owners/1/ownerview/ HTTP/1.1" 200 -
+2015-11-24 05:48:56,965 10.0.2.2 - - [24/Nov/2015 05:48:56] "GET /static/bootstrap.css HTTP/1.1" 304 -
+2015-11-24 05:49:11,376 10.0.2.2 - - [24/Nov/2015 05:49:11] "GET /owners/1/ownerview/ HTTP/1.1" 200 -
+2015-11-24 05:49:11,594 10.0.2.2 - - [24/Nov/2015 05:49:11] "GET /static/bootstrap.css HTTP/1.1" 304 -
+2015-11-24 05:49:22,717 10.0.2.2 - - [24/Nov/2015 05:49:22] "GET /puppies/1/puppyview/ HTTP/1.1" 200 -
+2015-11-24 05:54:30,024  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/puppyViews.py', reloading
+2015-11-24 05:54:30,044  * Restarting with reloader
+2015-11-24 05:54:30,387 Started server
+2015-11-24 05:54:45,917  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/puppyViews.py', reloading
+2015-11-24 05:54:45,937  * Restarting with reloader
+2015-11-24 05:54:46,284 Started server
+2015-11-24 05:55:25,355  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/models.py', reloading
+2015-11-24 05:55:25,385  * Restarting with reloader
+2015-11-24 05:55:25,728 Started server
+2015-11-24 05:55:55,729  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/puppyViews.py', reloading
+2015-11-24 05:55:55,744  * Restarting with reloader
+2015-11-24 05:55:56,093 Started server
+2015-11-24 05:55:59,108 10.0.2.2 - - [24/Nov/2015 05:55:59] "GET /puppies/1/puppyview/ HTTP/1.1" 200 -
+2015-11-24 05:55:59,286 10.0.2.2 - - [24/Nov/2015 05:55:59] "GET /static/bootstrap.css HTTP/1.1" 304 -
+2015-11-24 05:57:39,864 10.0.2.2 - - [24/Nov/2015 05:57:39] "GET /puppies/1/puppyview/ HTTP/1.1" 200 -
+2015-11-24 05:57:40,069 10.0.2.2 - - [24/Nov/2015 05:57:40] "GET /static/bootstrap.css HTTP/1.1" 304 -
+2015-11-24 05:58:17,825  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/models.py', reloading
+2015-11-24 05:58:17,848  * Restarting with reloader
+2015-11-24 05:58:18,190 Started server
+2015-11-24 05:58:21,102 10.0.2.2 - - [24/Nov/2015 05:58:21] "GET /puppies/1/puppyview/ HTTP/1.1" 200 -
+2015-11-24 05:58:21,287 10.0.2.2 - - [24/Nov/2015 05:58:21] "GET /static/bootstrap.css HTTP/1.1" 304 -
+2015-11-24 05:58:44,669 10.0.2.2 - - [24/Nov/2015 05:58:44] "GET / HTTP/1.1" 200 -
+2015-11-24 05:58:46,368 10.0.2.2 - - [24/Nov/2015 05:58:46] "GET /owners/ HTTP/1.1" 200 -
+2015-11-24 05:58:48,959 10.0.2.2 - - [24/Nov/2015 05:58:48] "GET /owners/2/ownerview/ HTTP/1.1" 200 -
+2015-11-24 05:58:53,643 10.0.2.2 - - [24/Nov/2015 05:58:53] "GET /owners/1/ownerview/ HTTP/1.1" 200 -
+2015-11-24 05:59:27,419 10.0.2.2 - - [24/Nov/2015 05:59:27] "GET /owners/1/ownerview/ HTTP/1.1" 200 -
+2015-11-24 05:59:27,639 10.0.2.2 - - [24/Nov/2015 05:59:27] "GET /static/bootstrap.css HTTP/1.1" 304 -
+2015-11-24 05:59:36,794 10.0.2.2 - - [24/Nov/2015 05:59:36] "GET /owners/2/ownerview/ HTTP/1.1" 200 -
+2015-11-24 05:59:41,295 10.0.2.2 - - [24/Nov/2015 05:59:41] "GET /puppies/ HTTP/1.1" 200 -
+2015-11-24 05:59:46,720 10.0.2.2 - - [24/Nov/2015 05:59:46] "GET / HTTP/1.1" 200 -
+2015-11-24 05:59:48,210 10.0.2.2 - - [24/Nov/2015 05:59:48] "GET /puppies/ HTTP/1.1" 200 -
+2015-11-24 05:59:52,364 10.0.2.2 - - [24/Nov/2015 05:59:52] "GET /owners/ HTTP/1.1" 200 -
+2015-11-24 05:59:53,991 10.0.2.2 - - [24/Nov/2015 05:59:53] "GET /owners/1/ownerview/ HTTP/1.1" 200 -
+2015-11-24 05:59:55,496 10.0.2.2 - - [24/Nov/2015 05:59:55] "GET /puppies/1/puppyview/ HTTP/1.1" 200 -
+2015-11-24 05:59:58,981 10.0.2.2 - - [24/Nov/2015 05:59:58] "GET /1/adopt/ HTTP/1.1" 200 -
+2015-11-24 06:00:31,167  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/models.py', reloading
+2015-11-24 06:00:31,182  * Restarting with reloader
+2015-11-24 06:00:31,527 Started server
+2015-11-24 06:00:32,984 10.0.2.2 - - [24/Nov/2015 06:00:32] "GET /puppies/1/puppyview/ HTTP/1.1" 500 -
+2015-11-24 06:00:33,207 10.0.2.2 - - [24/Nov/2015 06:00:33] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2015-11-24 06:00:33,345 10.0.2.2 - - [24/Nov/2015 06:00:33] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2015-11-24 06:00:33,354 10.0.2.2 - - [24/Nov/2015 06:00:33] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2015-11-24 06:00:33,429 10.0.2.2 - - [24/Nov/2015 06:00:33] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:00:33,732 10.0.2.2 - - [24/Nov/2015 06:00:33] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2015-11-24 06:00:34,056 10.0.2.2 - - [24/Nov/2015 06:00:34] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:00:34,306 10.0.2.2 - - [24/Nov/2015 06:00:34] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:02:30,243  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/puppyViews.py', reloading
+2015-11-24 06:02:30,268  * Restarting with reloader
+2015-11-24 06:02:30,604 Started server
+2015-11-24 06:02:35,334 10.0.2.2 - - [24/Nov/2015 06:02:35] "GET /puppies/1/puppyview/ HTTP/1.1" 500 -
+2015-11-24 06:02:35,534 10.0.2.2 - - [24/Nov/2015 06:02:35] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2015-11-24 06:02:35,681 10.0.2.2 - - [24/Nov/2015 06:02:35] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2015-11-24 06:02:35,691 10.0.2.2 - - [24/Nov/2015 06:02:35] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2015-11-24 06:02:35,742 10.0.2.2 - - [24/Nov/2015 06:02:35] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:02:36,047 10.0.2.2 - - [24/Nov/2015 06:02:36] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2015-11-24 06:02:36,361 10.0.2.2 - - [24/Nov/2015 06:02:36] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:02:36,610 10.0.2.2 - - [24/Nov/2015 06:02:36] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:02:45,080  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/puppyViews.py', reloading
+2015-11-24 06:02:45,101  * Restarting with reloader
+2015-11-24 06:02:45,434 Started server
+2015-11-24 06:02:46,716 10.0.2.2 - - [24/Nov/2015 06:02:46] "GET /puppies/1/puppyview/ HTTP/1.1" 500 -
+2015-11-24 06:02:46,929 10.0.2.2 - - [24/Nov/2015 06:02:46] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2015-11-24 06:02:47,063 10.0.2.2 - - [24/Nov/2015 06:02:47] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2015-11-24 06:02:47,069 10.0.2.2 - - [24/Nov/2015 06:02:47] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2015-11-24 06:02:47,114 10.0.2.2 - - [24/Nov/2015 06:02:47] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:02:47,419 10.0.2.2 - - [24/Nov/2015 06:02:47] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2015-11-24 06:02:47,732 10.0.2.2 - - [24/Nov/2015 06:02:47] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:02:47,982 10.0.2.2 - - [24/Nov/2015 06:02:47] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:03:32,069  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/puppyViews.py', reloading
+2015-11-24 06:03:32,099  * Restarting with reloader
+2015-11-24 06:03:32,428 Started server
+2015-11-24 06:03:35,611 10.0.2.2 - - [24/Nov/2015 06:03:35] "GET /puppies/1/puppyview/ HTTP/1.1" 500 -
+2015-11-24 06:03:35,832 10.0.2.2 - - [24/Nov/2015 06:03:35] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2015-11-24 06:03:35,964 10.0.2.2 - - [24/Nov/2015 06:03:35] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2015-11-24 06:03:35,969 10.0.2.2 - - [24/Nov/2015 06:03:35] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2015-11-24 06:03:36,020 10.0.2.2 - - [24/Nov/2015 06:03:36] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:03:36,326 10.0.2.2 - - [24/Nov/2015 06:03:36] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2015-11-24 06:03:36,638 10.0.2.2 - - [24/Nov/2015 06:03:36] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:03:36,890 10.0.2.2 - - [24/Nov/2015 06:03:36] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:03:38,559 10.0.2.2 - - [24/Nov/2015 06:03:38] "GET /puppies/1/puppyview/ HTTP/1.1" 500 -
+2015-11-24 06:03:38,901 10.0.2.2 - - [24/Nov/2015 06:03:38] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2015-11-24 06:03:38,904 10.0.2.2 - - [24/Nov/2015 06:03:38] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2015-11-24 06:03:38,920 10.0.2.2 - - [24/Nov/2015 06:03:38] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2015-11-24 06:03:39,150 10.0.2.2 - - [24/Nov/2015 06:03:39] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:03:39,263 10.0.2.2 - - [24/Nov/2015 06:03:39] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2015-11-24 06:03:39,274 10.0.2.2 - - [24/Nov/2015 06:03:39] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:03:39,676 10.0.2.2 - - [24/Nov/2015 06:03:39] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:03:49,815 Started server
+2015-11-24 06:03:49,830  * Running on http://0.0.0.0:8080/
+2015-11-24 06:03:49,830  * Restarting with reloader
+2015-11-24 06:03:50,162 Started server
+2015-11-24 06:03:55,746 10.0.2.2 - - [24/Nov/2015 06:03:55] "GET /puppies/1/puppyview/ HTTP/1.1" 500 -
+2015-11-24 06:03:55,957 10.0.2.2 - - [24/Nov/2015 06:03:55] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2015-11-24 06:03:56,093 10.0.2.2 - - [24/Nov/2015 06:03:56] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2015-11-24 06:03:56,098 10.0.2.2 - - [24/Nov/2015 06:03:56] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2015-11-24 06:03:56,149 10.0.2.2 - - [24/Nov/2015 06:03:56] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:03:56,455 10.0.2.2 - - [24/Nov/2015 06:03:56] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2015-11-24 06:04:35,720  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/puppyViews.py', reloading
+2015-11-24 06:04:35,734  * Restarting with reloader
+2015-11-24 06:04:36,090 Started server
+2015-11-24 06:04:37,641 10.0.2.2 - - [24/Nov/2015 06:04:37] "GET /puppies/1/puppyview/ HTTP/1.1" 500 -
+2015-11-24 06:04:37,825 10.0.2.2 - - [24/Nov/2015 06:04:37] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2015-11-24 06:04:37,982 10.0.2.2 - - [24/Nov/2015 06:04:37] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2015-11-24 06:04:37,988 10.0.2.2 - - [24/Nov/2015 06:04:37] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2015-11-24 06:04:38,038 10.0.2.2 - - [24/Nov/2015 06:04:38] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:04:38,344 10.0.2.2 - - [24/Nov/2015 06:04:38] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2015-11-24 06:04:38,657 10.0.2.2 - - [24/Nov/2015 06:04:38] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:04:38,909 10.0.2.2 - - [24/Nov/2015 06:04:38] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:05:14,388  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/puppyViews.py', reloading
+2015-11-24 06:05:14,419  * Restarting with reloader
+2015-11-24 06:05:14,782 Started server
+2015-11-24 06:05:16,046 10.0.2.2 - - [24/Nov/2015 06:05:16] "GET /puppies/1/puppyview/ HTTP/1.1" 500 -
+2015-11-24 06:05:16,254 10.0.2.2 - - [24/Nov/2015 06:05:16] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2015-11-24 06:05:16,399 10.0.2.2 - - [24/Nov/2015 06:05:16] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2015-11-24 06:05:16,405 10.0.2.2 - - [24/Nov/2015 06:05:16] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2015-11-24 06:05:16,465 10.0.2.2 - - [24/Nov/2015 06:05:16] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:05:16,778 10.0.2.2 - - [24/Nov/2015 06:05:16] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2015-11-24 06:05:17,111 10.0.2.2 - - [24/Nov/2015 06:05:17] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:05:17,363 10.0.2.2 - - [24/Nov/2015 06:05:17] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:05:45,489  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/puppyViews.py', reloading
+2015-11-24 06:05:45,502  * Restarting with reloader
+2015-11-24 06:05:45,865 Started server
+2015-11-24 06:05:51,540 10.0.2.2 - - [24/Nov/2015 06:05:51] "GET /puppies/1/puppyview/ HTTP/1.1" 500 -
+2015-11-24 06:05:51,756 10.0.2.2 - - [24/Nov/2015 06:05:51] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2015-11-24 06:05:51,884 10.0.2.2 - - [24/Nov/2015 06:05:51] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2015-11-24 06:05:51,886 10.0.2.2 - - [24/Nov/2015 06:05:51] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2015-11-24 06:05:51,919 10.0.2.2 - - [24/Nov/2015 06:05:51] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:05:52,222 10.0.2.2 - - [24/Nov/2015 06:05:52] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2015-11-24 06:05:52,528 10.0.2.2 - - [24/Nov/2015 06:05:52] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:05:52,780 10.0.2.2 - - [24/Nov/2015 06:05:52] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:06:33,258  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/models.py', reloading
+2015-11-24 06:06:33,290  * Restarting with reloader
+2015-11-24 06:06:33,629 Started server
+2015-11-24 06:06:37,107 10.0.2.2 - - [24/Nov/2015 06:06:37] "GET /puppies/1/puppyview/ HTTP/1.1" 500 -
+2015-11-24 06:06:37,316 10.0.2.2 - - [24/Nov/2015 06:06:37] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2015-11-24 06:06:37,460 10.0.2.2 - - [24/Nov/2015 06:06:37] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2015-11-24 06:06:37,466 10.0.2.2 - - [24/Nov/2015 06:06:37] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2015-11-24 06:06:37,517 10.0.2.2 - - [24/Nov/2015 06:06:37] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:06:37,821 10.0.2.2 - - [24/Nov/2015 06:06:37] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2015-11-24 06:06:38,129 10.0.2.2 - - [24/Nov/2015 06:06:38] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:06:38,379 10.0.2.2 - - [24/Nov/2015 06:06:38] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:07:12,709  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/puppyViews.py', reloading
+2015-11-24 06:07:12,729  * Restarting with reloader
+2015-11-24 06:07:13,075 Started server
+2015-11-24 06:07:28,609  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/puppyViews.py', reloading
+2015-11-24 06:07:28,629  * Restarting with reloader
+2015-11-24 06:07:42,948 Started server
+2015-11-24 06:07:42,963  * Running on http://0.0.0.0:8080/
+2015-11-24 06:07:42,964  * Restarting with reloader
+2015-11-24 06:07:43,276 Started server
+2015-11-24 06:07:46,689 10.0.2.2 - - [24/Nov/2015 06:07:46] "GET /puppies/1/puppyview/ HTTP/1.1" 500 -
+2015-11-24 06:07:46,906 10.0.2.2 - - [24/Nov/2015 06:07:46] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2015-11-24 06:07:47,038 10.0.2.2 - - [24/Nov/2015 06:07:47] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2015-11-24 06:07:47,041 10.0.2.2 - - [24/Nov/2015 06:07:47] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2015-11-24 06:07:47,081 10.0.2.2 - - [24/Nov/2015 06:07:47] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:07:47,386 10.0.2.2 - - [24/Nov/2015 06:07:47] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2015-11-24 06:07:47,700 10.0.2.2 - - [24/Nov/2015 06:07:47] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:07:47,948 10.0.2.2 - - [24/Nov/2015 06:07:47] "GET /puppies/1/puppyview/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:08:16,337  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/models.py', reloading
+2015-11-24 06:08:16,369  * Restarting with reloader
+2015-11-24 06:08:16,703 Started server
+2015-11-24 06:08:18,789  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/models.py', reloading
+2015-11-24 06:08:18,820  * Restarting with reloader
+2015-11-24 06:08:19,192 Started server
+2015-11-24 06:10:40,998  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/models.py', reloading
+2015-11-24 06:10:41,030  * Restarting with reloader
+2015-11-24 06:10:41,375 Started server
+2015-11-24 06:10:43,776 10.0.2.2 - - [24/Nov/2015 06:10:43] "GET /puppies/1/puppyview/ HTTP/1.1" 200 -
+2015-11-24 06:10:43,966 10.0.2.2 - - [24/Nov/2015 06:10:43] "GET /static/bootstrap.css HTTP/1.1" 304 -
+2015-11-24 06:28:18,474  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 06:28:18,493  * Restarting with reloader
+2015-11-24 06:33:02,541 Started server
+2015-11-24 06:33:02,559  * Running on http://0.0.0.0:8080/
+2015-11-24 06:33:02,559  * Restarting with reloader
+2015-11-24 06:33:02,908 Started server
+2015-11-24 06:34:02,082  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 06:34:02,095  * Restarting with reloader
+2015-11-24 06:34:02,468 Started server
+2015-11-24 06:34:40,696  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 06:34:40,713  * Restarting with reloader
+2015-11-24 06:34:41,069 Started server
+2015-11-24 06:34:49,071 10.0.2.2 - - [24/Nov/2015 06:34:49] "GET /puppies/1/puppyview/ HTTP/1.1" 200 -
+2015-11-24 06:34:49,295 10.0.2.2 - - [24/Nov/2015 06:34:49] "GET /static/bootstrap.css HTTP/1.1" 304 -
+2015-11-24 06:34:51,278 10.0.2.2 - - [24/Nov/2015 06:34:51] "GET /1/adopt/ HTTP/1.1" 500 -
+2015-11-24 06:34:51,482 10.0.2.2 - - [24/Nov/2015 06:34:51] "GET /1/adopt/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2015-11-24 06:34:51,630 10.0.2.2 - - [24/Nov/2015 06:34:51] "GET /1/adopt/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2015-11-24 06:34:51,640 10.0.2.2 - - [24/Nov/2015 06:34:51] "GET /1/adopt/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2015-11-24 06:34:51,687 10.0.2.2 - - [24/Nov/2015 06:34:51] "GET /1/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:34:51,991 10.0.2.2 - - [24/Nov/2015 06:34:51] "GET /1/adopt/?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2015-11-24 06:34:52,304 10.0.2.2 - - [24/Nov/2015 06:34:52] "GET /1/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:35:16,138  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 06:35:16,158  * Restarting with reloader
+2015-11-24 06:35:16,530 Started server
+2015-11-24 06:35:17,750 10.0.2.2 - - [24/Nov/2015 06:35:17] "GET /1/adopt/ HTTP/1.1" 500 -
+2015-11-24 06:35:17,931 10.0.2.2 - - [24/Nov/2015 06:35:17] "GET /1/adopt/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2015-11-24 06:35:18,096 10.0.2.2 - - [24/Nov/2015 06:35:18] "GET /1/adopt/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2015-11-24 06:35:18,106 10.0.2.2 - - [24/Nov/2015 06:35:18] "GET /1/adopt/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2015-11-24 06:35:18,157 10.0.2.2 - - [24/Nov/2015 06:35:18] "GET /1/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:35:18,463 10.0.2.2 - - [24/Nov/2015 06:35:18] "GET /1/adopt/?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2015-11-24 06:35:18,768 10.0.2.2 - - [24/Nov/2015 06:35:18] "GET /1/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:35:19,023 10.0.2.2 - - [24/Nov/2015 06:35:19] "GET /1/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:35:27,833  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 06:35:27,848  * Restarting with reloader
+2015-11-24 06:35:28,252 Started server
+2015-11-24 06:35:29,752 10.0.2.2 - - [24/Nov/2015 06:35:29] "GET /1/adopt/ HTTP/1.1" 500 -
+2015-11-24 06:35:29,966 10.0.2.2 - - [24/Nov/2015 06:35:29] "GET /1/adopt/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2015-11-24 06:35:30,099 10.0.2.2 - - [24/Nov/2015 06:35:30] "GET /1/adopt/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2015-11-24 06:35:30,104 10.0.2.2 - - [24/Nov/2015 06:35:30] "GET /1/adopt/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2015-11-24 06:35:30,147 10.0.2.2 - - [24/Nov/2015 06:35:30] "GET /1/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:35:30,454 10.0.2.2 - - [24/Nov/2015 06:35:30] "GET /1/adopt/?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2015-11-24 06:35:30,763 10.0.2.2 - - [24/Nov/2015 06:35:30] "GET /1/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:35:31,012 10.0.2.2 - - [24/Nov/2015 06:35:31] "GET /1/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:35:51,748  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 06:35:51,762  * Restarting with reloader
+2015-11-24 06:35:52,138 Started server
+2015-11-24 06:35:58,198 10.0.2.2 - - [24/Nov/2015 06:35:58] "GET /1/adopt/ HTTP/1.1" 200 -
+2015-11-24 06:35:58,374 10.0.2.2 - - [24/Nov/2015 06:35:58] "GET /static/bootstrap.css HTTP/1.1" 304 -
+2015-11-24 06:36:07,169 10.0.2.2 - - [24/Nov/2015 06:36:07] "GET /puppies/ HTTP/1.1" 200 -
+2015-11-24 06:36:09,106 10.0.2.2 - - [24/Nov/2015 06:36:09] "GET /puppies/1/puppyview/ HTTP/1.1" 200 -
+2015-11-24 06:36:11,034 10.0.2.2 - - [24/Nov/2015 06:36:11] "GET /1/adopt/ HTTP/1.1" 200 -
+2015-11-24 06:36:21,509 10.0.2.2 - - [24/Nov/2015 06:36:21] "GET /puppies/1/puppyview/ HTTP/1.1" 200 -
+2015-11-24 06:36:24,822 10.0.2.2 - - [24/Nov/2015 06:36:24] "GET /puppies/2/puppyview/ HTTP/1.1" 200 -
+2015-11-24 06:36:26,391 10.0.2.2 - - [24/Nov/2015 06:36:26] "GET /2/adopt/?shelter_id=4 HTTP/1.1" 200 -
+2015-11-24 06:36:58,134  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 06:36:58,162  * Restarting with reloader
+2015-11-24 06:37:21,731 Started server
+2015-11-24 06:37:21,746  * Running on http://0.0.0.0:8080/
+2015-11-24 06:37:21,746  * Restarting with reloader
+2015-11-24 06:37:22,068 Started server
+2015-11-24 06:37:25,949 10.0.2.2 - - [24/Nov/2015 06:37:25] "GET /2/adopt/?shelter_id=4 HTTP/1.1" 200 -
+2015-11-24 06:37:36,427 10.0.2.2 - - [24/Nov/2015 06:37:36] "GET /2/adopt/?shelter_id=4 HTTP/1.1" 200 -
+2015-11-24 06:37:43,305 10.0.2.2 - - [24/Nov/2015 06:37:43] "GET /static/bootstrap.css.map HTTP/1.1" 304 -
+2015-11-24 06:39:09,586  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 06:39:09,606  * Restarting with reloader
+2015-11-24 06:39:09,944 Started server
+2015-11-24 06:39:14,058 10.0.2.2 - - [24/Nov/2015 06:39:14] "GET /2/adopt/?shelter_id=4 HTTP/1.1" 500 -
+2015-11-24 06:39:14,219 10.0.2.2 - - [24/Nov/2015 06:39:14] "GET /2/adopt/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2015-11-24 06:39:14,459 10.0.2.2 - - [24/Nov/2015 06:39:14] "GET /2/adopt/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2015-11-24 06:39:14,480 10.0.2.2 - - [24/Nov/2015 06:39:14] "GET /2/adopt/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2015-11-24 06:39:14,529 10.0.2.2 - - [24/Nov/2015 06:39:14] "GET /2/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:39:14,834 10.0.2.2 - - [24/Nov/2015 06:39:14] "GET /2/adopt/?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2015-11-24 06:39:15,158 10.0.2.2 - - [24/Nov/2015 06:39:15] "GET /2/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:39:15,407 10.0.2.2 - - [24/Nov/2015 06:39:15] "GET /2/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:39:40,956  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 06:39:40,977  * Restarting with reloader
+2015-11-24 06:39:41,315 Started server
+2015-11-24 06:39:49,411 10.0.2.2 - - [24/Nov/2015 06:39:49] "GET /2/adopt/?shelter_id=4 HTTP/1.1" 200 -
+2015-11-24 06:39:49,629 10.0.2.2 - - [24/Nov/2015 06:39:49] "GET /static/bootstrap.css HTTP/1.1" 304 -
+2015-11-24 06:40:08,221 10.0.2.2 - - [24/Nov/2015 06:40:08] "POST /2/adopt/?shelter_id=4 HTTP/1.1" 302 -
+2015-11-24 06:40:08,532 10.0.2.2 - - [24/Nov/2015 06:40:08] "GET /puppies/ HTTP/1.1" 200 -
+2015-11-24 06:40:18,370 10.0.2.2 - - [24/Nov/2015 06:40:18] "GET /puppies/1/puppyview/ HTTP/1.1" 200 -
+2015-11-24 06:40:22,885 10.0.2.2 - - [24/Nov/2015 06:40:22] "GET /puppies/2/puppyview/ HTTP/1.1" 200 -
+2015-11-24 06:40:25,409 10.0.2.2 - - [24/Nov/2015 06:40:25] "GET / HTTP/1.1" 200 -
+2015-11-24 06:40:27,124 10.0.2.2 - - [24/Nov/2015 06:40:27] "GET /owners/ HTTP/1.1" 200 -
+2015-11-24 06:40:28,967 10.0.2.2 - - [24/Nov/2015 06:40:28] "GET /owners/1/ownerview/ HTTP/1.1" 200 -
+2015-11-24 06:41:02,813 10.0.2.2 - - [24/Nov/2015 06:41:02] "GET /owners/1/ownerview/ HTTP/1.1" 200 -
+2015-11-24 06:41:03,022 10.0.2.2 - - [24/Nov/2015 06:41:03] "GET /static/bootstrap.css HTTP/1.1" 304 -
+2015-11-24 06:41:24,010 10.0.2.2 - - [24/Nov/2015 06:41:24] "GET /owners/1/ownerview/ HTTP/1.1" 200 -
+2015-11-24 06:41:24,246 10.0.2.2 - - [24/Nov/2015 06:41:24] "GET /static/bootstrap.css HTTP/1.1" 304 -
+2015-11-24 06:42:35,628 10.0.2.2 - - [24/Nov/2015 06:42:35] "GET /owners/1/ownerview/ HTTP/1.1" 200 -
+2015-11-24 06:42:35,861 10.0.2.2 - - [24/Nov/2015 06:42:35] "GET /static/bootstrap.css HTTP/1.1" 304 -
+2015-11-24 06:43:01,415 10.0.2.2 - - [24/Nov/2015 06:43:01] "GET /owners/1/ownerview/ HTTP/1.1" 200 -
+2015-11-24 06:43:01,653 10.0.2.2 - - [24/Nov/2015 06:43:01] "GET /static/bootstrap.css HTTP/1.1" 304 -
+2015-11-24 06:43:52,670 10.0.2.2 - - [24/Nov/2015 06:43:52] "GET /owners/1/ownerview/ HTTP/1.1" 200 -
+2015-11-24 06:43:52,892 10.0.2.2 - - [24/Nov/2015 06:43:52] "GET /static/bootstrap.css HTTP/1.1" 304 -
+2015-11-24 06:44:39,716 10.0.2.2 - - [24/Nov/2015 06:44:39] "GET / HTTP/1.1" 200 -
+2015-11-24 06:44:41,179 10.0.2.2 - - [24/Nov/2015 06:44:41] "GET /puppies/ HTTP/1.1" 200 -
+2015-11-24 06:44:44,966 10.0.2.2 - - [24/Nov/2015 06:44:44] "GET /puppies/1/puppyview/ HTTP/1.1" 200 -
+2015-11-24 06:44:47,169 10.0.2.2 - - [24/Nov/2015 06:44:47] "GET /1/adopt/ HTTP/1.1" 200 -
+2015-11-24 06:44:56,133 10.0.2.2 - - [24/Nov/2015 06:44:56] "POST /1/adopt/ HTTP/1.1" 302 -
+2015-11-24 06:44:56,408 10.0.2.2 - - [24/Nov/2015 06:44:56] "GET /puppies/ HTTP/1.1" 200 -
+2015-11-24 06:44:58,789 10.0.2.2 - - [24/Nov/2015 06:44:58] "GET /puppies/1/puppyview/ HTTP/1.1" 200 -
+2015-11-24 06:45:06,431 10.0.2.2 - - [24/Nov/2015 06:45:06] "GET /1/adopt/ HTTP/1.1" 200 -
+2015-11-24 06:45:08,928 10.0.2.2 - - [24/Nov/2015 06:45:08] "GET / HTTP/1.1" 200 -
+2015-11-24 06:45:10,838 10.0.2.2 - - [24/Nov/2015 06:45:10] "GET /owners/ HTTP/1.1" 200 -
+2015-11-24 06:45:12,510 10.0.2.2 - - [24/Nov/2015 06:45:12] "GET /owners/1/ownerview/ HTTP/1.1" 200 -
+2015-11-24 06:45:18,534 10.0.2.2 - - [24/Nov/2015 06:45:18] "GET /owners/2/ownerview/ HTTP/1.1" 200 -
+2015-11-24 06:45:44,670  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 06:45:44,705  * Restarting with reloader
+2015-11-24 06:45:45,171 Started server
+2015-11-24 06:45:49,478 10.0.2.2 - - [24/Nov/2015 06:45:49] "GET /owners/ HTTP/1.1" 200 -
+2015-11-24 06:45:50,743 10.0.2.2 - - [24/Nov/2015 06:45:50] "GET / HTTP/1.1" 200 -
+2015-11-24 06:45:52,096 10.0.2.2 - - [24/Nov/2015 06:45:52] "GET /puppies/ HTTP/1.1" 200 -
+2015-11-24 06:45:55,583 10.0.2.2 - - [24/Nov/2015 06:45:55] "GET /puppies/1/puppyview/ HTTP/1.1" 200 -
+2015-11-24 06:45:58,103 10.0.2.2 - - [24/Nov/2015 06:45:58] "GET /1/adopt/ HTTP/1.1" 200 -
+2015-11-24 06:46:07,824 10.0.2.2 - - [24/Nov/2015 06:46:07] "GET /puppies/3/puppyview/ HTTP/1.1" 200 -
+2015-11-24 06:46:09,772 10.0.2.2 - - [24/Nov/2015 06:46:09] "GET /3/adopt/?shelter_id=1 HTTP/1.1" 200 -
+2015-11-24 06:47:30,333  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 06:47:30,355  * Restarting with reloader
+2015-11-24 06:47:30,750 Started server
+2015-11-24 06:47:35,911  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 06:47:35,926  * Restarting with reloader
+2015-11-24 06:47:36,283 Started server
+2015-11-24 06:47:44,256 10.0.2.2 - - [24/Nov/2015 06:47:44] "GET /3/adopt/?shelter_id=1 HTTP/1.1" 500 -
+2015-11-24 06:47:44,413 10.0.2.2 - - [24/Nov/2015 06:47:44] "GET /3/adopt/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2015-11-24 06:47:44,653 10.0.2.2 - - [24/Nov/2015 06:47:44] "GET /3/adopt/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2015-11-24 06:47:44,672 10.0.2.2 - - [24/Nov/2015 06:47:44] "GET /3/adopt/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2015-11-24 06:47:44,720 10.0.2.2 - - [24/Nov/2015 06:47:44] "GET /3/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:47:45,025 10.0.2.2 - - [24/Nov/2015 06:47:45] "GET /3/adopt/?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2015-11-24 06:47:45,345 10.0.2.2 - - [24/Nov/2015 06:47:45] "GET /3/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:47:45,594 10.0.2.2 - - [24/Nov/2015 06:47:45] "GET /3/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:48:10,267  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 06:48:10,288  * Restarting with reloader
+2015-11-24 06:48:10,649 Started server
+2015-11-24 06:48:19,962 10.0.2.2 - - [24/Nov/2015 06:48:19] "GET /3/adopt/?shelter_id=1 HTTP/1.1" 500 -
+2015-11-24 06:48:20,148 10.0.2.2 - - [24/Nov/2015 06:48:20] "GET /3/adopt/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2015-11-24 06:48:20,355 10.0.2.2 - - [24/Nov/2015 06:48:20] "GET /3/adopt/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2015-11-24 06:48:20,362 10.0.2.2 - - [24/Nov/2015 06:48:20] "GET /3/adopt/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2015-11-24 06:48:20,415 10.0.2.2 - - [24/Nov/2015 06:48:20] "GET /3/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:48:20,720 10.0.2.2 - - [24/Nov/2015 06:48:20] "GET /3/adopt/?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2015-11-24 06:48:48,492  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 06:48:48,513  * Restarting with reloader
+2015-11-24 06:50:49,176 Started server
+2015-11-24 06:50:49,191  * Running on http://0.0.0.0:8080/
+2015-11-24 06:50:49,192  * Restarting with reloader
+2015-11-24 06:50:49,536 Started server
+2015-11-24 06:50:52,337 10.0.2.2 - - [24/Nov/2015 06:50:52] "GET /puppies/3/puppyview/ HTTP/1.1" 200 -
+2015-11-24 06:50:52,539 10.0.2.2 - - [24/Nov/2015 06:50:52] "GET /static/bootstrap.css HTTP/1.1" 304 -
+2015-11-24 06:50:55,327 10.0.2.2 - - [24/Nov/2015 06:50:55] "GET /3/adopt/?shelter_id=1 HTTP/1.1" 500 -
+2015-11-24 06:50:55,720 10.0.2.2 - - [24/Nov/2015 06:50:55] "GET /3/adopt/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2015-11-24 06:50:55,722 10.0.2.2 - - [24/Nov/2015 06:50:55] "GET /3/adopt/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2015-11-24 06:50:55,739 10.0.2.2 - - [24/Nov/2015 06:50:55] "GET /3/adopt/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2015-11-24 06:50:55,968 10.0.2.2 - - [24/Nov/2015 06:50:55] "GET /3/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:50:56,076 10.0.2.2 - - [24/Nov/2015 06:50:56] "GET /3/adopt/?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2015-11-24 06:51:39,010  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 06:51:39,030  * Restarting with reloader
+2015-11-24 06:51:39,435 Started server
+2015-11-24 06:51:42,712 10.0.2.2 - - [24/Nov/2015 06:51:42] "GET /3/adopt/?shelter_id=1 HTTP/1.1" 500 -
+2015-11-24 06:51:42,902 10.0.2.2 - - [24/Nov/2015 06:51:42] "GET /3/adopt/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2015-11-24 06:51:43,094 10.0.2.2 - - [24/Nov/2015 06:51:43] "GET /3/adopt/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2015-11-24 06:51:43,100 10.0.2.2 - - [24/Nov/2015 06:51:43] "GET /3/adopt/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2015-11-24 06:51:43,155 10.0.2.2 - - [24/Nov/2015 06:51:43] "GET /3/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 06:51:43,460 10.0.2.2 - - [24/Nov/2015 06:51:43] "GET /3/adopt/?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2015-11-24 06:55:47,807  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 06:55:47,835  * Restarting with reloader
+2015-11-24 06:55:48,176 Started server
+2015-11-24 06:56:06,772  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 06:56:06,787  * Restarting with reloader
+2015-11-24 06:56:07,147 Started server
+2015-11-24 06:56:22,512  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 06:56:22,526  * Restarting with reloader
+2015-11-24 06:56:22,926 Started server
+2015-11-24 06:56:25,979 10.0.2.2 - - [24/Nov/2015 06:56:25] "GET /3/adopt/?shelter_id=1 HTTP/1.1" 200 -
+2015-11-24 06:56:26,162 10.0.2.2 - - [24/Nov/2015 06:56:26] "GET /static/bootstrap.css HTTP/1.1" 304 -
+2015-11-24 06:56:33,772 10.0.2.2 - - [24/Nov/2015 06:56:33] "POST /3/adopt/?shelter_id=1 HTTP/1.1" 302 -
+2015-11-24 06:56:34,203 10.0.2.2 - - [24/Nov/2015 06:56:34] "GET /puppies/ HTTP/1.1" 200 -
+2015-11-24 06:59:20,825  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 06:59:20,845  * Restarting with reloader
+2015-11-24 06:59:21,185 Started server
+2015-11-24 06:59:24,330  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 06:59:24,350  * Restarting with reloader
+2015-11-24 06:59:24,697 Started server
+2015-11-24 06:59:26,795  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 06:59:26,814  * Restarting with reloader
+2015-11-24 06:59:27,165 Started server
+2015-11-24 06:59:42,730  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 06:59:42,747  * Restarting with reloader
+2015-11-24 06:59:43,101 Started server
+2015-11-24 06:59:50,042 10.0.2.2 - - [24/Nov/2015 06:59:50] "GET /puppies/1/puppyview/ HTTP/1.1" 200 -
+2015-11-24 06:59:53,235 10.0.2.2 - - [24/Nov/2015 06:59:53] "GET /1/adopt/ HTTP/1.1" 200 -
+2015-11-24 07:00:13,063  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 07:00:13,083  * Restarting with reloader
+2015-11-24 07:00:13,418 Started server
+2015-11-24 07:00:16,874 10.0.2.2 - - [24/Nov/2015 07:00:16] "GET /1/adopt/ HTTP/1.1" 200 -
+2015-11-24 07:00:17,046 10.0.2.2 - - [24/Nov/2015 07:00:17] "GET /static/bootstrap.css HTTP/1.1" 304 -
+2015-11-24 07:00:27,909  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 07:00:27,927  * Restarting with reloader
+2015-11-24 07:00:28,272 Started server
+2015-11-24 07:00:43,756 10.0.2.2 - - [24/Nov/2015 07:00:43] "GET /1/adopt/ HTTP/1.1" 200 -
+2015-11-24 07:00:43,920 10.0.2.2 - - [24/Nov/2015 07:00:43] "GET /static/bootstrap.css HTTP/1.1" 304 -
+2015-11-24 07:00:54,571 10.0.2.2 - - [24/Nov/2015 07:00:54] "GET /puppies/2/puppyview/ HTTP/1.1" 200 -
+2015-11-24 07:00:56,959 10.0.2.2 - - [24/Nov/2015 07:00:56] "GET /2/adopt/ HTTP/1.1" 200 -
+2015-11-24 07:01:05,061 10.0.2.2 - - [24/Nov/2015 07:01:05] "GET /puppies/6/puppyview/ HTTP/1.1" 200 -
+2015-11-24 07:01:08,877 10.0.2.2 - - [24/Nov/2015 07:01:08] "GET /6/adopt/?shelter_id=5 HTTP/1.1" 500 -
+2015-11-24 07:01:09,073 10.0.2.2 - - [24/Nov/2015 07:01:09] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2015-11-24 07:01:09,262 10.0.2.2 - - [24/Nov/2015 07:01:09] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2015-11-24 07:01:09,278 10.0.2.2 - - [24/Nov/2015 07:01:09] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2015-11-24 07:01:09,469 10.0.2.2 - - [24/Nov/2015 07:01:09] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 07:01:09,770 10.0.2.2 - - [24/Nov/2015 07:01:09] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2015-11-24 07:01:10,083 10.0.2.2 - - [24/Nov/2015 07:01:10] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 07:01:10,334 10.0.2.2 - - [24/Nov/2015 07:01:10] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 07:02:17,239  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 07:02:17,256  * Restarting with reloader
+2015-11-24 07:02:31,937 Started server
+2015-11-24 07:02:31,953  * Running on http://0.0.0.0:8080/
+2015-11-24 07:02:31,953  * Restarting with reloader
+2015-11-24 07:02:32,341 Started server
+2015-11-24 07:02:39,464 10.0.2.2 - - [24/Nov/2015 07:02:39] "GET /6/adopt/?shelter_id=5 HTTP/1.1" 500 -
+2015-11-24 07:02:39,583 10.0.2.2 - - [24/Nov/2015 07:02:39] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2015-11-24 07:02:39,864 10.0.2.2 - - [24/Nov/2015 07:02:39] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2015-11-24 07:02:39,866 10.0.2.2 - - [24/Nov/2015 07:02:39] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2015-11-24 07:02:39,912 10.0.2.2 - - [24/Nov/2015 07:02:39] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 07:02:40,216 10.0.2.2 - - [24/Nov/2015 07:02:40] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2015-11-24 07:03:20,868  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 07:03:20,885  * Restarting with reloader
+2015-11-24 07:03:21,234 Started server
+2015-11-24 07:03:26,423 10.0.2.2 - - [24/Nov/2015 07:03:26] "GET /6/adopt/?shelter_id=5 HTTP/1.1" 500 -
+2015-11-24 07:03:26,589 10.0.2.2 - - [24/Nov/2015 07:03:26] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2015-11-24 07:03:26,820 10.0.2.2 - - [24/Nov/2015 07:03:26] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2015-11-24 07:03:26,842 10.0.2.2 - - [24/Nov/2015 07:03:26] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2015-11-24 07:03:26,881 10.0.2.2 - - [24/Nov/2015 07:03:26] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 07:03:27,186 10.0.2.2 - - [24/Nov/2015 07:03:27] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2015-11-24 07:04:01,648  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 07:04:01,673  * Restarting with reloader
+2015-11-24 07:04:02,040 Started server
+2015-11-24 07:05:07,208  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 07:05:07,228  * Restarting with reloader
+2015-11-24 07:05:07,570 Started server
+2015-11-24 07:05:11,761 10.0.2.2 - - [24/Nov/2015 07:05:11] "GET /6/adopt/?shelter_id=5 HTTP/1.1" 500 -
+2015-11-24 07:05:11,918 10.0.2.2 - - [24/Nov/2015 07:05:11] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2015-11-24 07:05:12,145 10.0.2.2 - - [24/Nov/2015 07:05:12] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2015-11-24 07:05:12,150 10.0.2.2 - - [24/Nov/2015 07:05:12] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2015-11-24 07:05:12,221 10.0.2.2 - - [24/Nov/2015 07:05:12] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 07:05:12,526 10.0.2.2 - - [24/Nov/2015 07:05:12] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2015-11-24 07:05:22,071  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 07:05:22,098  * Restarting with reloader
+2015-11-24 07:05:22,450 Started server
+2015-11-24 07:05:25,139 10.0.2.2 - - [24/Nov/2015 07:05:25] "GET /6/adopt/?shelter_id=5 HTTP/1.1" 500 -
+2015-11-24 07:05:25,318 10.0.2.2 - - [24/Nov/2015 07:05:25] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2015-11-24 07:05:25,521 10.0.2.2 - - [24/Nov/2015 07:05:25] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2015-11-24 07:05:25,545 10.0.2.2 - - [24/Nov/2015 07:05:25] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2015-11-24 07:05:25,584 10.0.2.2 - - [24/Nov/2015 07:05:25] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 07:05:25,892 10.0.2.2 - - [24/Nov/2015 07:05:25] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2015-11-24 07:05:54,494  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 07:05:54,515  * Restarting with reloader
+2015-11-24 07:05:54,850 Started server
+2015-11-24 07:05:59,344 10.0.2.2 - - [24/Nov/2015 07:05:59] "GET /6/adopt/?shelter_id=5 HTTP/1.1" 500 -
+2015-11-24 07:05:59,522 10.0.2.2 - - [24/Nov/2015 07:05:59] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2015-11-24 07:05:59,725 10.0.2.2 - - [24/Nov/2015 07:05:59] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2015-11-24 07:05:59,731 10.0.2.2 - - [24/Nov/2015 07:05:59] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2015-11-24 07:05:59,805 10.0.2.2 - - [24/Nov/2015 07:05:59] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 07:06:00,108 10.0.2.2 - - [24/Nov/2015 07:06:00] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2015-11-24 07:06:10,394  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 07:06:10,415  * Restarting with reloader
+2015-11-24 07:06:10,768 Started server
+2015-11-24 07:06:11,188 10.0.2.2 - - [24/Nov/2015 07:06:11] "GET /6/adopt/?shelter_id=5 HTTP/1.1" 500 -
+2015-11-24 07:06:11,366 10.0.2.2 - - [24/Nov/2015 07:06:11] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2015-11-24 07:06:11,576 10.0.2.2 - - [24/Nov/2015 07:06:11] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2015-11-24 07:06:11,580 10.0.2.2 - - [24/Nov/2015 07:06:11] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2015-11-24 07:06:11,639 10.0.2.2 - - [24/Nov/2015 07:06:11] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 07:06:11,944 10.0.2.2 - - [24/Nov/2015 07:06:11] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2015-11-24 07:11:50,319  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 07:11:50,339  * Restarting with reloader
+2015-11-24 07:11:50,675 Started server
+2015-11-24 07:11:58,347 10.0.2.2 - - [24/Nov/2015 07:11:58] "GET /6/adopt/?shelter_id=5 HTTP/1.1" 500 -
+2015-11-24 07:11:58,522 10.0.2.2 - - [24/Nov/2015 07:11:58] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2015-11-24 07:11:58,735 10.0.2.2 - - [24/Nov/2015 07:11:58] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2015-11-24 07:11:58,737 10.0.2.2 - - [24/Nov/2015 07:11:58] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2015-11-24 07:11:58,779 10.0.2.2 - - [24/Nov/2015 07:11:58] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 07:11:59,083 10.0.2.2 - - [24/Nov/2015 07:11:59] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2015-11-24 07:12:15,539  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 07:12:15,562  * Restarting with reloader
+2015-11-24 07:12:15,898 Started server
+2015-11-24 07:12:17,195 10.0.2.2 - - [24/Nov/2015 07:12:17] "GET /6/adopt/?shelter_id=5 HTTP/1.1" 500 -
+2015-11-24 07:12:17,372 10.0.2.2 - - [24/Nov/2015 07:12:17] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2015-11-24 07:12:17,569 10.0.2.2 - - [24/Nov/2015 07:12:17] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2015-11-24 07:12:17,575 10.0.2.2 - - [24/Nov/2015 07:12:17] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2015-11-24 07:12:17,630 10.0.2.2 - - [24/Nov/2015 07:12:17] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 07:12:17,933 10.0.2.2 - - [24/Nov/2015 07:12:17] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2015-11-24 07:12:18,240 10.0.2.2 - - [24/Nov/2015 07:12:18] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 07:12:18,492 10.0.2.2 - - [24/Nov/2015 07:12:18] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 07:12:36,651  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 07:12:36,675  * Restarting with reloader
+2015-11-24 07:12:37,018 Started server
+2015-11-24 07:12:39,053 10.0.2.2 - - [24/Nov/2015 07:12:39] "GET /6/adopt/?shelter_id=5 HTTP/1.1" 500 -
+2015-11-24 07:12:39,210 10.0.2.2 - - [24/Nov/2015 07:12:39] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2015-11-24 07:12:39,414 10.0.2.2 - - [24/Nov/2015 07:12:39] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2015-11-24 07:12:39,425 10.0.2.2 - - [24/Nov/2015 07:12:39] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2015-11-24 07:12:39,466 10.0.2.2 - - [24/Nov/2015 07:12:39] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 07:12:39,769 10.0.2.2 - - [24/Nov/2015 07:12:39] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2015-11-24 07:12:40,082 10.0.2.2 - - [24/Nov/2015 07:12:40] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 07:12:40,332 10.0.2.2 - - [24/Nov/2015 07:12:40] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 07:14:09,594  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 07:14:09,619  * Restarting with reloader
+2015-11-24 07:14:09,959 Started server
+2015-11-24 07:14:22,315  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 07:14:22,328  * Restarting with reloader
+2015-11-24 07:14:22,728 Started server
+2015-11-24 07:14:23,884 10.0.2.2 - - [24/Nov/2015 07:14:23] "GET /6/adopt/?shelter_id=5 HTTP/1.1" 200 -
+2015-11-24 07:14:24,075 10.0.2.2 - - [24/Nov/2015 07:14:24] "GET /static/bootstrap.css HTTP/1.1" 304 -
+2015-11-24 07:14:38,165  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 07:14:38,178  * Restarting with reloader
+2015-11-24 07:14:38,528 Started server
+2015-11-24 07:14:40,028 10.0.2.2 - - [24/Nov/2015 07:14:40] "GET /6/adopt/?shelter_id=5 HTTP/1.1" 200 -
+2015-11-24 07:14:40,182 10.0.2.2 - - [24/Nov/2015 07:14:40] "GET /static/bootstrap.css HTTP/1.1" 304 -
+2015-11-24 07:15:29,244  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 07:15:29,280  * Restarting with reloader
+2015-11-24 07:15:29,631 Started server
+2015-11-24 07:15:37,838 10.0.2.2 - - [24/Nov/2015 07:15:37] "GET /6/adopt/?shelter_id=5 HTTP/1.1" 200 -
+2015-11-24 07:15:38,009 10.0.2.2 - - [24/Nov/2015 07:15:38] "GET /static/bootstrap.css HTTP/1.1" 304 -
+2015-11-24 07:17:36,667  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 07:17:36,685  * Restarting with reloader
+2015-11-24 07:17:37,038 Started server
+2015-11-24 07:17:40,497 10.0.2.2 - - [24/Nov/2015 07:17:40] "GET /6/adopt/?shelter_id=5 HTTP/1.1" 500 -
+2015-11-24 07:17:40,681 10.0.2.2 - - [24/Nov/2015 07:17:40] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2015-11-24 07:17:40,846 10.0.2.2 - - [24/Nov/2015 07:17:40] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2015-11-24 07:17:40,854 10.0.2.2 - - [24/Nov/2015 07:17:40] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2015-11-24 07:17:40,900 10.0.2.2 - - [24/Nov/2015 07:17:40] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 07:17:41,203 10.0.2.2 - - [24/Nov/2015 07:17:41] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2015-11-24 07:17:41,512 10.0.2.2 - - [24/Nov/2015 07:17:41] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 07:17:41,761 10.0.2.2 - - [24/Nov/2015 07:17:41] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 07:17:56,676  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 07:17:56,710  * Restarting with reloader
+2015-11-24 07:17:57,071 Started server
+2015-11-24 07:17:57,726 10.0.2.2 - - [24/Nov/2015 07:17:57] "GET /6/adopt/?shelter_id=5 HTTP/1.1" 200 -
+2015-11-24 07:17:57,899 10.0.2.2 - - [24/Nov/2015 07:17:57] "GET /static/bootstrap.css HTTP/1.1" 304 -
+2015-11-24 07:18:07,481  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 07:18:07,500  * Restarting with reloader
+2015-11-24 07:18:07,840 Started server
+2015-11-24 07:18:13,817 10.0.2.2 - - [24/Nov/2015 07:18:13] "GET /6/adopt/?shelter_id=5 HTTP/1.1" 200 -
+2015-11-24 07:18:13,972 10.0.2.2 - - [24/Nov/2015 07:18:13] "GET /static/bootstrap.css HTTP/1.1" 304 -
+2015-11-24 07:18:49,972  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 07:18:49,988  * Restarting with reloader
+2015-11-24 07:18:50,378 Started server
+2015-11-24 07:18:51,534 10.0.2.2 - - [24/Nov/2015 07:18:51] "GET /6/adopt/?shelter_id=5 HTTP/1.1" 200 -
+2015-11-24 07:18:51,726 10.0.2.2 - - [24/Nov/2015 07:18:51] "GET /static/bootstrap.css HTTP/1.1" 304 -
+2015-11-24 07:21:44,617  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 07:21:44,636  * Restarting with reloader
+2015-11-24 07:21:44,975 Started server
+2015-11-24 07:21:53,802 10.0.2.2 - - [24/Nov/2015 07:21:53] "GET /6/adopt/?shelter_id=5 HTTP/1.1" 500 -
+2015-11-24 07:21:53,959 10.0.2.2 - - [24/Nov/2015 07:21:53] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2015-11-24 07:21:54,165 10.0.2.2 - - [24/Nov/2015 07:21:54] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2015-11-24 07:21:54,181 10.0.2.2 - - [24/Nov/2015 07:21:54] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2015-11-24 07:21:54,223 10.0.2.2 - - [24/Nov/2015 07:21:54] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 07:21:54,529 10.0.2.2 - - [24/Nov/2015 07:21:54] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2015-11-24 07:21:54,841 10.0.2.2 - - [24/Nov/2015 07:21:54] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 07:21:55,092 10.0.2.2 - - [24/Nov/2015 07:21:55] "GET /6/adopt/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2015-11-24 07:22:32,564  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 07:22:32,593  * Restarting with reloader
+2015-11-24 07:22:32,981 Started server
+2015-11-24 07:22:35,106 10.0.2.2 - - [24/Nov/2015 07:22:35] "GET /6/adopt/?shelter_id=5 HTTP/1.1" 200 -
+2015-11-24 07:22:35,279 10.0.2.2 - - [24/Nov/2015 07:22:35] "GET /static/bootstrap.css HTTP/1.1" 304 -
+2015-11-24 07:22:45,408  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 07:22:45,426  * Restarting with reloader
+2015-11-24 07:22:45,769 Started server
+2015-11-24 07:22:47,387 10.0.2.2 - - [24/Nov/2015 07:22:47] "GET /6/adopt/?shelter_id=5 HTTP/1.1" 200 -
+2015-11-24 07:22:47,555 10.0.2.2 - - [24/Nov/2015 07:22:47] "GET /static/bootstrap.css HTTP/1.1" 304 -
+2015-11-24 07:23:01,297  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 07:23:01,315  * Restarting with reloader
+2015-11-24 07:23:01,659 Started server
+2015-11-24 07:23:03,509 10.0.2.2 - - [24/Nov/2015 07:23:03] "GET /6/adopt/?shelter_id=5 HTTP/1.1" 200 -
+2015-11-24 07:23:03,686 10.0.2.2 - - [24/Nov/2015 07:23:03] "GET /static/bootstrap.css HTTP/1.1" 304 -
+2015-11-24 07:23:13,083 10.0.2.2 - - [24/Nov/2015 07:23:13] "GET /puppies/1/puppyview/ HTTP/1.1" 200 -
+2015-11-24 07:23:15,137 10.0.2.2 - - [24/Nov/2015 07:23:15] "GET /1/adopt/ HTTP/1.1" 200 -
+2015-11-24 07:23:38,894  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/mainView.py', reloading
+2015-11-24 07:23:38,911  * Restarting with reloader
+2015-11-24 07:23:39,248 Started server
+2015-11-24 07:24:19,433 10.0.2.2 - - [24/Nov/2015 07:24:19] "GET /puppies/ HTTP/1.1" 200 -
+2015-11-24 07:24:21,682 10.0.2.2 - - [24/Nov/2015 07:24:21] "GET /puppies/4/puppyview/ HTTP/1.1" 200 -
+2015-11-24 07:24:34,797  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/puppyViews.py', reloading
+2015-11-24 07:24:34,811  * Restarting with reloader
+2015-11-24 07:24:35,195 Started server
+2015-11-24 07:25:19,468  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/puppyViews.py', reloading
+2015-11-24 07:25:19,486  * Restarting with reloader
+2015-11-24 07:25:19,823 Started server
+2015-11-24 07:25:39,197 10.0.2.2 - - [24/Nov/2015 07:25:39] "GET /puppies/3/puppyview/ HTTP/1.1" 200 -
+2015-11-24 07:25:43,207 10.0.2.2 - - [24/Nov/2015 07:25:43] "GET /puppies/1/puppyview/ HTTP/1.1" 200 -
+2015-11-24 07:27:09,378 10.0.2.2 - - [24/Nov/2015 07:27:09] "GET /puppies/1/puppyview/ HTTP/1.1" 200 -
+2015-11-24 07:28:08,338 10.0.2.2 - - [24/Nov/2015 07:28:08] "GET /puppies/1/puppyview/ HTTP/1.1" 200 -
+2015-11-24 07:28:08,511 10.0.2.2 - - [24/Nov/2015 07:28:08] "GET /static/bootstrap.css HTTP/1.1" 304 -
+2015-11-24 07:28:20,454 10.0.2.2 - - [24/Nov/2015 07:28:20] "GET /puppies/1/puppyview/ HTTP/1.1" 200 -
+2015-11-24 07:28:20,800 10.0.2.2 - - [24/Nov/2015 07:28:20] "GET /static/bootstrap.css HTTP/1.1" 304 -
+2015-11-24 07:29:11,294  * Detected change in '/vagrant/PuppyShelter/PuppyShelter/puppyViews.py', reloading
+2015-11-24 07:29:11,322  * Restarting with reloader
+2015-11-24 07:29:11,667 Started server
+2015-11-24 07:29:13,438 10.0.2.2 - - [24/Nov/2015 07:29:13] "GET /puppies/1/puppyview/ HTTP/1.1" 200 -
+2015-11-24 07:29:13,590 10.0.2.2 - - [24/Nov/2015 07:29:13] "GET /static/bootstrap.css HTTP/1.1" 304 -

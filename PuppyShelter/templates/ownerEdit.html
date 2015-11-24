@@ -8,8 +8,10 @@
 		<legend>Edit Owner Information</legend>
 		{% for o in owner %}
 		<form method ='POST' actions='/puppyEdit' id='puppyEdit'>
-			<label>{{o.name}}</label>
-				<input type='text' textarea placeholder="{{o.name}}" name='name' required><br>
+			<label>{{o.firstName}}</label>
+				<input type='text' textarea placeholder="{{o.firstName}}" name='firstName' required><br>
+			<label>{{o.lastName}}</label>
+				<input type='text' textarea placeholder="{{o.lastName}}" name='lastName' required><br>
 			<label>{{o.address}}</label>
 				<input type='text' textarea placeholder="{{o.address}}" name='address' required><br>
 			<label>{{o.city}}</label>
@@ -18,6 +20,8 @@
 				<input type='text' placeholder="{{o.state}}" name='state' required>
 			<label>{{o.zipCode}}</label>
 				<input type='text' textarea placeholder="{{o.zipCode}}" name='zipCode' required><br>
+			<label>{{o.email}}</label>
+				<input type='text' textarea placeholder="{{o.email}}" name='email' required><br>
 			<textarea name='needs' form='puppyEdit' placeholder="{{o.needs}}" required>
 			</textarea> </br>
 			{% endfor %}

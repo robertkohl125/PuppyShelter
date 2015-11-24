@@ -14,15 +14,23 @@ def puppies():
 @app.route('/puppies/<int:puppy_id>/puppyview/')
 def puppyView(puppy_id):
 	puppy = models.selectAllPuppies().filter_by(puppy_id = puppy_id)
+	owner = models.selectAdopterOwners(puppy_id)
+	shelter = models.selectEnrolledShelter(puppy_id)
+	a = models.selectAdopterOwners(puppy_id).scalar()
 	for p in puppy:
-		shltr = p.shelter_id
-	shelter = models.selectAllShelters().filter_by(shelter_id = shltr)
-	return render_template('puppyView.html', puppy = puppy, puppy_id = puppy_id, shelter = shelter)
+		print p.picture
+	if a is None:
+		att = 'enabled'
+	else:
+		att = 'disabled'
+	return render_template('puppyView.html', 
+		puppy = puppy, puppy_id = puppy_id, shelter = shelter, owner = owner, att = att)
 
 
 #
 @app.route('/puppies/puppynew', methods = ['GET','POST'])
 def puppyNew():
+	form = form.PuppyForm(request.form)
 	shelters = models.selectAvailableShelters()
 	if request.method == "POST":
 		new_puppy = {'name': request.form['name'],
@@ -35,14 +43,15 @@ def puppyNew():
 		models.createPuppy(new_puppy)
 		return redirect(url_for('puppies'))
 	else:
-		return render_template('puppyNew.html', shelters = shelters)
+		return render_template('puppyNew.html', shelters = shelters, form = form)
 
 
 #
 @app.route('/puppies/<int:puppy_id>/puppyedit', methods = ['GET','POST'])
 def puppyEdit(puppy_id):
 	puppy = models.selectAllPuppies().filter_by(puppy_id=puppy_id)
-#	shelters = models.selectAllShelters()
+	shelter = models.selectEnrolledShelter(puppy_id)
+	shelters = models.selectAvailableShelters()
 	if request.method == "POST":
 		edit_puppy = {'name': request.form['name'],
 			'gender': request.form['gender'],
@@ -54,7 +63,7 @@ def puppyEdit(puppy_id):
 		models.editPuppy(edit_puppy, puppy_id)
 		return redirect(url_for('puppies'))
 	else:
-		return render_template('puppyEdit.html', puppy = puppy, puppy_id = puppy_id, shelters = shelters)
+		return render_template('puppyEdit.html', puppy = puppy, puppy_id = puppy_id, shelters = shelters, shelter = shelter)
 
 
 #

@@ -21,13 +21,16 @@ def ownerView(owner_id):
 #
 @app.route('/owners/ownernew', methods = ['GET','POST'])
 def ownerNew():
+#	form = form.OwnerForm(request.form)
 	if request.method == "POST":
-		new_owner = {'name': request.form['name'],
-			'needs': request.form['needs'],
+		new_owner = {'firstName': request.form['firstName'],
+			'lastName': request.form['lastName'],
 			'address': request.form['address'],
 			'city': request.form['city'],
 			'state': request.form['state'],
-			'zipCode': request.form['zipCode']}
+			'zipCode': request.form['zipCode'],
+			'email': request.form['email'],
+			'needs': request.form['needs']}
 		models.createOwner(new_owner)
 		return redirect(url_for('owners'))
 	else:
@@ -39,12 +42,13 @@ def ownerNew():
 def ownerEdit(owner_id):
 	owner = models.selectAllOwners().filter_by(owner_id=owner_id)
 	if request.method == "POST":
-		edit_owner = {
-			'name': request.form['name'],
+		edit_owner = {'firstName': request.form['firstName'],
+			'lastName': request.form['lastName'],
 			'address': request.form['address'],
 			'city': request.form['city'],
 			'state': request.form['state'],
 			'zipCode': request.form['zipCode'],
+			'email': request.form['email'],
 			'needs': request.form['needs']}
 		models.editOwner(edit_owner, owner_id)
 		return redirect(url_for('owners'))

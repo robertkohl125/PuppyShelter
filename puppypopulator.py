@@ -12,7 +12,8 @@ session = DBSession()
 
 
 #Create shelter instances
-shelter1 = Shelter(name = "Oakland Animal Services", 
+shelter1 = Shelter(
+	name = "Oakland Animal Services", 
 	address = "1101 29th Ave", 
 	city = "Oakland", 
 	state = "California", 
@@ -20,7 +21,8 @@ shelter1 = Shelter(name = "Oakland Animal Services",
 	website = "oaklandanimalservices.org", 
 	maximum_capacity = 30)
 
-shelter2 = Shelter(name = "San Francisco SPCA Mission Adoption Center", 
+shelter2 = Shelter(
+	name = "San Francisco SPCA Mission Adoption Center", 
 	address="250 Florida St", 
 	city="San Francisco", 
 	state="California", 
@@ -28,7 +30,8 @@ shelter2 = Shelter(name = "San Francisco SPCA Mission Adoption Center",
 	website = "sfspca.org", 
 	maximum_capacity = 35)
 
-shelter3 = Shelter(name = "Wonder Dog Rescue", 
+shelter3 = Shelter(
+	name = "Wonder Dog Rescue", 
 	address= "2926 16th Street", 
 	city = "San Francisco", 
 	state = "California" , 
@@ -36,21 +39,23 @@ shelter3 = Shelter(name = "Wonder Dog Rescue",
 	website = "http://wonderdogrescue.org", 
 	maximum_capacity = 50)
 
-shelter4 = Shelter(name = "Humane Society of Alameda", 
+shelter4 = Shelter(
+	name = "Humane Society of Alameda", 
 	address = "PO Box 1571", 
 	city = "Alameda" , 
 	state = "California", 
 	zipCode = "94501", 
 	website = "hsalameda.org", 
-	maximum_capacity = 20)
+	maximum_capacity = 35)
 
-shelter5 = Shelter(name = "Palo Alto Humane Society" , 
+shelter5 = Shelter(
+	name = "Palo Alto Humane Society" , 
 	address = "1149 Chestnut St.", 
 	city = "Menlo Park", 
 	state = "California" , 
 	zipCode = "94025", 
 	website = "paloaltohumane.org", 
-	maximum_capacity = 10)
+	maximum_capacity = 40)
 
 #Add all instances of shelter to the ORM
 session.add_all([shelter1, shelter2, shelter3, shelter4, shelter5])
