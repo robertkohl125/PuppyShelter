@@ -1,6 +1,4 @@
-from PuppyShelter import app
-from PuppyShelter import models
-from PuppyShelter import forms
+from PuppyShelter import app, models, forms
 from flask import render_template, url_for, request, redirect, flash, jsonify
 
 
@@ -19,11 +17,11 @@ def shelterView(shelter_id):
     return render_template('shelterView.html', shelter = shelter, puppies = puppies)
 
 
-#
+
 @app.route('/shelters/shelternew', methods = ['GET','POST'])
 def shelterNew():
-	form = forms.ShelterForm()
-	if request.method == "POST":
+	form = forms.ShelterForm(request.form)
+	if request.method == "POST" and form.validate():
 		new_shelter = {
 			'name': form.name.data,
 			'address': form.address.data,

@@ -3,6 +3,8 @@ from sqlalchemy.orm import *
 from puppyShelterDBsetup import Base, Puppy, Shelter, Owner
 from sqlalchemy.sql import *
 import datetime
+import logging
+
 
 engine = create_engine('sqlite:///puppyshelter.db')
 Base.metadata.bind = engine
@@ -23,17 +25,20 @@ def adoptPuppy(puppy_id, ownr, shelt):
 
 
 def selectAllPuppies():
+	logging.info('**models.selectAllPuppies called')
 	puppies = session.query(Puppy)
 	return puppies
 
 
 def selectAllShelters():
+	logging.info('**models.selectAllShelters called')
 	updateCurrentOccupancy()
 	shelters = session.query(Shelter)
 	return shelters
 
 
 def selectAllOwners():
+	logging.info('**models.selectAllOwners called')
 	owners = session.query(Owner)
 	return owners
 
@@ -283,7 +288,6 @@ def updateCurrentOccupancy():
 	shelters = session.query(Shelter)
 	for shelter in shelters:
 		shelter.current_occupancy = counts_dict.get(shelter.shelter_id)
-		co = 0
 		if shelter.current_occupancy is None:
 			co = 0
 		else:
@@ -297,7 +301,7 @@ def updateCurrentOccupancy():
 def testAvailability():
 	updateCurrentOccupancy()
 	t = calcCurrentOccDiff()
-	total = 3 #sum(t)
+	total = sum(t)
 	print total
 	if total < 0:
 		print 'Shelters beyond capacity, please open a new shelter.'

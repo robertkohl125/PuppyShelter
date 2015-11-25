@@ -18,8 +18,9 @@
                     {% endfor %}
                 </div>
             {% endif %}
+
         </div>
-        <div class="form-group col-xs-6">
+        <div class="form-group col-xs-7">
             <label for="shelter-address">Address</label>
             {{ form.address(class="form-control", placeholder="Address") }}
             {% if form.address.errors %}
@@ -53,7 +54,7 @@
             {% endif %}
         </div>
         <div class="form-group col-xs-3">
-            <label for="shelter-zipCode"></label>
+            <label for="shelter-zipCode">Zip</label>
             {{ form.zipCode(class="form-control", placeholder="Zip") }}
             {% if form.zipCode.errors %}
                 <div class="alert alert-info" role="alert">
@@ -63,7 +64,7 @@
                 </div>
             {% endif %}
         </div>
-        <div class="form-group col-xs-12">
+        <div class="form-group col-xs-11">
             <label for="shelter-website">Website</label>
             {{ form.website(class="form-control", placeholder="enter url here") }}
             {% if form.website.errors %}
@@ -85,11 +86,12 @@
                 </div>
             {% endif %}
         </div>
-        </br>
+        
         <div>
         <input class="btn btn-success" type='submit' value='Create'>
         <input class="btn btn-warning" type='reset' value='Reset'>
-        </div></br>
+        </div>
+
         </form>
         </br></br>
         <a href='{{url_for('shelters')}}'class="btn btn-success btn-lg active" role="button"> Shelters.</a>

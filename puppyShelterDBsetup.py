@@ -20,7 +20,7 @@ class Shelter(Base):
 	zipCode = Column(Integer(5))
 	website = Column(String)
 	maximum_capacity = Column(Integer, nullable = False)
-	current_occupancy = Column(Integer, default = '0')
+	current_occupancy = Column(Integer, default = 0)
 	remaining_spaces = Column(Integer)
 
 

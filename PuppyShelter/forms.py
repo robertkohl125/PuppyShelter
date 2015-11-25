@@ -6,57 +6,44 @@ from wtforms.validators import Required, InputRequired
 from wtforms.widgets import Select
 
 
-class SelectWithRedFrame(Select):
-    def __init__(self, error_class=u'has_errors'):
-        super(SelectWithRedFrame, self).__init__()
-        self.error_class = error_class
-
-    def __call__(self, field, **kwargs):
-        if field.errors:
-            c = kwargs.pop('class', '') or kwargs.pop('class_', '')
-            kwargs['class'] = u'%s %s' % (self.error_class, c)
-        return super(SelectWithRedFrame, self).__call__(field, **kwargs)
-
-
+    
 class ShelterForm(Form):
 	"""Sets definitions and validators for Shelter forms"""
-
-	name = StringField('Name', 
+	name = StringField('name', 
     	[validators.InputRequired(), 
     	validators.Length(
     		max=50, 
     		message="Limit 50 characters, please try again.")])
-	address = StringField('Address', 
+	address = StringField('address', 
     	[validators.InputRequired(), 
     	validators.Length(
     		max=30, 
     		message="Limit 30 characters, please try again.")])
-	city = StringField('City', 
+	city = StringField('city', 
     	[validators.InputRequired(), 
     	validators.Length(
     		max=20, 
     		message="Limit 20 characters, please try again.")])
-	state = StringField('State', 
+	state = StringField('state', 
     	[validators.InputRequired(), 
     	validators.Length(
     		max=13, 
     		message="Limit 13 characters, please try again.")])
-	zipCode = IntegerField('zipCode', 
+	zipCode = StringField('zipCode', 
     	[validators.InputRequired(), 
     	validators.Length(
     		max=10, 
     		message="xxxxx or xxxxx-xxxx")])
-	website = StringField('Website', 
+	website = StringField('website', 
     	[validators.InputRequired(),
     	validators.URL(
-    		message="Not a valid URL")])
+    		message="Not a valid URL (should contain http://www...)")])
 	maximum_capacity = IntegerField('maximum_capacity', 
     	[validators.InputRequired()])
 
 
 class PuppyForm(Form):
 	"""Sets definitions and validators for Puppy forms"""
-
 	name = StringField('Name', 
     	[validators.InputRequired(),
     	validators.Length(
@@ -84,7 +71,6 @@ class PuppyForm(Form):
 
 class OwnerForm(Form):
 	"""Sets definitions and validators for Owner forms"""
-
 	firstName = StringField('First Name', 
     	[validators.InputRequired(), 
     	validators.Length(

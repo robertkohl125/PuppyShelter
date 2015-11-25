@@ -1,5 +1,4 @@
-from PuppyShelter import app
-from PuppyShelter import models
+from PuppyShelter import app, models, forms
 from flask import render_template, url_for, request, redirect, flash, jsonify
 
 
