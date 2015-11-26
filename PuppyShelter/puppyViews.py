@@ -19,30 +19,48 @@ def puppyView(puppy_id):
 	for p in puppy:
 		print p.picture
 	if a is None:
+		txt1 = 'Adopt'
+		txt2 = ''
+		btn = 'success'
 		att = 'enabled'
 	else:
+		txt1 = ''
+		txt2 = 'was already adopted'
+		btn = 'danger'
 		att = 'disabled'
 	return render_template('puppyView.html', 
-		puppy = puppy, puppy_id = puppy_id, shelter = shelter, owner = owner, att = att)
+		puppy = puppy, 
+		puppy_id = puppy_id, 
+		shelter = shelter, 
+		owner = owner, 
+		txt1 = txt1,
+		txt2 = txt2,
+		att = att, 
+		btn = btn)
 
 
 #
 @app.route('/puppies/puppynew', methods = ['GET','POST'])
 def puppyNew():
-	form = form.PuppyForm(request.form)
-	shelters = models.selectAvailableShelters()
-	if request.method == "POST":
-		new_puppy = {'name': request.form['name'],
-			'gender': request.form['gender'],
-			'dateOfbirth': request.form['dateOfbirth'],
-			'picture': request.form['picture'],
-			'breed': request.form['breed'],
-			'weight': request.form['weight'],
-			'shelter_id': request.form['shelter_id']}
+	shelter_choices = models.selectAvailableShelters()
+	form = forms.PuppyForm(request.form, obj = shelter_choices)
+	form.shelter_id.choices = [(a.shelter_id, a.name) for a in shelter_choices]
+	print form.shelter_id.choices
+	if request.method == "POST" and form.validate():
+		new_puppy = {
+			'name': form.name.data,
+			'gender': form.lastName.data,
+			'dateOfbirth': form.dateOfbirth.data,
+			'picture': form.picture.data,
+			'breed': form.breed.data,
+			'weight': form.weight.data,
+			'shelter_id': form.shelter_id.data}
 		models.createPuppy(new_puppy)
+		flash('A new puppy is ready for adoption!')
 		return redirect(url_for('puppies'))
 	else:
-		return render_template('puppyNew.html', shelters = shelters, form = form)
+		return render_template('puppyNew.html', 
+			form = form)
 
 
 #
@@ -62,7 +80,11 @@ def puppyEdit(puppy_id):
 		models.editPuppy(edit_puppy, puppy_id)
 		return redirect(url_for('puppies'))
 	else:
-		return render_template('puppyEdit.html', puppy = puppy, puppy_id = puppy_id, shelters = shelters, shelter = shelter)
+		return render_template('puppyEdit.html', 
+			puppy = puppy, 
+			puppy_id = puppy_id, 
+			shelters = shelters, 
+			shelter = shelter)
 
 
 #
@@ -73,6 +95,8 @@ def puppyDelete(puppy_id):
 		models.deletePuppy(puppy_id)
 		return redirect(url_for('puppies'))
 	else:
-		return render_template('puppyDelete.html', puppy = puppy, puppy_id = puppy_id)
+		return render_template('puppyDelete.html', 
+			puppy = puppy, 
+			puppy_id = puppy_id)
 
 

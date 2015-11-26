@@ -220,8 +220,9 @@ def selectOwnerWOPuppies():
 
 def selectAvailableShelters():
 	updateCurrentOccupancy()
-	shelters = session.query(Shelter).filter(Shelter.remaining_spaces > 1).order_by(asc(Shelter.remaining_spaces))
+	shelters = session.query(Shelter).filter(Shelter.remaining_spaces > 1).order_by(desc(Shelter.remaining_spaces))
 	return shelters
+
 
 
 #This method selects and displays all puppy names from Puppy table in alphabetical order.

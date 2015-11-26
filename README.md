@@ -1,26 +1,60 @@
 Puppy Shelter Database
 ========
 
-This project sets up a puppy shelter database and demonstrates some code to manipulate that database. This repository contains the puppyShelterDBsetup.py that sets up the database, the puppypopulator.py that populates my database with shelters and puppies, and two programs that demonstrate my ability to manipulate data in this database. puppyExpressionLanguage.py uses SQLAlchemy expression language to send SQL queries to the database, and puppyORM.py which uses ORM to manipulate the database.
-
-UPDATE: Currenly in the process of creating a webserver and web pages to view.
+This project sets up a puppy shelter website supported by a database and demonstrates some code to manipulate that database. Features include CRUD operators for all database modules, Flask, WTForms including selects and validators, a method for adoption. Please view my commits for latest updates.
 
 Technology
 ----------
 -Python 2.7.10
--SQLite	
-Special modules:
-	-SQLAlchemy
+-Flask
+-WTForms
+-SQLite
+-Bootstrap.css
+-SQLAlchemy
 -Oracle VM VirtualBox 5.0.4
 -Vagrant 1.7.4
 
 Files
 -----
--ReadMe.md
--puppyExpressionLanguage.py
--puppyORM.py
--puppyShelterDBsetup.py
--puppypopulator.py
+/ReadMe.md
+/config.py
+/puppyExpressionLanguage.py
+/puppyORM.py
+/puppypopulator.py
+/puppyShelterDBsetup.py
+/runserver.py
+/flask-wtf
+	/(various WTForms files)
+/PuppyShelter
+	/__init__
+	/forms.py
+	/mainView.py
+	/models.py
+	/ownerViews.py
+	/puppyViews.py
+	/shelterViews.py
+	/static
+		/(various bootstrap.css files)
+		/styles.css
+		/stylesForm.css
+	/templates
+		/adoptPuppy.html
+		/main.html
+		/ownerAll.html
+		/ownerDelete.html
+		/ownerEdit.html
+		/ownerNew.html
+		/ownerView.html
+		/puppyAll.html
+		/puppyDelete.html
+		/puppyEdit.html
+		/puppyNew.html
+		/puppyView.html
+		/shelterAll.html
+		/shelterDelete.html
+		/shelterEdit.html
+		/shelterNew.html
+		/shelterView.html
 
 To Begin
 --------
@@ -31,14 +65,13 @@ To Begin
 -Navigate to fullstack/vagrant/PuppyShelter
 --Files are listed above.
 
--From a command line run puppyShelterDBsetup.py the set up the database using
-$ python puppyShelterDBsetup.py
+-From a command line run runserver.py the set up the database using
+$ python runserver.py 
+-Then hit <CTRL> C to stop the process
 -Then run puppypopulator.py to add puppies and shelters to the database using 
 $ python puppypopulator.py
--Then open puppyORM.py or puppyExpressionLanguage.py in a text editor. Uncomment the methods and run from a command line to test my code
-$ python puppyORM.py
-	-or- 
-$ python puppyExpressionLanguage.py
+-Then run runserver.py again
+$ python runserver.py 
 
 Contribute
 ----------

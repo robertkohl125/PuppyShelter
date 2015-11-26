@@ -19,7 +19,7 @@
 			{{o.email}}</br>
 			<i>{{o.needs}}</i></br>
 			
-			<b>Adopted Puppies:</b></br>
+			<b>{{pups}}</b></br>
 			<ul>
 				{% for p in puppy %}
 				<li><a href='{{url_for('puppyView', puppy_id = p.puppy_id)}}'class="btn btn-info btn-xs active" role="button">{{p.name}}</a></li>

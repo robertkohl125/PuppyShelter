@@ -6,23 +6,96 @@
     <body>
         <div>
         <legend>New Owner Profile</legend>
-        <form method ='POST' actions='/ownerNew' id='ownerNew'>
-            <label>First Name</label>
-                <input type='text' placeholder='Full Name' name='firstName' required><br>
-            <label>Last Name</label>
-                <input type='text' placeholder='Full Name' name='lastName' required><br>
-            <label>Address</label>
-                <input type='text' placeholder='Street Address' name='address'required><br>
-            <label>City</label>
-                <input type='text' placeholder='City' name='city' required><br>
-            <label>State</label>
-                <input type='text' placeholder='State' name='state' required><br>
-            <label>ZIP</label>
-                <input type='text' placeholder='xxxxx-xxxx or xxxxx' name='zipCode' required><br>
-            <label>email</label>
-                <input type='text' placeholder='email' name='email' required><br>
-            <textarea rows="4" cols="50" name='needs'  form='ownerNew' required>Please tell us about your needs here...
-                </textarea> </br> </br>
+        <form method ='POST' actions='/ownerNew' enctype="multipart/form-data" id='ownerNew'>
+            {{ form.csrf_token }}
+        <div class="form-group col-xs-4">
+            <label for="owner-firstName">First Name</label>
+            {{ form.firstName(class="form-control", placeholder="First Name") }}
+            {% if form.firstName.errors %}
+                <div class="alert alert-info" role="alert">
+                    {% for error in form.firstName.errors %}
+                    {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group col-xs-4">
+            <label for="owner-lastName">Last Name</label>
+            {{ form.lastName(class="form-control", placeholder="Last Name") }}
+            {% if form.lastName.errors %}
+                <div class="alert alert-info" role="alert">
+                    {% for error in form.lastName.errors %}
+                    {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group col-xs-4">
+            <label for="owner-address">Address</label>
+            {{ form.address(class="form-control", placeholder="Address") }}
+            {% if form.address.errors %}
+                <div class="alert alert-info" role="alert">
+                    {% for error in form.address.errors %}
+                    {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group col-xs-4">
+            <label for="owner-city">City</label>
+            {{ form.city(class="form-control", placeholder="City") }}
+            {% if form.city.errors %}
+                <div class="alert alert-info" role="alert">
+                    {% for error in form.city.errors %}
+                    {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group col-xs-4">
+            <label for="owner-state">State</label>
+            {{ form.state(class="form-control", placeholder="State") }}
+            {% if form.state.errors %}
+                <div class="alert alert-info" role="alert">
+                    {% for error in form.state.errors %}
+                    {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group col-xs-4">
+            <label for="owner-zipCode">Zip Code</label>
+            {{ form.zipCode(class="form-control", placeholder="Zip Code") }}
+            {% if form.zipCode.errors %}
+                <div class="alert alert-info" role="alert">
+                    {% for error in form.zipCode.errors %}
+                    {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group col-xs-4">
+            <label for="owner-email">Email</label>
+            {{ form.email(class="form-control", placeholder="Email") }}
+            {% if form.email.errors %}
+                <div class="alert alert-info" role="alert">
+                    {% for error in form.email.errors %}
+                    {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group col-xs-4" id="ownerNew">
+            <label for="owner-needs">Needs</label>
+            {{ form.needs(class="form-control", placeholder="Please tell us about your needs here...") }}
+            {% if form.needs.errors %}
+                <div class="alert alert-info" role="alert">
+                    {% for error in form.needs.errors %}
+                    {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
             <input class="btn btn-success" type='submit' value='Create'>
             <input class="btn btn-warning" type='reset' value='Reset'></br>
         </form>

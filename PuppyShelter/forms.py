@@ -1,12 +1,13 @@
 from flask.ext.wtf import Form
 from wtforms import StringField, IntegerField, TextAreaField, SelectField, validators
-from wtforms.fields import TextField, BooleanField
+#from wtforms.fields import TextField
+from wtforms.ext.sqlalchemy.fields import QuerySelectField
 from wtforms.fields.html5 import DateField
 from wtforms.validators import Required, InputRequired
-from wtforms.widgets import Select
+from wtforms.widgets import Select, TextArea
+from models import selectAvailableShelters
 
 
-    
 class ShelterForm(Form):
 	"""Sets definitions and validators for Shelter forms"""
 	name = StringField('name', 
@@ -39,34 +40,30 @@ class ShelterForm(Form):
     	validators.URL(
     		message="Not a valid URL (should contain http://www...)")])
 	maximum_capacity = IntegerField('maximum_capacity', 
-    	[validators.InputRequired()])
+        [validators.InputRequired()])
 
 
 class PuppyForm(Form):
-	"""Sets definitions and validators for Puppy forms"""
-	name = StringField('Name', 
-    	[validators.InputRequired(),
-    	validators.Length(
-    		max=10, 
-    		message="Limit 10 characters.")])
-	gender = SelectField('Gender', 
+    
+    name = StringField('name', 
+        [validators.InputRequired(), 
+        validators.Length(
+            max=50, 
+            message="Limit 50 characters, please try again.")])
+    gender = SelectField('gender', 
     	choices=[('male', 'male'), ('female', 'female')])
-	dateOfBirth = DateField("Date of Birth", 
+    dateOfBirth = DateField("Date of Birth", 
     	[validators.InputRequired()])
-	picture = StringField('Picture', 
+    picture = StringField('picture', 
     	[validators.InputRequired()])
-	breed = StringField('Breed', 
+    breed = StringField('breed', 
     	[validators.InputRequired()])
-	weight = IntegerField('Weight', 
+    weight = IntegerField('weight', 
     	[validators.InputRequired(), 
     	validators.NumberRange(
     		min=1, max=1000, 
     		message="Between 1 and 1000.")])
-	shelter_id = IntegerField('Weight', 
-    	[validators.InputRequired(), 
-    	validators.NumberRange(
-    		min=1, max=10, 
-    		message="Please choose a shelter.")])
+    shelter_id = SelectField('shelter_id')
 
 
 class OwnerForm(Form):
@@ -96,16 +93,17 @@ class OwnerForm(Form):
     	validators.Length(
     		max=13, 
     		message="Limit 13 characters.")])
-	zipCode = IntegerField('zipCode', 
+	zipCode = StringField('zipCode', 
     	[validators.InputRequired(), 
     	validators.Length(
     		max=10, 
     		message="xxxxx or xxxxx-xxxx")])
-	email = TextField(('Email'),
+	email = StringField('Email',
     	[validators.InputRequired(message=('Email is required')),
-    	validators.Email(message=('Please enter a valid email'))])
+    	validators.Email(message=('Please enter a valid email address'))])
 	needs = TextAreaField('Needs', 
-    	[validators.InputRequired()])
+    	[validators.InputRequired(message=('Please let us know about what you want in a furry companion.'))],
+        widget=TextArea())
 
 
 class AdoptionForm(Form):

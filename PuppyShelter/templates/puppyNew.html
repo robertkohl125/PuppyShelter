@@ -6,28 +6,87 @@
 	<body>
 		<div>
 		<legend>New Puppy</legend>
-		<form method ='POST' actions='/puppyNew'>
-			<label>Name</label>
-				<input type='text' name='name'><br>
-			<label>Shelter</label>
-				<select class='form-control' type='text' name='shelter_id' >
-					{% for s in shelters %}
-					<option value="{{ s.shelter_id }}" SELECTED>Available Spaces {{s.remaining_spaces}} - <b>{{s.name}}</b></option>
-					{% endfor %}
-				</select><br>
-			<label>Gender</label>
-				<select class='form-control' type='text' name='gender' >
-					<option value="male" SELECTED>male</option>
-					<option value="female" SELECTED>female</option>
-				</select><br>
-			<label>Date of Birth</label>
-				<input type='text' name='dateOfbirth'><br>
-			<label>Breed</label>
-				<input type='text' name='breed'><br>
-			<label>Weight</label>
-				<input type='text' name='weight'><br>
-			<label>Picture URL</label>
-				<input type='text' name='picture'><br>
+		<form method ='POST' actions='/puppyNew' enctype="multipart/form-data">
+			{{ form.csrf_token }}
+        <div class="form-group col-xs-4">
+            <label for="puppy-name">Name</label>
+            {{ form.name(class="form-control", placeholder="Name") }}
+            {% if form.name.errors %}
+                <div class="alert alert-info" role="alert">
+                    {% for error in form.name.errors %}
+                    {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="form-group col-xs-6">
+            <label for="puppy-shelter_id">Shelter (shelters with the most available spaces are at the top.)</label>
+            {{ form.shelter_id(class="form-control") }}
+            {% if form.shelter_id.errors %}
+                <div class="alert alert-info" role="alert">
+                    {% for error in form.shelter_id.errors %}
+                    {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="form-group col-xs-2">
+            <label for="puppy-gender">Gender</label>
+            {{ form.gender(class="form-control") }}
+            {% if form.gender.errors %}
+                <div class="alert alert-info" role="alert">
+                    {% for error in form.gender.errors %}
+                    {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group col-xs-2">
+            <label for="puppy-dateOfBirth">Date of Birth</label>
+            {{ form.dateOfBirth(class="form-control") }}
+            {% if form.dateOfBirth.errors %}
+                <div class="alert alert-info" role="alert">
+                    {% for error in form.dateOfBirth.errors %}
+                    {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group col-xs-4">
+            <label for="puppy-breed">Breed</label>
+            {{ form.breed(class="form-control", placeholder="Breed") }}
+            {% if form.breed.errors %}
+                <div class="alert alert-info" role="alert">
+                    {% for error in form.breed.errors %}
+                    {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group col-xs-2">
+            <label for="puppy-weight">Weight</label>
+            {{ form.weight(class="form-control", placeholder="lbs") }}
+            {% if form.weight.errors %}
+                <div class="alert alert-info" role="alert">
+                    {% for error in form.weight.errors %}
+                    {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group col-xs-6">
+            <label for="puppy-picture">Picture</label>
+            {{ form.picture(class="form-control", placeholder="path") }}
+            {% if form.picture.errors %}
+                <div class="alert alert-info" role="alert">
+                    {% for error in form.picture.errors %}
+                    {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
 			<input class="btn btn-success" type='submit' value='Create'>
 			<input class="btn btn-warning" type='reset' value='Reset'></br>
 		</form>

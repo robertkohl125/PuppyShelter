@@ -22,8 +22,14 @@ def puppyAdopt(puppy_id):
 	shelters = models.selectAllShelters().filter_by(shelter_id=shelt)
 	a = models.selectAdopterOwners(puppy_id).scalar()
 	if a is None:
+		txt1 = 'Adopt'
+		txt2 = 'now!'
+		btn = 'success'
 		att = 'enabled'
 	else:
+		txt1 = ''
+		txt2 = 'was already adopted'
+		btn = 'danger'
 		att = 'disabled'
 	if request.method == "POST":
 		dict_ownr = {'owner_id': request.form['owner_id']}
@@ -34,4 +40,10 @@ def puppyAdopt(puppy_id):
 		logging.info = ('puppy_id(%s) was adopted from shelter_id(%s) by owner_id(%s)',puppy_id, ownr, shelt)
 	else:
 		return render_template('adoptPuppy.html', 
-			puppy = puppy, owners = owners, shelters = shelters, att = att)
+			puppy = puppy, 
+			owners = owners, 
+			shelters = shelters, 
+			txt1 = txt1,
+			txt2 = txt2,
+			att = att, 
+			btn = btn)

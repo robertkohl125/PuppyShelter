@@ -14,26 +14,37 @@ def owners():
 def ownerView(owner_id):
 	puppy = models.selectAllPuppies().filter_by(owner_id=owner_id)
 	owner = models.selectAllOwners().filter_by(owner_id=owner_id)
-#	puppy = models.selectAllPuppies().filter_by(puppy_id = pup)
-	return render_template('ownerView.html', owner_id = owner_id, owner=owner, puppy = puppy)
+	a = puppy.scalar()
+	if a is None:
+		pups = "No puppies adopted yet!"
+	else:
+		pups = "Adopted Puppies:"
+	print pups
+	return render_template('ownerView.html', 
+		owner_id = owner_id, 
+		owner = owner, 
+		puppy = puppy, 
+		pups = pups)
 
 #
 @app.route('/owners/ownernew', methods = ['GET','POST'])
 def ownerNew():
-#	form = form.OwnerForm(request.form)
-	if request.method == "POST":
-		new_owner = {'firstName': request.form['firstName'],
-			'lastName': request.form['lastName'],
-			'address': request.form['address'],
-			'city': request.form['city'],
-			'state': request.form['state'],
-			'zipCode': request.form['zipCode'],
-			'email': request.form['email'],
-			'needs': request.form['needs']}
+	form = forms.OwnerForm(request.form)
+	if request.method == "POST" and form.validate():
+		new_owner = {
+			'firstName': form.firstName.data,
+			'lastName': form.lastName.data,
+			'address': form.address.data,
+			'city': form.city.data,
+			'state': form.state.data,
+			'zipCode': form.zipCode.data,
+			'email': form.email.data,
+			'needs': form.needs.data}
 		models.createOwner(new_owner)
+		flash('A new owner is ready to adopt!')
 		return redirect(url_for('owners'))
 	else:
-		return render_template('ownerNew.html')
+		return render_template('ownerNew.html', form = form)
 
 
 #
@@ -41,7 +52,8 @@ def ownerNew():
 def ownerEdit(owner_id):
 	owner = models.selectAllOwners().filter_by(owner_id=owner_id)
 	if request.method == "POST":
-		edit_owner = {'firstName': request.form['firstName'],
+		edit_owner = {
+			'firstName': request.form['firstName'],
 			'lastName': request.form['lastName'],
 			'address': request.form['address'],
 			'city': request.form['city'],

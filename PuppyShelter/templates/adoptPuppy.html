@@ -25,7 +25,7 @@
 				{% endfor %}
 			</div>
 			<img src={{p.picture}} alt="picture"></br>
-			<input class="btn btn-success round btn-lg" type='submit' value='ADOPT' {{att}}>
+			<input class="btn btn-{{btn}} round btn-lg" type='submit' value='{{txt1}} {{p.name}} {{txt2}}' {{att}}>
 			{% endfor %}
 		</form>
 	</body>
