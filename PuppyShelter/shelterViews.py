@@ -1,6 +1,9 @@
 from PuppyShelter import app, models, forms
 from flask import render_template, url_for, request, redirect, flash, jsonify
+import logging 
 
+
+logging.info('shelterViews.py file accessed ')
 
 #
 @app.route('/shelters/')
@@ -68,3 +71,6 @@ def shelterDelete(shelter_id):
 		return redirect(url_for('shelters'))
 	else:
 		return render_template('shelterDelete.html', shelter = shelter, shelter_id = shelter_id)
+
+# set the secret key.
+app.secret_key = 'super_secret_key'

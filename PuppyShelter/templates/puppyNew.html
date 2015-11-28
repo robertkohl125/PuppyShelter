@@ -44,11 +44,11 @@
             {% endif %}
         </div>
         <div class="form-group col-xs-2">
-            <label for="puppy-dateOfBirth">Date of Birth</label>
-            {{ form.dateOfBirth(class="form-control") }}
-            {% if form.dateOfBirth.errors %}
+            <label for="puppy-dateOfbirth">Date of Birth</label>
+            {{ form.dateOfbirth(class="form-control") }}
+            {% if form.dateOfbirth.errors %}
                 <div class="alert alert-info" role="alert">
-                    {% for error in form.dateOfBirth.errors %}
+                    {% for error in form.dateOfbirth.errors %}
                     {{ error }}
                     {% endfor %}
                 </div>

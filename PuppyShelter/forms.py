@@ -6,7 +6,10 @@ from wtforms.fields.html5 import DateField
 from wtforms.validators import Required, InputRequired
 from wtforms.widgets import Select, TextArea
 from models import selectAvailableShelters
+import logging 
 
+
+logging.info('forms.py file accessed ')
 
 class ShelterForm(Form):
 	"""Sets definitions and validators for Shelter forms"""
@@ -52,7 +55,7 @@ class PuppyForm(Form):
             message="Limit 50 characters, please try again.")])
     gender = SelectField('gender', 
     	choices=[('male', 'male'), ('female', 'female')])
-    dateOfBirth = DateField("Date of Birth", 
+    dateOfbirth = DateField("Date of Birth", 
     	[validators.InputRequired()])
     picture = StringField('picture', 
     	[validators.InputRequired()])
@@ -63,7 +66,7 @@ class PuppyForm(Form):
     	validators.NumberRange(
     		min=1, max=1000, 
     		message="Between 1 and 1000.")])
-    shelter_id = SelectField('shelter_id')
+    shelter_id = SelectField('Shelter ID', coerce = int)
 
 
 class OwnerForm(Form):

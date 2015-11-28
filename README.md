@@ -1,7 +1,14 @@
 Puppy Shelter Database
 ========
 
-This project sets up a puppy shelter website supported by a database and demonstrates some code to manipulate that database. Features include CRUD operators for all database modules, Flask, WTForms including selects and validators, a method for adoption. Please view my commits for latest updates.
+This project sets up a puppy shelter website supported by a database and demonstrates some code to manipulate that database. Please view my commits for latest updates.
+Features include:
+-All CRUD operators for database modules, 
+-Flask, 
+-WTForms including selects and validators, 
+-Logging,
+-email
+-SMS
 
 Technology
 ----------

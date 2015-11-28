@@ -4,8 +4,8 @@
 <link rel=stylesheet type=text/css href="{{url_for('static', filename='bootstrap.css') }}"
 </head>
 	<body>
-		<a href='{{url_for('main')}}'class="btn btn-primary active" role="button"> Return to main.</a></br>
-		<a href='{{url_for('puppies')}}'class="btn btn-primary active" role="button"> Return to puppies.</a></br>
+		<a href='{{url_for('main')}}'class="btn btn-primary btn-sm active" role="button"> Return to main.</a>
+		<a href='{{url_for('puppies')}}'class="btn btn-primary btn-sm active" role="button"> Return to puppies.</a></br>
 		{% for p in puppy %}<br>	
 			<div class="container">
 			<h3>{{p.name}}</h3>

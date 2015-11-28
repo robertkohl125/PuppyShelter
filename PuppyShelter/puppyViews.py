@@ -1,6 +1,9 @@
 from PuppyShelter import app, models, forms
 from flask import render_template, url_for, request, redirect, flash, jsonify
+import logging 
 
+
+logging.info('puppyViews.py file accessed ')
 
 #
 @app.route('/puppies/')
@@ -49,7 +52,7 @@ def puppyNew():
 	if request.method == "POST" and form.validate():
 		new_puppy = {
 			'name': form.name.data,
-			'gender': form.lastName.data,
+			'gender': form.gender.data,
 			'dateOfbirth': form.dateOfbirth.data,
 			'picture': form.picture.data,
 			'breed': form.breed.data,
@@ -99,4 +102,4 @@ def puppyDelete(puppy_id):
 			puppy = puppy, 
 			puppy_id = puppy_id)
 
-
+app.secret_key = 'super_secret_key'

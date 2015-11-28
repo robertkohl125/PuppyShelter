@@ -4,18 +4,19 @@
 <link rel=stylesheet type=text/css href="{{url_for('static', filename='bootstrap.css') }}"
 </head>
 	<body>
-		<a href='{{url_for('main')}}'class="btn btn-primary btn-lg active" role="button"> Return to main.</a></br>
-		<a href='{{url_for('shelters')}}'class="btn btn-primary active" role="button"> Return to shelters.</a></br>
+		<a href='{{url_for('main')}}'class="btn btn-primary btn-sm active" role="button"> Return to main.</a>
+		<a href='{{url_for('shelters')}}'class="btn btn-primary btn-sm active" role="button"> Return to shelters.</a></br>
 		{% for s in shelter %}<br>	
 			<div class="container">
-			<h4>{{s.name}}</h4>
+			<h3>{{s.name}}</h3>
 			<h6>id#: {{s.shelter_id}}</h6>
 			{{s.address}}</br>
 			{{s.city}}
 			{{s.state}}  
 			{{s.zipCode}}</br>
-			{{s.website}}</br></br>
-			<h2>Spaces remaining: {{s.remaining_spaces}}</h2>
+			{{s.website}}</br>
+			<h4>Maximum Capacity: <b>{{s.maximum_capacity}}</b></br>
+			Spaces remaining: <b>{{s.remaining_spaces}}</b></h4>
 			Puppies at this shelter:</br>
 			{% for p in puppies %}
 				<a href='{{url_for('puppyView', puppy_id = p.puppy_id)}}'class="btn btn-info btn-xs active" role="button">{{p.name}}</a></br>

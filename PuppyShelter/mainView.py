@@ -1,10 +1,10 @@
 from PuppyShelter import app
 from PuppyShelter import models
 from flask import render_template, url_for, request, redirect, flash, jsonify
-import logging
+import logging 
 
 
-logging.basicConfig(filename='pslog.log',level=logging.DEBUG,format='%(asctime)s %(message)s')
+logging.info('mainView.py file accessed ')
 
 #
 @app.route('/')
@@ -47,3 +47,5 @@ def puppyAdopt(puppy_id):
 			txt2 = txt2,
 			att = att, 
 			btn = btn)
+
+app.secret_key = 'super_secret_key'

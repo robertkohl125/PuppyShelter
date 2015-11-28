@@ -2,8 +2,12 @@ from sqlalchemy import Column, ForeignKey, Integer, String, Date, Numeric
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from sqlalchemy import create_engine
+import logging
 
 Base = declarative_base()
+
+
+logging.info('puppyShelterDBSetup.py file accessed')
 
 
 #Builds the Shelter table in the ORM

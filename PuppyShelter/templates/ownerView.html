@@ -4,7 +4,7 @@
 <link rel=stylesheet type=text/css href="{{url_for('static', filename='bootstrap.css') }}"
 </head>
 	<body>
-		<a href='{{url_for('main')}}'class="btn btn-primary btn-sm active" role="button"> Return to main.</a></br>
+		<a href='{{url_for('main')}}'class="btn btn-primary btn-sm active" role="button"> Return to main.</a>
 		<a href='{{url_for('owners')}}'class="btn btn-primary btn-sm active" role="button"> Return to owners.</a></br>
 		{% for o in owner %}<br>	
 			<div class="container">

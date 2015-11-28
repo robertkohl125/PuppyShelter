@@ -1,5 +1,9 @@
 from PuppyShelter import app, models, forms
 from flask import render_template, url_for, request, redirect, flash, jsonify
+import logging 
+
+
+logging.info('ownerViews.py file accessed ')
 
 
 #
@@ -76,3 +80,5 @@ def ownerDelete(owner_id):
 		return redirect(url_for('owners'))
 	else:
 		return render_template('ownerDelete.html', owner = owner, owner_id = owner_id)
+
+app.secret_key = 'super_secret_key'
