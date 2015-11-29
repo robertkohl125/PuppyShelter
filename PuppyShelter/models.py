@@ -4,8 +4,6 @@ from puppyShelterDBsetup import Base, Puppy, Shelter, Owner
 from sqlalchemy.sql import *
 import datetime
 import logging 
-import sms
-import email
 
 
 logging.info('models.py file accessed ')
@@ -30,22 +28,17 @@ def adoptPuppy(puppy_id, ownr, shelt):
 
 
 def selectAllPuppies():
-	logging.info('**models.selectAllPuppies called')
 	puppies = session.query(Puppy)
-	for p in puppies:
-		logging.debug('%s',p.name)
 	return puppies
 
 
 def selectAllShelters():
-	logging.info('**models.selectAllShelters called')
 	updateCurrentOccupancy()
 	shelters = session.query(Shelter)
 	return shelters
 
 
 def selectAllOwners():
-	logging.info('**models.selectAllOwners called')
 	owners = session.query(Owner)
 	return owners
 

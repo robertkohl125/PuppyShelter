@@ -41,6 +41,7 @@ class Owner(Base):
 	city = Column(String(20))
 	state = Column(String(13))
 	zipCode = Column(Integer(5))
+	cellnum = Column(Integer(10))
 	email = Column(String)
 	needs = Column(String)
 

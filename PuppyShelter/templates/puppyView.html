@@ -17,11 +17,10 @@
 			breed: {{p.breed}}</br>
 			{{p.weight}} lbs</br>
 				{% for s in shelter %}
-				Shelter: {{s.name}}
-			
-					{% for o in owner %}
-					Adopter: {{o.firstName}} {{o.lastName}}
-					{% endfor %}
+				Shelter: <b>{{s.name}}</b>
+				{% endfor %}
+				{% for o in owner %}
+				Adopted by: <b>{{o.firstName}} {{o.lastName}}</b>
 				{% endfor %}
 			</div>
 			<img src={{p.picture}} class="img-responsive" alt="Responsive image"></br>

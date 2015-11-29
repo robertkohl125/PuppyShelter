@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from puppyShelterDBsetup import Base, Shelter, Puppy
+from puppyShelterDBsetup import Base, Shelter, Puppy, Owner
 from random import randint
 import datetime
 import random
@@ -59,6 +59,52 @@ shelter5 = Shelter(
 
 #Add all instances of shelter to the ORM
 session.add_all([shelter1, shelter2, shelter3, shelter4, shelter5])
+
+owner1 = Owner(
+	firstName = "Mr. Bob" , 
+	lastName = "Dobolina", 
+	address = "123 North View", 
+	city = "Durango", 
+	state = "Colorado" , 
+	zipCode = "80024", 
+	cellnum = "1111111111", 
+	email = "bob@dobolina.com", 
+	needs = "I'm interested in getting a lovable puppy.")
+
+owner2 = Owner(
+	firstName = "Smaug" , 
+	lastName = "TheTerrible", 
+	address = "1 Lonely Mountain", 
+	city = "Boulder", 
+	state = "Colorado" , 
+	zipCode = "80024", 
+	cellnum = "2222222222", 
+	email = "smoug@theterrible.com", 
+	needs = "I want a puppy to keep me company in my mountain.")
+
+owner3 = Owner(
+	firstName = "Kylo" , 
+	lastName = "Ren", 
+	address = "666 Starkiller Base", 
+	city = "Colorado Springs", 
+	state = "Colorado" , 
+	zipCode = "80024", 
+	cellnum = "3333333333", 
+	email = "renk@firstorder.com", 
+	needs = "I need a puppy to finish what you started.")
+
+owner4 = Owner(
+	firstName = "Boba" , 
+	lastName = "Fett", 
+	address = "9 Jabba's Pallace", 
+	city = "Mos Isley", 
+	state = "Colorado" , 
+	zipCode = "80024", 
+	cellnum = "4444444444", 
+	email = "boba@fett.com", 
+	needs = "I need a hypoallergenic puppy to keep me company on long journeys.")
+
+session.add_all([owner1, owner2, owner3, owner4])
 
 
 #Add Puppies

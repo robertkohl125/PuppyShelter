@@ -1,5 +1,4 @@
-from PuppyShelter import app
-from PuppyShelter import models
+from PuppyShelter import app, models, sms, email
 from flask import render_template, url_for, request, redirect, flash, jsonify
 import logging 
 
@@ -36,8 +35,15 @@ def puppyAdopt(puppy_id):
 		print dict_ownr
 		ownr = dict_ownr.get('owner_id')
 		models.adoptPuppy(puppy_id, ownr, shelt)
+		text = ('puppy_id(%s) was adopted from shelter_id(%s) by owner_id(%s)' % (puppy_id, ownr, shelt))
+		logging.info = text
+		text = text
+		r = owners.filter_by(owner_id=ownr)
+		for r in r:
+			print r
+		recipient = r.email
+		email.email(text,recipient)
 		return redirect(url_for('puppies'))
-		logging.info = ('puppy_id(%s) was adopted from shelter_id(%s) by owner_id(%s)',puppy_id, ownr, shelt)
 	else:
 		return render_template('adoptPuppy.html', 
 			puppy = puppy, 
@@ -47,5 +53,6 @@ def puppyAdopt(puppy_id):
 			txt2 = txt2,
 			att = att, 
 			btn = btn)
+
 
 app.secret_key = 'super_secret_key'
