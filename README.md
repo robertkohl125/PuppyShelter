@@ -9,12 +9,11 @@ Features include:
 -Logging,
 -email
 -SMS
+-Pagination on the puppies page
 
 !!BugsLingering issues!!
 ----------------
-*logging not working within methods: TypeError: 'unicode' object is not callable.
 *Edit functions not completely updated to WTForms and not auto filling fields in.
-*Pagination not working.
 *email server not live.
 *sms not functional yet.
 

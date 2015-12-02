@@ -224,6 +224,16 @@ def selectAvailableShelters():
 	return shelters
 
 
+def countPuppies():
+	p = session.query(Puppy).count()
+	return p
+
+
+def paginatePuppies(page, PER_PAGE, total_count):
+	x = (page-1) * PER_PAGE
+	puppy = session.query(Puppy).offset(x).limit(PER_PAGE)
+	return puppy
+
 
 #This method selects and displays all puppy names from Puppy table in alphabetical order.
 def selectSortAllPuppies():

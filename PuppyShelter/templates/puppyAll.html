@@ -4,6 +4,25 @@
 	<link rel=stylesheet type=text/css href="{{url_for('static', filename='bootstrap.css') }}"
 </head>
 	<body>
+		{% macro render_pagination(pagination) %}
+			<div class=pagination>
+			{%- for page in pagination.iter_pages() %}
+				{% if page %}
+					{% if page != pagination.page %}
+						<a href="{{ url_for_other_page(page) }}">{{ page }}</a>
+					{% else %}
+						<strong>{{ page }}</strong>
+					{% endif %}
+				{% else %}
+					<span class=ellipsis>…</span>
+				{% endif %}
+			{%- endfor %}
+			{% if pagination.has_next %}
+				<a href="{{ url_for_other_page(pagination.page + 1)}}">Next &raquo;</a>
+  			{% endif %}
+  			</div>
+		{% endmacro %}
+		{{ render_pagination(pagination) }}
 		<h1>Available Puppies</h1>
 		{% with messages = get_flashed_messages() %}
 			{% if messages %}
@@ -18,31 +37,20 @@
 		<a href='{{url_for('puppyNew')}}'class="btn btn-success btn-sm active" role="button"> To add a puppy, click here.</a>
 		{% for p in puppies %}
 			<div class="container">
-
-			<h4>{{p.name}}</h4>
-			<p>
-			<h6>id#: {{p.puppy_id}}</h6>
-			{{p.gender}}</br>
-			born {{p.dateOfbirth}}</br>
-			breed: {{p.breed}}</br>
-			{{p.weight}} lbs</br>
-			Shelter: {{p.shelter_id}}
-			</p>
-			<h5>
-			<a href='{{url_for('puppyView', puppy_id = p.puppy_id)}}'class="btn btn-info btn-xs active" role="button">View Puppy</a>
-			<a href='{{url_for('puppyEdit', puppy_id = p.puppy_id)}}'class="btn btn-warning btn-xs active" role="button">Edit</a>
-			<a href='{{url_for('puppyDelete', puppy_id = p.puppy_id)}}'class="btn btn-danger btn-xs active" role="button">Delete</a>
-			</h5>
-
+				<h4>{{p.name}}</h4>
+				<p><h6><b>ID#: </b>{{p.puppy_id}}</h6>
+				<b>Gender: </b>{{p.gender}}</br>
+				<b>Born: </b>{{p.dateOfbirth}}</br>
+				<b>Breed: </b>{{p.breed}}</br>
+				<b>Weight: </b>{{p.weight}} lbs</br>
+				<b>Shelter: </b>{{p.shelter_id}}</p>
+				<h5><a href='{{url_for('puppyView', puppy_id = p.puppy_id)}}'class="btn btn-info btn-xs active" role="button">View Puppy</a>
+				<a href='{{url_for('puppyEdit', puppy_id = p.puppy_id)}}'class="btn btn-warning btn-xs active" role="button">Edit</a>
+				<a href='{{url_for('puppyDelete', puppy_id = p.puppy_id)}}'class="btn btn-danger btn-xs active" role="button">Delete</a></h5>
 			</div>
-			</br></br></br>
+			</br>
 		{% endfor %}
-			<ul class="pagination">
-			    <li><a href="#">1</a></li>
-    			<li><a href="#">2</a></li>
-    			<li><a href="#">3</a></li>
-    			<li><a href="#">4</a></li>
-    			<li><a href="#">5</a></li>
-			</ul>
 	</body>
+
+
 </html>
