@@ -7,29 +7,111 @@
 		<div>
 		<legend>Edit Owner Information</legend>
 		{% for o in owner %}
-		<form method ='POST' actions='/puppyEdit' id='puppyEdit'>
-			<label>{{o.firstName}}</label>
-				<input type='text' textarea placeholder="{{o.firstName}}" name='firstName' required><br>
-			<label>{{o.lastName}}</label>
-				<input type='text' textarea placeholder="{{o.lastName}}" name='lastName' required><br>
-			<label>{{o.address}}</label>
-				<input type='text' textarea placeholder="{{o.address}}" name='address' required><br>
-			<label>{{o.city}}</label>
-				<input type='text' textarea placeholder="{{o.city}}" name='city' required>
-			<label>{{o.state}}</label>
-				<input type='text' placeholder="{{o.state}}" name='state' required>
-			<label>{{o.zipCode}}</label>
-				<input type='text' textarea placeholder="{{o.zipCode}}" name='zipCode' required><br>
-			<label>{{o.cellnum}}</label>
-				<input type='text' textarea placeholder="{{o.cellnum}}" name='cellnum' required><br>
-			<label>{{o.email}}</label>
-				<input type='text' textarea placeholder="{{o.email}}" name='email' required><br>
-			<textarea name='needs' form='puppyEdit' placeholder="{{o.needs}}" required>
-			</textarea> </br>
-			{% endfor %}
-			<input class="btn btn-success" type='submit' value='Edit'>
-			<input class="btn btn-warning" type='reset' value='Reset'></br>
-		</form>
+        <form method ='POST' actions='/ownerEdit' enctype="multipart/form-data" id='ownerEdit'>
+            {{ form.csrf_token }}
+        <div class="form-group col-xs-4">
+            <label for="owner-firstName">First Name</label>
+            {{ form.firstName(class="form-control", placeholder= o.firstName) }}
+            {% if form.firstName.errors %}
+                <div class="alert alert-info" role="alert">
+                    {% for error in form.firstName.errors %}
+                    {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group col-xs-4">
+            <label for="owner-lastName">Last Name</label>
+            {{ form.lastName(class="form-control", placeholder=o.lastName) }}
+            {% if form.lastName.errors %}
+                <div class="alert alert-info" role="alert">
+                    {% for error in form.lastName.errors %}
+                    {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group col-xs-4">
+            <label for="owner-address">Address</label>
+            {{ form.address(class="form-control", placeholder=o.address) }}
+            {% if form.address.errors %}
+                <div class="alert alert-info" role="alert">
+                    {% for error in form.address.errors %}
+                    {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group col-xs-4">
+            <label for="owner-city">City</label>
+            {{ form.city(class="form-control", placeholder=o.city) }}
+            {% if form.city.errors %}
+                <div class="alert alert-info" role="alert">
+                    {% for error in form.city.errors %}
+                    {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group col-xs-4">
+            <label for="owner-state">State</label>
+            {{ form.state(class="form-control", placeholder=o.state) }}
+            {% if form.state.errors %}
+                <div class="alert alert-info" role="alert">
+                    {% for error in form.state.errors %}
+                    {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group col-xs-4">
+            <label for="owner-zipCode">Zip Code</label>
+            {{ form.zipCode(class="form-control", placeholder=o.zipCode) }}
+            {% if form.zipCode.errors %}
+                <div class="alert alert-info" role="alert">
+                    {% for error in form.zipCode.errors %}
+                    {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group col-xs-4">
+            <label for="owner-cellnum">Cell Number</label>
+            {{ form.cellnum(class="form-control", placeholder=o.cellnum) }}
+            {% if form.cellnum.errors %}
+                <div class="alert alert-info" role="alert">
+                    {% for error in form.cellnum.errors %}
+                    {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group col-xs-4">
+            <label for="owner-email">Email</label>
+            {{ form.email(class="form-control", placeholder=o.email) }}
+            {% if form.email.errors %}
+                <div class="alert alert-info" role="alert">
+                    {% for error in form.email.errors %}
+                    {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group col-xs-4" id="ownerNew">
+            <label for="owner-needs">Needs</label>
+            {{ form.needs(class="form-control", placeholder=o.needs) }}
+            {% if form.needs.errors %}
+                <div class="alert alert-info" role="alert">
+                    {% for error in form.needs.errors %}
+                    {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endfor %}
+        </div>
+            <input class="btn btn-success" type='submit' value='Edit'>
+            <input class="btn btn-warning" type='reset' value='Reset'></br>
+        </form>
 		</br></br>
 		<a href='{{url_for('shelters')}}'class="btn btn-success btn-lg active" role="button"> Shelters.</a>
 		<a href='{{url_for('puppies')}}'class="btn btn-success btn-lg active" role="button"> Puppies.</a>

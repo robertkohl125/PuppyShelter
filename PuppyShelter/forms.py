@@ -47,7 +47,7 @@ class ShelterForm(Form):
 
 
 class PuppyForm(Form):
-    
+    """Sets definitions and validators for Puppy forms"""
     name = StringField('name', 
         [validators.InputRequired(), 
         validators.Length(

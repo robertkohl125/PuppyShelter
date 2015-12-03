@@ -58,22 +58,25 @@ def ownerNew():
 #
 @app.route('/owners/<int:owner_id>/owneredit', methods = ['GET','POST'])
 def ownerEdit(owner_id):
+    form = forms.OwnerForm(request.form)
     owner = models.selectAllOwners().filter_by(owner_id=owner_id)
-    if request.method == "POST":
+    if request.method == "POST" and form.validate():
         edit_owner = {
-            'firstName': request.form['firstName'],
-            'lastName': request.form['lastName'],
-            'address': request.form['address'],
-            'city': request.form['city'],
-            'state': request.form['state'],
-            'zipCode': request.form['zipCode'],
-            'cellnum': request.form['cellnum.data'],
-            'email': request.form['email'],
-            'needs': request.form['needs']}
+            'firstName': form.firstName.data,
+            'lastName': form.lastName.data,
+            'address': form.address.data,
+            'city': form.city.data,
+            'state': form.state.data,
+            'zipCode': form.zipCode.data,
+            'cellnum': form.cellnum.data,
+            'email': form.email.data,
+            'needs': form.needs.data}
         models.editOwner(edit_owner, owner_id)
         return redirect(url_for('owners'))
     else:
-        return render_template('ownerEdit.html', owner = owner)
+        return render_template('ownerEdit.html', 
+            owner = owner,
+            form = form)
 
 
 #

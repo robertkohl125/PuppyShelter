@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>	
-	<link rel=stylesheet type=text/css href="{{url_for('static', filename='bootstrap.css') }}"
+<head>  
+    <link rel=stylesheet type=text/css href="{{url_for('static', filename='bootstrap.css') }}"
 </head>
-	<body>
-		<div>
-		<legend>New Puppy</legend>
-		<form method ='POST' actions='/puppyNew' enctype="multipart/form-data">
-			{{ form.csrf_token }}
+    <body>
+        <div>
+        <legend>Enroll a new puppy here!</legend>
+        <form method ='POST' actions='/puppyNew' enctype="multipart/form-data">
+            {{ form.csrf_token }}
         <div class="form-group col-xs-4">
             <label for="puppy-name">Name</label>
             {{ form.name(class="form-control", placeholder="Name") }}
@@ -87,14 +87,14 @@
                 </div>
             {% endif %}
         </div>
-			<input class="btn btn-success" type='submit' value='Create'>
-			<input class="btn btn-warning" type='reset' value='Reset'></br>
-		</form>
-		</br></br>
-		<a href='{{url_for('shelters')}}'class="btn btn-success btn-lg active" role="button"> Shelters.</a>
-		<a href='{{url_for('puppies')}}'class="btn btn-success btn-lg active" role="button"> Puppies.</a>
-		<a href='{{url_for('owners')}}'class="btn btn-success btn-lg active" role="button"> Owners.</a>
+            <input class="btn btn-success" type='submit' value='Create'>
+            <input class="btn btn-warning" type='reset' value='Reset'></br>
+        </form>
+        </br></br>
+        <a href='{{url_for('shelters')}}'class="btn btn-success btn-lg active" role="button"> Shelters.</a>
+        <a href='{{url_for('puppies')}}'class="btn btn-success btn-lg active" role="button"> Puppies.</a>
+        <a href='{{url_for('owners')}}'class="btn btn-success btn-lg active" role="button"> Owners.</a>
 
-		</div>
-	</body>
+        </div>
+    </body>
 </html>

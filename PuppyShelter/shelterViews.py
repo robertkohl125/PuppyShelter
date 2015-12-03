@@ -45,7 +45,7 @@ def shelterNew():
 def shelterEdit(shelter_id):
 	form = forms.ShelterForm()
 	shelter = models.selectAllShelters().filter_by(shelter_id=shelter_id)
-	if request.method == "POST":
+	if request.method == "POST" and form.validate():
 		edit_shelter = {
 			'name': form.name.data,
 			'address': form.address.data,
@@ -58,7 +58,10 @@ def shelterEdit(shelter_id):
 		flash('A shelter has been edited!')
 		return redirect(url_for('shelters'))
 	else:
-		return render_template('shelterEdit.html', shelter_id = shelter_id, shelter = shelter, form = form)
+		return render_template('shelterEdit.html', 
+			shelter_id = shelter_id, 
+			shelter = shelter, 
+			form = form)
 
 
 #

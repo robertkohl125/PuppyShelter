@@ -28,7 +28,7 @@ def log():
         h.setFormatter(format)
         h.setLevel(logging.DEBUG)
         root_logger.addHandler(h)
-#log()
+log()
 
 
 from flask.ext.mail import Mail 

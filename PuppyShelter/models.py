@@ -114,7 +114,7 @@ def deleteOwner(owner_id):
 def editPuppy(edit_puppy, puppy_id):
 	puppy = session.query(Puppy).filter_by(puppy_id=puppy_id)
 	editPup = Puppy(
-		name = edit_puppy['name'],
+    	name = edit_puppy['name'],
 		gender = edit_puppy['gender'],
 		dateOfbirth = edit_puppy['dateOfbirth'],
 		picture = edit_puppy['picture'],

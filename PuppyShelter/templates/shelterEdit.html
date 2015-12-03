@@ -11,10 +11,10 @@
 		<legend>Edit Shelter Information</legend>
         <form method ='POST' actions='/shelterNew' enctype="multipart/form-data">
             {{ form.csrf_token }}
-        {% for s in shelter %}
         <div class="form-group col-xs-4">
-            <label for="shelter-name">Name</label> {{s.name}}
-            {{ form.name(class="form-control", placeholder="Name") }}
+        {% for s in shelter %}
+            <label for="shelter-name">Name</label>
+            {{ form.name(class="form-control", placeholder=s.name) }}
             {% if form.name.errors %}
                 <div class="alert alert-info" role="alert">
                     {% for error in form.name.errors %}
@@ -23,9 +23,9 @@
                 </div>
             {% endif %}
         </div>
-        <div class="form-group col-xs-6">
-            <label for="shelter-address">Address</label> {{s.address}}
-            {{ form.address(class="form-control", placeholder="Address") }}
+        <div class="form-group col-xs-7">
+            <label for="shelter-address">Address</label>
+            {{ form.address(class="form-control", placeholder=s.address) }}
             {% if form.address.errors %}
                 <div class="alert alert-info" role="alert">
                     {% for error in form.address.errors %}
@@ -35,8 +35,8 @@
             {% endif %}
         </div>
         <div class="form-group col-xs-4">
-            <label for="shelter-city">City</label> {{s.city}}
-            {{ form.city(class="form-control", placeholder="City") }}
+            <label for="shelter-city">City</label>
+            {{ form.city(class="form-control", placeholder=s.city) }}
             {% if form.city.errors %}
                 <div class="alert alert-info" role="alert">
                     {% for error in form.city.errors %}
@@ -46,8 +46,8 @@
             {% endif %}
         </div>
         <div class="form-group col-xs-4">
-            <label for="shelter-state">State</label> {{s.state}}
-            {{ form.state(class="form-control", placeholder="State") }}
+            <label for="shelter-state">State</label>
+            {{ form.state(class="form-control", placeholder=s.state) }}
             {% if form.state.errors %}
                 <div class="alert alert-info" role="alert">
                     {% for error in form.state.errors %}
@@ -57,8 +57,8 @@
             {% endif %}
         </div>
         <div class="form-group col-xs-3">
-            <label for="shelter-zipCode"></label> {{s.zipCode}}
-            {{ form.zipCode(class="form-control", placeholder="Zip") }}
+            <label for="shelter-zipCode">Zip</label>
+            {{ form.zipCode(class="form-control", placeholder=s.zipCode) }}
             {% if form.zipCode.errors %}
                 <div class="alert alert-info" role="alert">
                     {% for error in form.zipCode.errors %}
@@ -67,9 +67,9 @@
                 </div>
             {% endif %}
         </div>
-        <div class="form-group col-xs-12">
-            <label for="shelter-website">Website</label> {{s.website}}
-            {{ form.website(class="form-control", placeholder="enter url here") }}
+        <div class="form-group col-xs-11">
+            <label for="shelter-website">Website</label>
+            {{ form.website(class="form-control", placeholder=s.website) }}
             {% if form.website.errors %}
                 <div class="alert alert-info" role="alert">
                     {% for error in form.website.errors %}
@@ -79,8 +79,8 @@
             {% endif %}
         </div>
         <div class="form-group col-xs-4">
-            <label for="shelter-maximum_capacity">Maximum Capacity</label> {{s.maximum_capacity}}
-            {{ form.maximum_capacity(class="form-control", placeholder="Maximum Capacity") }}
+            <label for="shelter-maximum_capacity">Maximum Capacity</label>
+            {{ form.maximum_capacity(class="form-control", placeholder=s.maximum_capacity) }}
             {% if form.maximum_capacity.errors %}
                 <div class="alert alert-info" role="alert">
                     {% for error in form.maximum_capacity.errors %}
@@ -88,13 +88,13 @@
                     {% endfor %}
                 </div>
             {% endif %}
-        {% endfor %}
         </div>
-        </br>
+        {% endfor %}
         <div>
-        <input class="btn btn-success" type='submit' value='Edit'>
+        <input class="btn btn-success" type='submit' value='Create'>
         <input class="btn btn-warning" type='reset' value='Reset'>
-        </div></br>
+        </div>
+
         </form>
 		</div>
 	</body>

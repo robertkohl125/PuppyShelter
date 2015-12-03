@@ -34,12 +34,10 @@ class Pagination(object):
 
 
 
-
-PER_PAGE = 5
-
 @app.route('/puppies/', defaults={'page': 1})
 @app.route('/puppies/page/<int:page>')
 def puppies(page):
+    PER_PAGE = 5
     total_count = models.countPuppies()
     puppies = models.paginatePuppies(page, PER_PAGE, total_count)
     if not puppies and page != 1:
@@ -111,25 +109,28 @@ def puppyNew():
 #
 @app.route('/puppies/<int:puppy_id>/puppyedit', methods = ['GET','POST'])
 def puppyEdit(puppy_id):
+    shelter_choices = models.selectAvailableShelters()
+    form = forms.PuppyForm(request.form, obj = shelter_choices)
+    form.shelter_id.choices = [(a.shelter_id, a.name) for a in shelter_choices]
     puppy = models.selectAllPuppies().filter_by(puppy_id=puppy_id)
     shelter = models.selectEnrolledShelter(puppy_id)
-    shelters = models.selectAvailableShelters()
-    if request.method == "POST":
-        edit_puppy = {'name': request.form['name'],
-            'gender': request.form['gender'],
-            'dateOfbirth': request.form['dateOfbirth'],
-            'picture': request.form['picture'],
-            'breed': request.form['breed'],
-            'weight': request.form['weight'],
-            'shelter_id': request.form['shelter_id']}
+    if request.method == "POST" and form.validate():
+        edit_puppy = {
+            'name': form.name.data,
+            'gender': form.gender.data,
+            'dateOfbirth': form.dateOfbirth.data,
+            'picture': form.picture.data,
+            'breed': form.breed.data,
+            'weight': form.weight.data,
+            'shelter_id': form.shelter_id.data}
         models.editPuppy(edit_puppy, puppy_id)
         return redirect(url_for('puppies'))
     else:
         return render_template('puppyEdit.html', 
             puppy = puppy, 
             puppy_id = puppy_id, 
-            shelters = shelters, 
-            shelter = shelter)
+            shelter = shelter,
+            form = form)
 
 
 #
