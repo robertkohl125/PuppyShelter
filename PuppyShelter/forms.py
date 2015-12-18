@@ -1,6 +1,5 @@
 from flask.ext.wtf import Form
 from wtforms import StringField, IntegerField, TextAreaField, SelectField, validators
-#from wtforms.fields import TextField
 from wtforms.ext.sqlalchemy.fields import QuerySelectField
 from wtforms.fields.html5 import DateField
 from wtforms.validators import Required, InputRequired
@@ -11,6 +10,8 @@ import logging
 
 logging.info('forms.py file accessed ')
 
+
+#
 class ShelterForm(Form):
     """Sets definitions and validators for Shelter forms"""
     name = StringField('name', 
@@ -46,6 +47,7 @@ class ShelterForm(Form):
         [validators.InputRequired()])
 
 
+#
 class PuppyForm(Form):
     """Sets definitions and validators for Puppy forms"""
     name = StringField('name', 
@@ -69,6 +71,7 @@ class PuppyForm(Form):
     shelter_id = SelectField('Shelter ID', coerce = int)
 
 
+#
 class OwnerForm(Form):
     """Sets definitions and validators for Owner forms"""
     firstName = StringField('First Name', 
@@ -113,6 +116,7 @@ class OwnerForm(Form):
         widget=TextArea())
 
 
+#
 class AdoptionForm(Form):
     owner_id = IntegerField('Owner', 
         [validators.InputRequired(), 

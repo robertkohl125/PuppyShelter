@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>	
-	<link rel=stylesheet type=text/css href="{{url_for('static', filename='bootstrap.css') }}"
-</head>
-	<body>
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
 		<div>
 		<legend>Edit Puppy Information</legend>
 		{% for p in puppy %}
 		<form method ='POST' actions='/puppyEdit' enctype="multipart/form-data" id='puppyEdit'>
             {{ form.csrf_token }}
-        <div class="form-group col-xs-4">
+        <div class="form-group col-xs-5">
             <label for="puppy-name">Name: {{p.name}}</label>
             {{ form.name(class="form-control", placeholder=p.name) }}
             {% if form.name.errors %}
@@ -21,7 +18,7 @@
             {% endif %}
         </div>
 
-        <div class="form-group col-xs-6">
+        <div class="form-group col-xs-10">
         	{% for s in shelter %}
             <label for="puppy-shelter_id">Current Shelter: {{s.name}}</label>
             {% endfor %}
@@ -35,7 +32,7 @@
             {% endif %}
         </div>
 
-        <div class="form-group col-xs-2">
+        <div class="form-group col-xs-4">
             <label for="puppy-gender">Gender: {{p.gender}}</label>
             {{ form.gender(class="form-control") }}
             {% if form.gender.errors %}
@@ -46,7 +43,7 @@
                 </div>
             {% endif %}
         </div>
-        <div class="form-group col-xs-3">
+        <div class="form-group col-xs-5">
             <label for="puppy-dateOfbirth">Date of Birth: {{p.dateOfbirth}}</label>
             {{ form.dateOfbirth(class="form-control", placeholder=p.dateOfbirth) }}
             {% if form.dateOfbirth.errors %}
@@ -57,7 +54,7 @@
                 </div>
             {% endif %}
         </div>
-        <div class="form-group col-xs-4">
+        <div class="form-group col-xs-6">
             <label for="puppy-breed">Breed: {{p.breed}}</label>
             {{ form.breed(class="form-control", placeholder=p.breed) }}
             {% if form.breed.errors %}
@@ -68,7 +65,7 @@
                 </div>
             {% endif %}
         </div>
-        <div class="form-group col-xs-2">
+        <div class="form-group col-xs-4">
             <label for="puppy-weight">Weight: {{p.weight}}</label>
             {{ form.weight(class="form-control", placeholder=(p.weight, 'lbs.')) }}
             {% if form.weight.errors %}
@@ -79,7 +76,7 @@
                 </div>
             {% endif %}
         </div>
-        <div class="form-group col-xs-6">
+        <div class="form-group col-xs-12">
             <label for="puppy-picture">Picture: {{p.picture}}</label>
             {{ form.picture(class="form-control", placeholder=("url:", p.picture))}}
             {% if form.picture.errors %}
@@ -94,10 +91,5 @@
             <input class="btn btn-success" type='submit' value='Edit'>
             <input class="btn btn-warning" type='reset' value='Reset'></br>
         </form>
-        <a href='{{url_for('shelters')}}'class="btn btn-success btn-lg active" role="button"> Shelters.</a>
-        <a href='{{url_for('puppies')}}'class="btn btn-success btn-lg active" role="button"> Puppies.</a>
-        <a href='{{url_for('owners')}}'class="btn btn-success btn-lg active" role="button"> Owners.</a>
-
 		</div>
-	</body>
-</html>
+{% endblock %}

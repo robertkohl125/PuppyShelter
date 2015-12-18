@@ -1,8 +1,9 @@
-from sqlalchemy import Column, ForeignKey, Integer, String, Date, Numeric
+from sqlalchemy import Column, ForeignKey, Integer, String, Date, Numeric, Boolean
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from sqlalchemy import create_engine
 import logging
+
 
 Base = declarative_base()
 
@@ -44,6 +45,11 @@ class Owner(Base):
 	cellnum = Column(Integer(10))
 	email = Column(String)
 	needs = Column(String)
+	authenticated = Column(Boolean, default = False)
+	active = Column(Boolean, default = False)
+	anonymous = Column(Boolean, default = False)
+
+
 
 
 #Builds the Puppy table in the ORM
@@ -63,6 +69,24 @@ class Puppy(Base):
 	shelter = relationship(Shelter, backref = 'puppy')
 	owner_id = Column(Integer, ForeignKey('owner.owner_id'))
 	owner = relationship(Owner, backref = 'puppy')
+
+
+class User(Base):
+	"""Connects to the User table
+	"""
+	__tablename__ = 'user'
+	
+	user_id = Column(Integer, primary_key = True)
+	name = Column(String(30), nullable = False)
+	address = Column(String(30))
+	city = Column(String(20))
+	state = Column(String(13))
+	zipCode = Column(Integer(5))
+	cellnum = Column(Integer(10))
+	picture = Column(String)
+	email = Column(String, nullable = False)
+	is_authenticated = Column(String)
+
 
 
 engine = create_engine('sqlite:///puppyshelter.db')

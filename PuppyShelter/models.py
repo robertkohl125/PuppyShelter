@@ -1,6 +1,6 @@
 from sqlalchemy import *
 from sqlalchemy.orm import *
-from puppyShelterDBsetup import Base, Puppy, Shelter, Owner
+from puppyShelterDBsetup import Base, Puppy, Shelter, Owner, User
 from sqlalchemy.sql import *
 import datetime
 import logging 
@@ -359,3 +359,27 @@ def calcCurrentOccDiff():
 	print list_calc
 	return list_calc
 
+
+#Get user ID from email from User table
+def getUserID(email):
+    try:
+        user = session.query(User).filter_by(email = email).one()
+        return user.user_id
+    except:
+        return None
+
+
+#Get user data from email from User table
+def getUserInfo(user_id):
+    user = session.query(User).filter_by(user_id = user_id).one()
+    return user
+
+
+#Create user in User table
+def createUser(login_session):
+    newUser = User(name = login_session['username'], email = login_session['email'], picture = login_session['picture'])
+    session.add(newUser)
+    session.commit()
+    user = session.query(User).filter_by(email = login_session['email']).one()
+    print "User %s created." % user.name
+    return user.user_id

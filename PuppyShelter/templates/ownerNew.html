@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>  
-    <link rel=stylesheet type=text/css href="{{url_for('static', filename='bootstrap.css') }}"
-</head>
-    <body>
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
         <div>
         <legend>New Owner Profile</legend>
         <form method ='POST' actions='/ownerNew' enctype="multipart/form-data" id='ownerNew'>
@@ -30,7 +27,7 @@
                 </div>
             {% endif %}
         </div>
-        <div class="form-group col-xs-4">
+        <div class="form-group col-xs-12">
             <label for="owner-address">Address</label>
             {{ form.address(class="form-control", placeholder="Address") }}
             {% if form.address.errors %}
@@ -85,7 +82,7 @@
                 </div>
             {% endif %}
         </div>
-        <div class="form-group col-xs-4">
+        <div class="form-group col-xs-8">
             <label for="owner-email">Email</label>
             {{ form.email(class="form-control", placeholder="Email") }}
             {% if form.email.errors %}
@@ -96,7 +93,7 @@
                 </div>
             {% endif %}
         </div>
-        <div class="form-group col-xs-4" id="ownerNew">
+        <div class="form-group col-xs-12" id="ownerNew">
             <label for="owner-needs">Needs</label>
             {{ form.needs(class="form-control", placeholder="Please tell us about your needs here...") }}
             {% if form.needs.errors %}
@@ -110,11 +107,5 @@
             <input class="btn btn-success" type='submit' value='Create'>
             <input class="btn btn-warning" type='reset' value='Reset'></br>
         </form>
-        </br></br>
-        <a href='{{url_for('shelters')}}'class="btn btn-success btn-lg active" role="button"> Shelters.</a>
-        <a href='{{url_for('puppies')}}'class="btn btn-success btn-lg active" role="button"> Puppies.</a>
-        <a href='{{url_for('owners')}}'class="btn btn-success btn-lg active" role="button"> Owners.</a>
-
         </div>
-    </body>
-</html>
+{% endblock %}

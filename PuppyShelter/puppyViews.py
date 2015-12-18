@@ -2,7 +2,7 @@ from PuppyShelter import app, models, forms
 from flask import render_template, url_for, request, redirect, flash, jsonify
 import logging 
 from math import ceil
-
+from flask import session as login_session
 
 logging.info('puppyViews.py file accessed ')
 
@@ -85,64 +85,74 @@ def puppyView(puppy_id):
 #
 @app.route('/puppies/puppynew', methods = ['GET','POST'])
 def puppyNew():
-    shelter_choices = models.selectAvailableShelters()
-    form = forms.PuppyForm(request.form, obj = shelter_choices)
-    form.shelter_id.choices = [(a.shelter_id, a.name) for a in shelter_choices]
-    print form.shelter_id.choices
-    if request.method == "POST" and form.validate():
-        new_puppy = {
-            'name': form.name.data,
-            'gender': form.gender.data,
-            'dateOfbirth': form.dateOfbirth.data,
-            'picture': form.picture.data,
-            'breed': form.breed.data,
-            'weight': form.weight.data,
-            'shelter_id': form.shelter_id.data}
-        models.createPuppy(new_puppy)
-        flash('A new puppy is ready for adoption!')
-        return redirect(url_for('puppies'))
+    if 'username' not in login_session:
+        return render_template('unauthorized.html')
     else:
-        return render_template('puppyNew.html', 
-            form = form)
+        print login_session['username']
+        shelter_choices = models.selectAvailableShelters()
+        form = forms.PuppyForm(request.form, obj = shelter_choices)
+        form.shelter_id.choices = [(a.shelter_id, a.name) for a in shelter_choices]
+        print form.shelter_id.choices
+        if request.method == "POST" and form.validate():
+            new_puppy = {
+                'name': form.name.data,
+                'gender': form.gender.data,
+                'dateOfbirth': form.dateOfbirth.data,
+                'picture': form.picture.data,
+                'breed': form.breed.data,
+                'weight': form.weight.data,
+                'shelter_id': form.shelter_id.data}
+            models.createPuppy(new_puppy)
+            flash('A new puppy is ready for adoption!')
+            return redirect(url_for('puppies'))
+        else:
+            return render_template('puppyNew.html', 
+                form = form)
 
 
 #
 @app.route('/puppies/<int:puppy_id>/puppyedit', methods = ['GET','POST'])
 def puppyEdit(puppy_id):
-    shelter_choices = models.selectAvailableShelters()
-    form = forms.PuppyForm(request.form, obj = shelter_choices)
-    form.shelter_id.choices = [(a.shelter_id, a.name) for a in shelter_choices]
-    puppy = models.selectAllPuppies().filter_by(puppy_id=puppy_id)
-    shelter = models.selectEnrolledShelter(puppy_id)
-    if request.method == "POST" and form.validate():
-        edit_puppy = {
-            'name': form.name.data,
-            'gender': form.gender.data,
-            'dateOfbirth': form.dateOfbirth.data,
-            'picture': form.picture.data,
-            'breed': form.breed.data,
-            'weight': form.weight.data,
-            'shelter_id': form.shelter_id.data}
-        models.editPuppy(edit_puppy, puppy_id)
-        return redirect(url_for('puppies'))
+    if 'username' not in login_session:
+        return render_template('unauthorized.html')
     else:
-        return render_template('puppyEdit.html', 
-            puppy = puppy, 
-            puppy_id = puppy_id, 
-            shelter = shelter,
-            form = form)
+        shelter_choices = models.selectAvailableShelters()
+        form = forms.PuppyForm(request.form, obj = shelter_choices)
+        form.shelter_id.choices = [(a.shelter_id, a.name) for a in shelter_choices]
+        puppy = models.selectAllPuppies().filter_by(puppy_id=puppy_id)
+        shelter = models.selectEnrolledShelter(puppy_id)
+        if request.method == "POST" and form.validate():
+            edit_puppy = {
+                'name': form.name.data,
+                'gender': form.gender.data,
+                'dateOfbirth': form.dateOfbirth.data,
+                'picture': form.picture.data,
+                'breed': form.breed.data,
+                'weight': form.weight.data,
+                'shelter_id': form.shelter_id.data}
+            models.editPuppy(edit_puppy, puppy_id)
+            return redirect(url_for('puppies'))
+        else:
+            return render_template('puppyEdit.html', 
+                puppy = puppy, 
+                puppy_id = puppy_id, 
+                shelter = shelter,
+                form = form)
 
 
 #
 @app.route('/puppies/<int:puppy_id>/puppydelete', methods = ['GET','POST'])
 def puppyDelete(puppy_id):
-    puppy = models.selectAllPuppies().filter_by(puppy_id=puppy_id)
-    if request.method == "POST":
-        models.deletePuppy(puppy_id)
-        return redirect(url_for('puppies'))
+    if 'username' not in login_session:
+        return render_template('unauthorized.html')
     else:
-        return render_template('puppyDelete.html', 
-            puppy = puppy, 
-            puppy_id = puppy_id)
+        puppy = models.selectAllPuppies().filter_by(puppy_id=puppy_id)
+        if request.method == "POST":
+            models.deletePuppy(puppy_id)
+            return redirect(url_for('puppies'))
+        else:
+            return render_template('puppyDelete.html', 
+                puppy = puppy, 
+                puppy_id = puppy_id)
 
 app.secret_key = 'super_secret_key'

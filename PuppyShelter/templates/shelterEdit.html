@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>	
-	<link rel=stylesheet type=text/css href="{{url_for('static', filename='bootstrap.css') }}"
-</head>
-	<body>
-		<a href='{{url_for('shelters')}}'class="btn btn-success btn-lg active" role="button"> Shelters.</a>
-		<a href='{{url_for('puppies')}}'class="btn btn-success btn-lg active" role="button"> Puppies.</a>
-		<a href='{{url_for('owners')}}'class="btn btn-success btn-lg active" role="button"> Owners.</a>
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
 		<div>
 		<legend>Edit Shelter Information</legend>
         <form method ='POST' actions='/shelterNew' enctype="multipart/form-data">
             {{ form.csrf_token }}
-        <div class="form-group col-xs-4">
+        <div class="form-group col-xs-8">
         {% for s in shelter %}
             <label for="shelter-name">Name</label>
             {{ form.name(class="form-control", placeholder=s.name) }}
@@ -23,7 +17,7 @@
                 </div>
             {% endif %}
         </div>
-        <div class="form-group col-xs-7">
+        <div class="form-group col-xs-12">
             <label for="shelter-address">Address</label>
             {{ form.address(class="form-control", placeholder=s.address) }}
             {% if form.address.errors %}
@@ -56,7 +50,7 @@
                 </div>
             {% endif %}
         </div>
-        <div class="form-group col-xs-3">
+        <div class="form-group col-xs-4">
             <label for="shelter-zipCode">Zip</label>
             {{ form.zipCode(class="form-control", placeholder=s.zipCode) }}
             {% if form.zipCode.errors %}
@@ -67,7 +61,7 @@
                 </div>
             {% endif %}
         </div>
-        <div class="form-group col-xs-11">
+        <div class="form-group col-xs-12">
             <label for="shelter-website">Website</label>
             {{ form.website(class="form-control", placeholder=s.website) }}
             {% if form.website.errors %}
@@ -97,5 +91,4 @@
 
         </form>
 		</div>
-	</body>
-</html>
+{% endblock %}

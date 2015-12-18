@@ -44,16 +44,30 @@ Files
 	/forms.py
 	/mainView.py
 	/models.py
+	/loginView.py
 	/ownerViews.py
 	/puppyViews.py
 	/shelterViews.py
-	/sms.py
-	/email.py
+	/logs
+		/mainlog
+		/mainlog.log.1
+		/mainlog.log.3
+	/components
+		/__init__.py(empty file)
+		/script.html
+		/sms.py
+		/email.py
+	/json
+		/__init__.py(empty file)
+		/fb_client_secrets.json
+		/g_client_secrets.json
+		/gh_client_secrets.json
 	/static
 		/(various bootstrap.css files)
 		/styles.css
 		/stylesForm.css
 	/templates
+		/login.html
 		/adoptPuppy.html
 		/main.html
 		/ownerAll.html

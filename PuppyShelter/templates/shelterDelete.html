@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>	
-<link rel=stylesheet type=text/css href="{{url_for('static', filename='bootstrap.css') }}"
-</head>
-	<body>
-		<a href='{{url_for('main')}}'class="btn btn-primary btn-lg active" role="button"> Return to main.</a></br>
-		<a href='{{url_for('shelters')}}'class="btn btn-primary btn-lg active" role="button"> Return to shelters.</a></br>
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
 		{% for s in shelter %}<br>	
 			<div class="container">
 			<h4>{{s.name}}</h4>
@@ -19,11 +14,7 @@
 		{% endfor %}
 		<br><br><br>
 		<form method ='POST' enctype ='multipart/form-data' actions='/deleteitem'>
-		<p>Confirm that you want to delete this shelter from the database.<br>
-		YOU ARE PUTTING THESE PUPPIES OUT ON THE STREET YOU HEARTLESS GIT!!<br>
-		CANNOT BE UNDONE!
-		</p>
-		<button type='submit' class="btn btn-danger btn-xs">Delete</button>
+		<button type='submit' class="btn btn-danger btn-lg">Confirm that you want to permanently delete this shelter.<br>
+		CANNOT BE UNDONE!</button>
 		</form>
-	</body>
-</html>
+{% endblock %}

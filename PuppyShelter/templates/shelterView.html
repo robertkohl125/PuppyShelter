@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>	
-<link rel=stylesheet type=text/css href="{{url_for('static', filename='bootstrap.css') }}"
-</head>
-	<body>
-		<a href='{{url_for('main')}}'class="btn btn-primary btn-sm active" role="button"> Return to main.</a>
-		<a href='{{url_for('shelters')}}'class="btn btn-primary btn-sm active" role="button"> Return to shelters.</a></br>
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
 		{% for s in shelter %}<br>	
 			<div class="container">
 			<h3>{{s.name}}</h3>
@@ -14,7 +9,7 @@
 			{{s.city}}
 			{{s.state}}  
 			{{s.zipCode}}</br>
-			{{s.website}}</br>
+			<a href='{{s.website}}'>{{s.website}}</a></br>
 			<h4>Maximum Capacity: <b>{{s.maximum_capacity}}</b></br>
 			Spaces remaining: <b>{{s.remaining_spaces}}</b></h4>
 			Puppies at this shelter:</br>
@@ -23,5 +18,4 @@
 			{% endfor %}
 			</div>
 		{% endfor %}
-	</body>
-</html>
+{% endblock %}

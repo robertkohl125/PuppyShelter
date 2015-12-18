@@ -4,6 +4,18 @@ import sys
 import logging
 import logging.handlers
 
+from flask.ext.mail import Mail 
+
+app = Flask(__name__)
+
+import PuppyShelter.mainView
+import PuppyShelter.ownerViews
+import PuppyShelter.puppyViews
+import PuppyShelter.shelterViews
+import PuppyShelter.models
+import PuppyShelter.forms
+import components.sms
+import components.email
 
 print "Flask version", flask.__version__
 print "Python version", (sys.version)
@@ -31,17 +43,8 @@ def log():
 log()
 
 
-from flask.ext.mail import Mail 
 
-app = Flask(__name__)
-import PuppyShelter.mainView
-import PuppyShelter.ownerViews
-import PuppyShelter.puppyViews
-import PuppyShelter.shelterViews
-import PuppyShelter.models
-import PuppyShelter.forms
-import PuppyShelter.sms
-import PuppyShelter.email
+
 
 #logging.info('__init__.py file accessed ')
 

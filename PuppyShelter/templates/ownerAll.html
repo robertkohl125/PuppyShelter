@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>	
-	<link rel=stylesheet type=text/css href="{{url_for('static', filename='bootstrap.css') }}"
-</head>
-	<body>
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
 		<h1>Owners</h1>
 		{% with messages = get_flashed_messages() %}
 			{% if messages %}
@@ -14,7 +11,6 @@
 				</ul>
 			{% endif %}
 		{% endwith %}
-		<a href='{{url_for('main')}}'class="btn btn-primary btn-sm active" role="button"> Return to main.</a>
 		<a href='{{url_for('ownerNew')}}'class="btn btn-success btn-sm active" role="button"> To add an owner, click here.</a>
 		{% for o in owners %}
 			<div class="container">
@@ -36,5 +32,4 @@
 			</div>
 			</br></br></br>
 		{% endfor %}
-	</body>
-</html>
+{% endblock %}

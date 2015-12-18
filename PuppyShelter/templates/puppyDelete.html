@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>	
-<link rel=stylesheet type=text/css href="{{url_for('static', filename='bootstrap.css') }}"
-</head>
-	<body>
-		<a href='{{url_for('main')}}'class="btn btn-primary btn-lg active" role="button"> Return to main.</a></br>
-		<a href='{{url_for('puppies')}}'class="btn btn-primary btn-lg active" role="button"> Return to puppies.</a></br>
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
 		{% for p in puppy %}<br>	
 			<div class="container">
 			<h4>{{p.name}}</h4>
@@ -16,11 +11,7 @@
 			{{p.weight}} lbs</br>
 			</div>
 		{% endfor %}
-		<br><br><br>
 		<form method ='POST' enctype ='multipart/form-data' actions='/deleteitem'>
-		<p>Confirm that you want to delete this puppy from the database.
-		<br>CANNOT BE UNDONE!</p>
-		<button type='submit' class="btn btn-danger btn-xs">Delete</button>
+		<button type='submit' class="btn btn-danger btn-lg">Click here to permanently delete this puppy. </br> CANNOT BE UNDONE!</button>
 		</form>
-	</body>
-</html>
+{% endblock %}

@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>	
-<link rel=stylesheet type=text/css href="{{url_for('static', filename='bootstrap.css') }}"
-</head>
-	<body>
-		<a href='{{url_for('main')}}'class="btn btn-primary active" role="button"> Return to main.</a></br>
-		<a href='{{url_for('puppies')}}'class="btn btn-primary active" role="button"> Return to puppies.</a></br></br></br></br>
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
 		<form method ='POST' actions='/puppyAdopt'>
 			<div class="container">
 			{% for p in puppy %}
@@ -21,12 +16,11 @@
 			breed: {{p.breed}}</br>
 			{{p.weight}} lbs</br>
 				{% for s in shelters %}
-				from <b>({{p.shelter_id}}){{s.shelter_id}}{{s.name}}</b>
+				from <b>{{s.name}}</b>
 				{% endfor %}
 			</div>
 			<img src={{p.picture}} alt="picture"></br>
 			<input class="btn btn-{{btn}} round btn-lg" type='submit' value='{{txt1}} {{p.name}} {{txt2}}' {{att}}>
 			{% endfor %}
 		</form>
-	</body>
-</html>
+{% endblock %}

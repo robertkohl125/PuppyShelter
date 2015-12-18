@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>	
-<link rel=stylesheet type=text/css href="{{url_for('static', filename='bootstrap.css') }}"
-</head>
-	<body>
-		<a href='{{url_for('main')}}'class="btn btn-primary btn-sm active" role="button"> Return to main.</a>
-		<a href='{{url_for('puppies')}}'class="btn btn-primary btn-sm active" role="button"> Return to puppies.</a></br>
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
 		{% for p in puppy %}<br>	
 			<div class="container">
 			<h3>{{p.name}}</h3>
@@ -26,5 +21,4 @@
 			<img src={{p.picture}} class="img-responsive" alt="Responsive image"></br>
 			<a href='{{url_for('puppyAdopt', puppy_id = p.puppy_id, shelter_id = p.shelter_id)}}'class="btn btn-{{btn}} btn-lg round active" role="button" {{att}}> {{txt1}} {{p.name}} {{txt2}}</a>
 		{% endfor %}
-	</body>
-</html>
+{% endblock %}

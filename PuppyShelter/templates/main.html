@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>	
-<link rel=stylesheet type=text/css href="{{url_for('static', filename='bootstrap.css') }}"
-</head>
+	<head>
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+		<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+	</head>
 	<body>
-		<a href='{{url_for('shelters')}}'class="btn btn-info btn-lg active" role="button"> Shelters.</a>
-		<a href='{{url_for('puppies')}}'class="btn btn-info btn-lg active" role="button"> Puppies.</a>
-		<a href='{{url_for('owners')}}'class="btn btn-info btn-lg active" role="button"> Owners.</a><b>
+		<div class="container">
+			{% block content %}
+			{% endblock %}
+		</div>
+		<a href='{{url_for('shelters')}}'class="btn btn-info btn-md active" role="button"> Shelters.</a>
+		<a href='{{url_for('puppies')}}'class="btn btn-info btn-md active" role="button"> Puppies.</a>
+		<a href='{{url_for('owners')}}'class="btn btn-info btn-md active" role="button"> Owners.</a><b>
 
 	</body>
 </html>
