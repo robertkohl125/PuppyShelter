@@ -1,4 +1,4 @@
-##PuppyShelter Project
+#PuppyShelter Project
 ========================
 
 This project sets up a puppy shelter website supported by a relational database and demonstrates some code to manipulate that database. Please view my commits for latest updates.
@@ -95,7 +95,7 @@ This project sets up a puppy shelter website supported by a relational database 
 1. Follow the instructions found [here][2] to install **Twilio**.
 1. Follow the instructions found [here][3] to install **Flask Mail**.
 1. Clone the Github repository [here][4].
-1. Navigate to **fullstack/vagrant/PuppyShelter** using the command shell.The directory structure is listed above.
+1. Navigate to **fullstack/vagrant/PuppyShelter** using the command shell. The directory structure is listed above.
 1. From a command line run **runserver.py** the set up the database with the following command:
   * $`python runserver.py`
 1. Hit **ctrl**+**c** to stop the process.
