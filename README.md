@@ -96,16 +96,19 @@ Features include:
 1. Navigate to fullstack/vagrant/PuppyShelter
 --*Directory structure is listed above.
 1. From a command line run runserver.py the set up the database using
---*```
+--*
+```
 $ python runserver.py
 ```
 1. Then hit <CTRL> C to stop the process
 1. Then run puppypopulator.py to add puppies and shelters to the database using 
---*```
+--*
+```
 $ python puppypopulator.py
 ```
 1. Then run runserver.py again
---*```
+--*
+```
 $ python runserver.py
 ```
 
