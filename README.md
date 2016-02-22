@@ -33,7 +33,7 @@ This project sets up a puppy shelter website supported by a relational database 
 ###Directory Structure
 ----------------------
 ```
-+--ReadMe.md
++--README.md
 +--config.py
 +--puppyExpressionLanguage.py
 +--puppyORM.py
