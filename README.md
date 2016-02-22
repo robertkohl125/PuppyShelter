@@ -2,21 +2,23 @@
 ========================
 
 This project sets up a puppy shelter website supported by a database and demonstrates some code to manipulate that database. Please view my commits for latest updates.
-Features include:
--All CRUD operators for database modules, 
--Flask, 
--WTForms including selects and validators, 
--Logging,
--email
--SMS (Twilio)
--Pagination on the puppies page
+
+###Features
+-----------
+* All CRUD operators for database modules, 
+* Flask, 
+* WTForms including selects and validators, 
+* Logging,
+* email
+* SMS (Twilio)
+* Pagination on the puppies page
 
 ###Bugs/Lingering issues
 ------------------------
 * Edit functions not auto filling HTML fields.
 * Puppy picture links not working
 
-###Technology
+###Technology Used
 -------------
 * Python 2.7.10
 * Flask
@@ -96,12 +98,12 @@ Features include:
 1. Navigate to fullstack/vagrant/PuppyShelter
 --* Directory structure is listed above.
 1. From a command line run runserver.py the set up the database using
---* `$ python runserver.py`
+--* $`python runserver.py`
 1. Then hit <CTRL> C to stop the process
 1. Then run puppypopulator.py to add puppies and shelters to the database using 
---* `$ python puppypopulator.py`
+--* $`python puppypopulator.py`
 1. Then run runserver.py again
---* `$ python runserver.py`
+--* $`python runserver.py`
 
 ###Contribute
 -------------
@@ -109,7 +111,8 @@ Features include:
 
 ###Support
 ----------
-If you are having issues, please let me know at: Robertkohl125@gmail.com
+If you are having issues, please let me know! 
+* robertkohl125@gmail.com
 
 ###License
 ----------
