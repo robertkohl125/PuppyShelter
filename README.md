@@ -1,21 +1,21 @@
 ##PuppyShelter Project
 ========================
 
-This project sets up a puppy shelter website supported by a database and demonstrates some code to manipulate that database. Please view my commits for latest updates.
+This project sets up a puppy shelter website supported by a relational database and demonstrates some code to manipulate that database. Please view my commits for latest updates.
 
 ###Features
 -----------
-* All CRUD operators for database modules, 
-* Flask, 
-* WTForms including selects and validators, 
-* Logging,
+* All CRUD operators for database modules
+* Flask
+* WTForms including selects and validators
+* Logging
 * email
 * SMS (Twilio)
-* Pagination on the puppies page
+* Pagination
 
 ###Bugs/Lingering issues
 ------------------------
-* Edit functions not auto filling HTML fields.
+* Edit functions not auto filling HTML fields
 * Puppy picture links not working
 
 ###Technology Used
@@ -24,7 +24,7 @@ This project sets up a puppy shelter website supported by a database and demonst
 * Flask
 * WTForms
 * SQLite
-* Bootstrap.css
+* Bootstrap
 * SQLAlchemy
 * Oracle VM VirtualBox 5.0.4
 * Vagrant 1.7.4
@@ -91,28 +91,26 @@ This project sets up a puppy shelter website supported by a database and demonst
 ```
 ###To Begin
 -----------
-1. Follow the instructions found [here][1] to install VirtualBox and Vagrant. 
-1. Follow the instructions found [here][2] to install Twilio
-1. Follow the instructions found [here][3] to install Flask Mail.
-1. Clone the [Github][4] repository
-1. Navigate to fullstack/vagrant/PuppyShelter
---* Directory structure is listed above.
-1. From a command line run runserver.py the set up the database using
---* $`python runserver.py`
-1. Then hit <CTRL> C to stop the process
-1. Then run puppypopulator.py to add puppies and shelters to the database using 
---* $`python puppypopulator.py`
-1. Then run runserver.py again
---* $`python runserver.py`
+1. Follow the instructions found [here][1] to install **VirtualBox** and **Vagrant**. 
+1. Follow the instructions found [here][2] to install **Twilio**.
+1. Follow the instructions found [here][3] to install **Flask Mail**.
+1. Clone the Github repository [here][4].
+1. Navigate to **fullstack/vagrant/PuppyShelter** using the command shell.The directory structure is listed above.
+1. From a command line run **runserver.py** the set up the database with the following command:
+  * $`python runserver.py`
+1. Hit **ctrl**+**c** to stop the process.
+1. Run **puppypopulator.py** to add puppies and shelters to the database with the following command:
+  * $`python puppypopulator.py`
+1. Run **runserver.py** again with the following command:
+  * $`python runserver.py`
 
-###Contribute
--------------
-* Source Code: github.com/robertkohl125/PuppyShelter.git
-
-###Support
+###Support/Contact
 ----------
-If you are having issues, please let me know! 
-* robertkohl125@gmail.com
+If you are having issues, please let me know. Contributions, tips and comments are welcome!
+* Email: robertkohl125@gmail.com
+* [Github Profile][5]
+* [StackOverflow Profile][6]
+* [LinkedIn Profile][7]
 
 ###License
 ----------
@@ -142,3 +140,6 @@ SOFTWARE.
 [2]: https://twilio-python.readthedocs.org/en/latest/ "twilio"
 [3]: https://pythonhosted.org/Flask-Mail/ "Flask-Mail"
 [4]: https://github.com/robertkohl125/PuppyShelter.git "Github repository"
+[5]: https://github.com/robertkohl125 "Github Profile"
+[6]: http://stackoverflow.com/users/2180707/robertkohl125?tab=profile "Stack Overflow Profile"
+[7]: https://www.linkedin.com/in/robertkohl125 "LinkedIn"
