@@ -30,6 +30,7 @@ Features include:
 
 ###Directory Structure
 -----
+```
 +--ReadMe.md
 +--config.py
 +--puppyExpressionLanguage.py
@@ -85,7 +86,7 @@ Features include:
         +--shelterEdit.html
         +--shelterNew.html
         +--shelterView.html
-
+```
 ###To Begin
 --------
 1. Follow the instructions found here to install VirtualBox and Vagrant. https://docs.google.com/document/d/16IgOm4XprTaKxAa8w02y028oBECOoB1EI1ReddADEeY/pub?embedded=true
@@ -99,13 +100,19 @@ https://pythonhosted.org/Flask-Mail/
 1. Navigate to fullstack/vagrant/PuppyShelter
 --Files are listed above.
 
--From a command line run runserver.py the set up the database using
-```$ python runserver.py 
--Then hit <CTRL> C to stop the process
--Then run puppypopulator.py to add puppies and shelters to the database using 
-```$ python puppypopulator.py
--Then run runserver.py again
-```$ python runserver.py 
+1. From a command line run runserver.py the set up the database using
+```
+$ python runserver.py
+```
+1. Then hit <CTRL> C to stop the process
+1. Then run puppypopulator.py to add puppies and shelters to the database using 
+```
+$ python puppypopulator.py
+```
+1. Then run runserver.py again
+```
+$ python runserver.py
+```
 
 ###Contribute
 ----------
