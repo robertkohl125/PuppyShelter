@@ -1,5 +1,5 @@
-##Puppy Shelter Database
-========
+##PuppyShelter Project
+========================
 
 This project sets up a puppy shelter website supported by a database and demonstrates some code to manipulate that database. Please view my commits for latest updates.
 Features include:
@@ -11,13 +11,13 @@ Features include:
 -SMS (Twilio)
 -Pagination on the puppies page
 
-###Bugs/Lingering issues!!
-----------------
-* Edit functions not auto filling fields in.
-* Puppy pictures not working
+###Bugs/Lingering issues
+------------------------
+* Edit functions not auto filling HTML fields.
+* Puppy picture links not working
 
 ###Technology
-----------
+-------------
 * Python 2.7.10
 * Flask
 * WTForms
@@ -29,7 +29,7 @@ Features include:
 * Twilio
 
 ###Directory Structure
------
+----------------------
 ```
 +--ReadMe.md
 +--config.py
@@ -88,8 +88,8 @@ Features include:
         +--shelterView.html
 ```
 ###To Begin
---------
-1. Follow the instructions found here to install VirtualBox and Vagrant. https://docs.google.com/document/d/16IgOm4XprTaKxAa8w02y028oBECOoB1EI1ReddADEeY/pub?embedded=true
+-----------
+1. Follow the instructions found [here][1] to install VirtualBox and Vagrant. 
 1. Install Oracle VM VirtualBox 5.0.4
 1. Install Vagrant 1.7.4
 1. Install Twilio. Use the following instructions from their website:
@@ -115,9 +115,38 @@ $ python runserver.py
 ```
 
 ###Contribute
-----------
+-------------
 * Source Code: github.com/robertkohl125/PuppyShelter.git
 
 ###Support
--------
+----------
 If you are having issues, please let me know at: Robertkohl125@gmail.com
+
+###License
+----------
+The MIT License (MIT)
+
+Copyright (c) [2015] [Robert Kohl]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+[1]: https://docs.google.com/document/d/16IgOm4XprTaKxAa8w02y028oBECOoB1EI1ReddADEeY/pub?embedded=true "Google Doc"
+[2]: https://twilio-python.readthedocs.org/en/latest/ "twilio"
+[3]: https://pythonhosted.org/Flask-Mail/ "Flask-Mail"
+[4]: https://github.com/robertkohl125/PuppyShelter.git "Github repository"
