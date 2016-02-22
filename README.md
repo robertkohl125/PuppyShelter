@@ -90,27 +90,22 @@ Features include:
 ###To Begin
 -----------
 1. Follow the instructions found [here][1] to install VirtualBox and Vagrant. 
-1. Install Oracle VM VirtualBox 5.0.4
-1. Install Vagrant 1.7.4
-1. Install Twilio. Use the following instructions from their website:
-https://twilio-python.readthedocs.org/en/latest/
-1. Install Flask Mail. Use the following instructions from their website:
-https://pythonhosted.org/Flask-Mail/
-1. Clone git repository from https://github.com/robertkohl125/PuppyShelter.git
+1. Follow the instructions found [here][2] to install Twilio
+1. Follow the instructions found [here][3] to install Flask Mail.
+1. Clone the [Github][4] repository
 1. Navigate to fullstack/vagrant/PuppyShelter
---Files are listed above.
-
+--*Directory structure is listed above.
 1. From a command line run runserver.py the set up the database using
-```
+--*```
 $ python runserver.py
 ```
 1. Then hit <CTRL> C to stop the process
 1. Then run puppypopulator.py to add puppies and shelters to the database using 
-```
+--*```
 $ python puppypopulator.py
 ```
 1. Then run runserver.py again
-```
+--*```
 $ python runserver.py
 ```
 
