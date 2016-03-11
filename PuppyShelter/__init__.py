@@ -42,15 +42,4 @@ def log():
         root_logger.addHandler(h)
 log()
 
-
-
-
-
 #logging.info('__init__.py file accessed ')
-
-
-
-
-
-
-
